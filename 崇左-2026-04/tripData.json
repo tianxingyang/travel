@@ -81,8 +81,8 @@
       "weather": { "icon": "cloudy", "high": 32, "low": 23 },
       "activities": [
         { "time": "07:30", "name": "酒店早餐\u00b7退房", "meal": { "name": "明仕那里酒店", "cuisine": "自助早餐", "perPerson": 0, "recommended": "含早", "location": "酒店" } },
-        { "time": "08:30", "name": "包车前往花山景区", "duration": "2h", "cost": 0, "transport": "包车", "note": "明仕\u2192宁明花山约120km/2h，途经崇左市区" },
-        { "time": "10:30", "name": "左江花山岩画(UNESCO)", "duration": "2.5h", "cost": 90, "transport": "游船", "note": "全程船上观赏\u00b7无需步行\u00b7宝宝坐怀里即可\u00b7船上有遮阳\u00b71m以下免票\u00b72000年骆越先民崖壁画" },
+        { "time": "08:30", "name": "包车前往花山景区", "duration": "2.5h", "cost": 0, "transport": "包车", "note": "明仕\u2192宁明花山约116km/2-2.5h，途经崇左市区" },
+        { "time": "11:00", "name": "左江花山岩画(UNESCO)", "duration": "2.5h", "cost": 90, "transport": "游船", "note": "全程船上观赏\u00b7无需步行\u00b7宝宝坐怀里即可\u00b7船上有遮阳\u00b71m以下免票\u00b72000年骆越先民崖壁画" },
         { "time": "13:00", "name": "午餐", "meal": { "name": "宁明/崇左沿途餐馆", "cuisine": "桂菜", "perPerson": 50, "recommended": "百香果排骨\u00b7越南鸡肉粉", "location": "宁明县或崇左市区" } },
         { "time": "14:30", "name": "返回崇左市区", "duration": "45min", "cost": 0, "transport": "包车", "note": "入住酒店，宝宝午睡" },
         { "time": "16:00", "name": "崇左市区漫步", "duration": "2h", "cost": 0, "transport": "步行/打车", "note": "太平古城/园博园轻松逛逛，采购伴手礼" },
