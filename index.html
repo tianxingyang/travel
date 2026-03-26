@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>旅行计划</title>
+<style>
+:root{--bg:#f4f1ec;--card:#fff;--txt:#2c2c2c;--sub:#7a7a7a;--r:16px;--ease:cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:60px 20px}
+h1{font-size:clamp(24px,4vw,36px);font-weight:700;letter-spacing:.05em;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;width:100%;max-width:780px}
+.card{position:relative;background:var(--card);border-radius:var(--r);overflow:hidden;text-decoration:none;color:var(--txt);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.card-banner{height:160px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
+.card-body{padding:24px}
+.card-body h2{font-size:20px;font-weight:600;margin-bottom:6px}
+.card-body p{font-size:14px;color:var(--sub);line-height:1.6}
+.tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:99px;margin-top:12px;font-weight:500}
+.c1 .card-banner{background:linear-gradient(135deg,#1a4d3a,#2d7a5e,#4a9e7a)}
+.c1 .tag{background:#e8f5ee;color:#2d7a5e}
+.c2 .card-banner{background:linear-gradient(135deg,#C45B3E,#9B7EC8 70%,#8B6F4E)}
+.c2 .tag{background:#f5e6e1;color:#C45B3E}
+</style>
+</head>
+<body>
+<h1>🗺 旅行计划</h1>
+<div class="grid">
+  <a class="card c1" href="崇左-2026-04/崇左-6天旅行计划">
+    <div class="card-banner">🏞</div>
+    <div class="card-body">
+      <h2>崇左 · 6日亲子游</h2>
+      <p>2026.04.02 – 04.07 · 德天瀑布 · 明仕田园 · 花山岩画</p>
+      <span class="tag">广西 · 边境山水</span>
+    </div>
+  </a>
+  <a class="card c2" href="弥勒建水-2026-04/弥勒建水-6天旅行计划">
+    <div class="card-banner">🏺</div>
+    <div class="card-body">
+      <h2>弥勒 · 建水 · 6日慢旅行</h2>
+      <p>2026.04 · 东风韵 · 建水古城 · 紫陶文化</p>
+      <span class="tag">云南 · 滇南秘境</span>
+    </div>
+  </a>
+</div>
+</body>
+</html>
