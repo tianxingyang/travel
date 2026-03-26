@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>崇左 6日亲子游 | 2026.04.02-07</title>
+<style>
+:root{
+  --c-forest:#1a4d3a;--c-emerald:#2d7a5e;--c-jade:#4a9e7a;
+  --c-gold:#c8956d;--c-gold-light:#e8c9a8;--c-water:#7fb3c9;
+  --c-cream:#f7f5f0;--c-paper:#fefdfb;--c-ink:#1a2e1e;
+  --c-muted:#6b8f7e;--c-border:#d4cec4;--c-light:#eae6df;
+  --c-meal:#fdf6ee;--c-meal-border:#e8c9a8;
+  --r:10px;--shadow:0 2px 12px rgba(26,77,58,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--c-cream);color:var(--c-ink);line-height:1.7;font-size:15px}
+a{color:var(--c-emerald);text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:linear-gradient(170deg,var(--c-forest) 0%,var(--c-emerald) 60%,var(--c-jade) 100%);
+  color:#fff;padding:60px 0 80px;overflow:hidden}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:var(--c-cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-mountains{position:absolute;bottom:55px;left:0;right:0;height:120px;opacity:.12}
+.hero-mountains svg{width:100%;height:100%}
+.hero-content{position:relative;z-index:1;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:2px;margin-bottom:8px}
+.hero-sub{font-size:15px;opacity:.85;margin-bottom:24px}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-val{font-size:22px;font-weight:600}
+.hero-stat-label{font-size:12px;opacity:.7;margin-top:2px}
+.hero-weather-summary{margin-top:20px;padding:12px 24px;background:rgba(255,255,255,.12);
+  border-radius:20px;display:inline-block;font-size:13px;backdrop-filter:blur(4px)}
+
+/* ===== WEATHER STRIP ===== */
+.weather-section{padding:32px 0 24px}
+.section-title{font-size:20px;font-weight:600;color:var(--c-forest);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px}
+.section-title::before{content:"";width:4px;height:22px;background:var(--c-gold);border-radius:2px}
+.weather-strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.weather-strip::-webkit-scrollbar{height:4px}
+.weather-strip::-webkit-scrollbar-thumb{background:var(--c-border);border-radius:4px}
+.weather-card{flex:0 0 160px;background:var(--c-paper);border:1px solid var(--c-border);
+  border-radius:var(--r);padding:16px;text-align:center;transition:box-shadow .2s}
+.weather-card:hover{box-shadow:var(--shadow)}
+.weather-card.rainy{border-left:3px solid var(--c-water)}
+.weather-card.sunny{border-left:3px solid var(--c-gold)}
+.weather-card.cloudy,.weather-card.partlyCloudy{border-left:3px solid var(--c-muted)}
+.wc-date{font-size:13px;color:var(--c-muted);font-weight:500}
+.wc-weekday{font-size:12px;color:var(--c-muted)}
+.wc-icon{font-size:28px;margin:8px 0}
+.wc-temp{font-size:18px;font-weight:600;color:var(--c-forest)}
+.wc-temp span{font-size:13px;color:var(--c-muted);font-weight:400}
+
+/* ===== ITINERARY ===== */
+.itinerary-section{padding:16px 0 40px}
+.itinerary-layout{display:flex;gap:24px;align-items:flex-start}
+.day-nav{position:sticky;top:20px;flex:0 0 180px;display:flex;flex-direction:column;gap:6px}
+.day-nav-btn{cursor:pointer;padding:12px 16px;background:var(--c-paper);border:1px solid var(--c-border);
+  border-radius:var(--r);font-size:13px;text-align:left;transition:all .2s;font-family:inherit}
+.day-nav-btn:hover{border-color:var(--c-jade)}
+.day-nav-btn.active{background:var(--c-forest);color:#fff;border-color:var(--c-forest)}
+.day-nav-btn .dn-date{font-weight:600;font-size:14px}
+.day-nav-btn .dn-theme{font-size:11px;opacity:.7;margin-top:2px;display:block;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day-content{flex:1;min-width:0}
+.day-panel{display:none;animation:fadeIn .3s ease}
+.day-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.day-header{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:12px;
+  border-bottom:2px solid var(--c-light)}
+.day-header h3{font-size:22px;color:var(--c-forest)}
+.day-header .dh-weather{font-size:14px;color:var(--c-muted);margin-left:auto}
+
+/* Activity cards */
+.activity{display:flex;gap:16px;margin-bottom:12px;position:relative;padding-left:20px}
+.activity::before{content:"";position:absolute;left:6px;top:26px;bottom:-12px;width:1px;background:var(--c-border)}
+.activity:last-child::before{display:none}
+.activity::after{content:"";position:absolute;left:2px;top:8px;width:9px;height:9px;
+  border-radius:50%;background:var(--c-jade);border:2px solid var(--c-cream)}
+.act-time{flex:0 0 48px;font-size:13px;font-weight:600;color:var(--c-emerald);padding-top:4px}
+.act-body{flex:1;background:var(--c-paper);border:1px solid var(--c-border);border-radius:var(--r);
+  padding:14px 16px;transition:box-shadow .2s}
+.act-body:hover{box-shadow:var(--shadow)}
+.act-name{font-weight:600;font-size:14px;color:var(--c-ink)}
+.act-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;font-size:12px;color:var(--c-muted)}
+.act-tag{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;
+  background:var(--c-light);border-radius:12px;font-size:11px}
+.act-tag.cost{background:#fef3e6;color:#b5710a}
+.act-note{margin-top:8px;font-size:12px;color:var(--c-muted);line-height:1.6;
+  padding:8px 10px;background:var(--c-cream);border-radius:6px}
+
+/* Meal cards */
+.activity.is-meal .act-body{background:var(--c-meal);border-color:var(--c-meal-border)}
+.activity.is-meal::after{background:var(--c-gold)}
+.meal-info{margin-top:8px;font-size:12px}
+.meal-rec{color:var(--c-gold);font-weight:500;margin-top:4px}
+
+/* ===== HOTELS ===== */
+.hotels-section{padding:32px 0}
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.hotel-card{background:var(--c-paper);border:1px solid var(--c-border);border-radius:var(--r);
+  padding:20px;transition:box-shadow .2s;cursor:pointer}
+.hotel-card:hover{box-shadow:var(--shadow)}
+.hotel-card.primary{border-left:4px solid var(--c-emerald)}
+.hotel-card.alt{border-left:4px solid var(--c-border)}
+.hc-name{font-weight:600;font-size:15px;color:var(--c-forest)}
+.hc-area{font-size:12px;color:var(--c-muted);margin-top:2px}
+.hc-price{font-size:20px;font-weight:700;color:var(--c-emerald);margin-top:10px}
+.hc-price span{font-size:12px;font-weight:400;color:var(--c-muted)}
+.hc-rating{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;
+  color:var(--c-gold);margin-top:6px}
+.hc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.hc-tag{font-size:11px;padding:3px 8px;background:var(--c-cream);border-radius:10px;color:var(--c-muted)}
+.hc-nights{font-size:11px;color:var(--c-muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--c-light)}
+
+/* ===== BUDGET ===== */
+.budget-section{padding:32px 0}
+.budget-layout{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
+.budget-chart{flex:0 0 220px;position:relative}
+.donut{width:200px;height:200px;border-radius:50%;position:relative;margin:0 auto}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;width:120px;height:120px;background:var(--c-paper);border-radius:50%;
+  display:flex;flex-direction:column;justify-content:center;box-shadow:inset 0 0 8px rgba(0,0,0,.04)}
+.donut-total{font-size:22px;font-weight:700;color:var(--c-forest)}
+.donut-label{font-size:11px;color:var(--c-muted)}
+.budget-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--c-muted)}
+.legend-dot{width:10px;height:10px;border-radius:3px}
+.budget-details{flex:1;min-width:280px}
+.budget-category{margin-bottom:8px}
+.budget-cat-header{display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;background:var(--c-paper);border:1px solid var(--c-border);
+  border-radius:var(--r);cursor:pointer;transition:background .2s;font-size:14px}
+.budget-cat-header:hover{background:var(--c-light)}
+.budget-cat-header .bch-name{font-weight:500}
+.budget-cat-header .bch-cost{font-weight:600;color:var(--c-emerald)}
+.budget-cat-items{display:none;padding:8px 14px 4px;font-size:13px}
+.budget-cat-items.open{display:block}
+.bci-row{display:flex;justify-content:space-between;padding:4px 0;color:var(--c-muted)}
+.bci-row .bci-tag{font-size:10px;padding:1px 5px;border-radius:4px;margin-left:4px}
+.bci-tag.flyai{background:#e6f7ef;color:#059669}
+.bci-tag.ref{background:#fef3e6;color:#b5710a}
+.bci-tag.estimate{background:#f0f0f0;color:#666}
+.budget-total{margin-top:16px;padding:16px;background:var(--c-forest);color:#fff;
+  border-radius:var(--r);display:flex;justify-content:space-between;align-items:center}
+.bt-amount{font-size:24px;font-weight:700}
+.bt-per{font-size:13px;opacity:.8}
+.budget-note{font-size:11px;color:var(--c-muted);margin-top:12px;line-height:1.6}
+
+/* ===== TIPS ===== */
+.tips-section{padding:32px 0}
+.tip-item{margin-bottom:6px}
+.tip-item details{background:var(--c-paper);border:1px solid var(--c-border);border-radius:var(--r);overflow:hidden}
+.tip-item summary{padding:12px 16px;cursor:pointer;font-size:13px;font-weight:500;
+  list-style:none;display:flex;align-items:center;gap:8px;transition:background .2s}
+.tip-item summary:hover{background:var(--c-light)}
+.tip-item summary::before{content:"\25B6";font-size:10px;color:var(--c-muted);transition:transform .2s}
+.tip-item details[open] summary::before{transform:rotate(90deg)}
+.tip-item summary::-webkit-details-marker{display:none}
+.tip-content{padding:0 16px 14px;font-size:13px;color:var(--c-muted);line-height:1.7}
+.tip-item.important details{border-left:3px solid var(--c-gold)}
+.tip-item.important summary{color:var(--c-gold);font-weight:600}
+
+/* ===== FOOTER ===== */
+.footer{padding:32px 0;border-top:1px solid var(--c-border);margin-top:20px}
+.footer-reliability{font-size:11px;color:var(--c-muted);line-height:1.8}
+.footer-reliability h4{font-size:13px;color:var(--c-ink);margin-bottom:8px}
+.rel-row{display:flex;gap:8px;margin-bottom:4px}
+.rel-dot{flex:0 0 8px;height:8px;border-radius:50%;margin-top:5px}
+.rel-dot.green{background:#059669}
+.rel-dot.blue{background:var(--c-water)}
+.rel-dot.yellow{background:var(--c-gold)}
+.footer-gen{text-align:center;margin-top:20px;font-size:11px;color:var(--c-border)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero{padding:40px 0 60px}
+  .hero h1{font-size:26px}
+  .hero-stats{gap:20px}
+  .itinerary-layout{flex-direction:column}
+  .day-nav{position:static;flex-direction:row;overflow-x:auto;flex-wrap:nowrap;
+    padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .day-nav-btn{flex:0 0 auto;padding:10px 14px}
+  .day-nav-btn .dn-theme{display:none}
+  .budget-layout{flex-direction:column}
+  .budget-chart{flex:none;width:100%}
+  .hotel-grid{grid-template-columns:1fr}
+  .activity{padding-left:16px}
+}
+@media(max-width:480px){
+  .container{padding:0 12px}
+  .hero-stats{flex-direction:column;gap:8px}
+  .weather-card{flex:0 0 130px;padding:12px}
+  .act-meta{gap:4px}
+}
+
+/* ===== PRINT ===== */
+@media print{
+  body{background:#fff;font-size:12px}
+  .hero{background:var(--c-forest)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:20px 0 30px}
+  .hero::after{display:none}
+  .day-nav{display:none}
+  .day-panel{display:block!important;page-break-inside:avoid;margin-bottom:20px}
+  .itinerary-layout{display:block}
+  .budget-cat-items{display:block!important}
+  .tip-item details{display:block}
+  .tip-item details[open] .tip-content,.tip-content{display:block!important}
+  .hotel-card:hover,.act-body:hover{box-shadow:none}
+  .weather-strip{flex-wrap:wrap}
+  .weather-card{flex:1 0 100px}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-mountains">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" width="1200" height="120">
+      <path d="M0,120 L40,80 L80,95 L140,40 L180,70 L220,30 L260,65 L300,20 L340,55 L380,35 L420,60 L460,15 L500,50 L540,25 L580,55 L620,10 L660,45 L700,30 L740,60 L780,20 L820,50 L860,35 L900,65 L940,25 L980,55 L1020,40 L1060,70 L1100,30 L1140,60 L1200,45 L1200,120 Z" fill="rgba(255,255,255,.5)"/>
+      <path d="M0,120 L60,90 L120,100 L200,55 L260,80 L320,45 L400,70 L460,35 L520,60 L580,40 L640,65 L700,25 L760,55 L820,40 L880,70 L940,30 L1000,60 L1060,50 L1120,75 L1200,55 L1200,120 Z" fill="rgba(255,255,255,.3)"/>
+    </svg>
+  </div>
+  <div class="hero-content container" id="heroContent"></div>
+</section>
+
+<!-- Weather -->
+<section class="weather-section">
+  <div class="container">
+    <div class="section-title">逐日天气</div>
+    <div class="weather-strip" id="weatherStrip"></div>
+  </div>
+</section>
+
+<!-- Itinerary -->
+<section class="itinerary-section">
+  <div class="container">
+    <div class="section-title">每日行程</div>
+    <div class="itinerary-layout">
+      <nav class="day-nav" id="dayNav"></nav>
+      <div class="day-content" id="dayContent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hotels -->
+<section class="hotels-section">
+  <div class="container">
+    <div class="section-title">住宿推荐</div>
+    <div class="hotel-grid" id="hotelGrid"></div>
+  </div>
+</section>
+
+<!-- Budget -->
+<section class="budget-section">
+  <div class="container">
+    <div class="section-title">预算明细</div>
+    <div class="budget-layout">
+      <div class="budget-chart" id="budgetChart"></div>
+      <div class="budget-details" id="budgetDetails"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tips -->
+<section class="tips-section">
+  <div class="container">
+    <div class="section-title">实用贴士</div>
+    <div id="tipsList"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-reliability" id="footerReliability"></div>
+    <div class="footer-gen" id="footerGen"></div>
+  </div>
+</footer>
+
+<script>
+var tripData = {"title":"\u5d07\u5de6 6\u65e5\u4eb2\u5b50\u6e38","dateRange":"2026-04-02 ~ 04-07","travelers":"4\u59271\u5c0f(16\u6708\u9f84)","generationDate":"2026-03-26","weather":{"summary":"\u524d4\u65e5\u9635\u96e8\u4e3a\u4e3b\uff0c\u540e2\u65e5\u8f6c\u6674\uff0c\u6c14\u6e2922-33\u00b0C","avgHigh":29,"avgLow":21,"rainfall":"60%\uff08\u96c6\u4e2d\u57284.3-4.5\uff09","clothing":"\u77ed\u8896+\u8584\u5916\u5957+\u96e8\u5177\uff0c\u540e\u4e24\u5929\u6ce8\u610f\u9632\u6652","tips":"4\u6708\u521d\u5d07\u5de6\u6e7f\u5ea6\u9ad8\uff0c\u5efa\u8bae\u901f\u5e72\u9762\u6599\uff1b\u96e8\u5929\u8def\u6ed1\u6ce8\u610f\u5b9d\u5b9d\u5b89\u5168"},"days":[{"date":"04/02","weekday":"\u5468\u56db","theme":"\u542f\u7a0b\u00b7\u62b5\u8fbe\u5d07\u5de6","weather":{"icon":"cloudy","high":31,"low":20},"activities":[{"time":"12:55","name":"\u6210\u90fd\u5929\u5e9cT1\u51fa\u53d1","duration":"1h45m","cost":0,"transport":"\u56db\u5ddd\u822a\u7a7a3U6747","note":"\u5a74\u513f\u7968\u7ea682\u5143(\u6210\u4eba10%)"},{"time":"14:40","name":"\u62b5\u8fbe\u5357\u5b81\u5434\u5729\u673a\u573a","duration":"1h40m","cost":0,"transport":"\u6b65\u884c\u81f3GTC\u5730\u4e0b\u9ad8\u94c1\u7ad9(5-8min)","note":"\u53d6\u884c\u674e\u540e\u6b65\u884c\u81f3\u673a\u573a\u9ad8\u94c1\u7ad9\uff0c\u9884\u754040min"},{"time":"16:22","name":"\u5434\u5729\u673a\u573a\u7ad9\u2192\u5d07\u5de6\u5357\u7ad9","duration":"35min","cost":45,"transport":"\u9ad8\u94c1\u4e8c\u7b49\u5ea7","note":"\u5a74\u5e7c\u513f\u514d\u7968\u4e0d\u5360\u5ea7"},{"time":"17:00","name":"\u62b5\u8fbe\u5d07\u5de6\u5357\u7ad9","duration":"20min","cost":0,"transport":"\u6253\u8f66\u5230\u9152\u5e97(\u7ea615\u5143)","note":"\u5165\u4f4f\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751\u9152\u5e97"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u5d07\u5de6\u6c5f\u5357\u591c\u5e02 / \u963f\u5a01\u7c89\u5e97","cuisine":"\u5e7f\u897f\u7c89\u7c7b","perPerson":50,"recommended":"\u8001\u53cb\u7c89\u00b7\u5377\u7b52\u7c89\u00b7\u70e4\u9e2d\u7c89","location":"\u5e02\u533a\u6b65\u884c\u53ef\u8fbe"}}]},{"date":"04/03","weekday":"\u5468\u4e94","theme":"\u8f6c\u79fb\u660e\u4ed5\u00b7\u6162\u4eab\u96e8\u65e5","weather":{"icon":"rainy","high":23,"low":19},"activities":[{"time":"08:30","name":"\u65e9\u9910","meal":{"name":"\u9f99\u5dde\u7f8e\u5473\u5377\u7b52\u7c89\u5e97 / \u9152\u5e97\u65e9\u9910","cuisine":"\u5d07\u5de6\u7279\u8272","perPerson":20,"recommended":"\u5377\u7b52\u7c89\u00b7\u6c99\u7cd5","location":"\u9152\u5e97\u9644\u8fd1"}},{"time":"09:30","name":"\u9000\u623f\u00b7\u5305\u8f66\u524d\u5f80\u660e\u4ed5","duration":"1.5h","cost":0,"transport":"\u5305\u8f66(7\u5ea7MPV)","note":"\u9014\u7ecf\u5927\u65b0\u53bf\u57ce\uff0c\u8f66\u7a0b\u7ea690\u5206\u949f"},{"time":"11:00","name":"\u9014\u7ecf\u5927\u65b0\u53bf\u57ce","duration":"1h","cost":0,"transport":"\u5305\u8f66","note":"\u53ef\u4e0b\u8f66\u901b\u901b\u5c0f\u57ce\uff0c\u4e70\u4e9b\u6c34\u679c\u96f6\u98df"},{"time":"12:00","name":"\u5348\u9910","meal":{"name":"\u5927\u65b0\u53bf\u57ce\u9910\u9986","cuisine":"\u58ee\u65cf\u5bb6\u5e38","perPerson":50,"recommended":"\u67e0\u6aac\u9e2d\u00b7\u9178\u7b0b\u9c7c","location":"\u5927\u65b0\u53bf\u57ce"}},{"time":"13:30","name":"\u62b5\u8fbe\u660e\u4ed5\u00b7\u5165\u4f4f","duration":"1.5h","cost":0,"transport":"\u5305\u8f66","note":"\u5165\u4f4f\u660e\u4ed5\u90a3\u91cc\u9152\u5e97\uff0c\u5b9d\u5b9d\u5348\u7761"},{"time":"15:30","name":"\u9152\u5e97\u5468\u8fb9\u6f2b\u6b65","duration":"2h","cost":0,"transport":"\u6b65\u884c","note":"\u96e8\u5929\u8f7b\u677e\u6d3b\u52a8\uff1a\u9152\u5e97\u7a3b\u7530\u6cf3\u6c60\u3001\u5468\u8fb9\u7530\u56ed\u5c0f\u8def\u6563\u6b65"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u90a3\u8292\u9910\u5385(\u9152\u5e97\u5185)","cuisine":"\u58ee\u65cf\u7cbe\u81f4\u6599\u7406","perPerson":80,"recommended":"\u660e\u4ed5\u73cd\u73e0\u9e2d\u00b7\u4e94\u8272\u7cef\u7c73\u996d\u00b7\u9999\u8305\u70e4\u9c7c","location":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97\u5185"}}]},{"date":"04/04","weekday":"\u5468\u516d","theme":"\u5fb7\u5929\u7011\u5e03\u00b7\u96e8\u4e2d\u58ee\u9614","weather":{"icon":"rainy","high":28,"low":21},"activities":[{"time":"08:00","name":"\u9152\u5e97\u65e9\u9910","meal":{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","cuisine":"\u81ea\u52a9\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u9152\u5e97\u9910\u5385"}},{"time":"09:00","name":"\u5305\u8f66\u524d\u5f80\u5fb7\u5929\u7011\u5e03","duration":"1h","cost":0,"transport":"\u5305\u8f66","note":"\u660e\u4ed5\u2192\u5fb7\u5929\u7ea637km/1h\uff0c\u63d0\u9192\u53f8\u673a\u76f4\u63a5\u5bfc\u822a\u666f\u533a\u5165\u53e3(\u975e\u6e38\u5ba2\u4e2d\u5fc3)"},{"time":"10:00","name":"\u5fb7\u5929\u8de8\u56fd\u7011\u5e03","duration":"3.5h","cost":115,"transport":"\u666f\u533a\u89c2\u5149\u8f66(\u542b\u5728\u95e8\u7968\u5185)","note":"\u8d70\u53f3\u4fa7\u65e0\u969c\u788d\u901a\u9053(\u5e73\u8def\u53ef\u63a8\u8f66)\u00b7\u96e8\u5929\u6c34\u91cf\u5145\u6c9b\u00b711:30\u7b49\u4e0a\u6e38\u653e\u6c34\u00b7\u7a7f\u96e8\u8863"},{"time":"11:30","name":"\u7af9\u7b4f\u6f02\u6d41","duration":"30min","cost":48,"transport":"\u7af9\u7b4f","note":"1.2m\u4ee5\u4e0b\u514d\u8d39\u00b7\u6709\u513f\u7ae5\u6551\u751f\u8863\u00b7\u4f1a\u88ab\u6c34\u82b1\u6e85\u6e7f\u00b7\u624b\u673a\u88c5\u9632\u6c34\u888b"},{"time":"12:30","name":"\u7a3b\u7530\u5496\u5561\u4f11\u606f","duration":"30min","cost":28,"transport":"\u666f\u533a\u5185\u6b65\u884c","note":"\u666f\u533a\u5185\u5496\u5561\u9986\uff0c\u7a3b\u7530\u666f\u89c2\u4f4d\uff0c\u9002\u5408\u4f11\u606f"},{"time":"13:30","name":"\u5348\u9910","meal":{"name":"\u4e2d\u8d8a\u597d\u5403\u8857","cuisine":"\u8d8a\u5357+\u58ee\u65cf\u5c0f\u5403","perPerson":40,"recommended":"\u8d8a\u5357\u6625\u5377\u00b7\u7af9\u7b52\u996d\u00b7\u8292\u679c\u7cef\u7c73\u996d","location":"\u5fb7\u5929\u666f\u533a\u5916\u7855\u9f99\u9547"}},{"time":"14:30","name":"\u8fd4\u56de\u660e\u4ed5","duration":"1h","cost":0,"transport":"\u5305\u8f66","note":"\u8f66\u4e0a\u5b9d\u5b9d\u5348\u7761"},{"time":"16:00","name":"\u81ea\u7531\u6d3b\u52a8","duration":"2h","cost":0,"transport":"\u6b65\u884c/\u7535\u52a8\u8f66","note":"\u9152\u5e97\u4f11\u606f\u6216\u79df\u7535\u52a8\u8f66(20\u5143/h)\u9a91\u884c\u5341\u91cc\u753b\u5eca"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u5915\u585c\u9910\u5385","cuisine":"\u897f\u5f0f+\u878d\u5408","perPerson":70,"recommended":"\u521b\u610f\u58ee\u65cf\u83dc\u00b7\u6c1b\u56f4\u597d","location":"\u660e\u4ed5\u666f\u533a\u9644\u8fd1"}}]},{"date":"04/05","weekday":"\u5468\u65e5","theme":"\u660e\u4ed5\u7530\u56ed\u00b7\u6162\u65f6\u5149","weather":{"icon":"partlyCloudy","high":27,"low":23},"activities":[{"time":"08:00","name":"\u9152\u5e97\u65e9\u9910","meal":{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","cuisine":"\u81ea\u52a9\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u9152\u5e97"}},{"time":"09:00","name":"\u660e\u4ed5\u7530\u56ed\u7af9\u7b4f+\u4e5d\u66f2\u6865","duration":"2h","cost":135,"transport":"\u6b65\u884c\u81f3\u7801\u5934","note":"\u7af9\u7b4f\u7a7f\u884c\u5580\u65af\u7279\u5cf0\u6797\u95f4\u00b7\u4e5d\u66f2\u6865\u62cd\u7167\u00b7\u5957\u7968\u542b\u58ee\u65cf\u535a\u7269\u9986+\u9c7c\u9cde\u575d"},{"time":"11:30","name":"\u58ee\u65cf\u535a\u7269\u9986","duration":"30min","cost":0,"transport":"\u6b65\u884c","note":"\u542b\u5728\u5957\u7968\u5185\uff0c\u4e86\u89e3\u58ee\u65cf\u6587\u5316"},{"time":"12:00","name":"\u5348\u9910","meal":{"name":"\u5362\u54e5\u9910\u9986 / \u8def\u8fb9\u519c\u5bb6\u4e50","cuisine":"\u58ee\u65cf\u519c\u5bb6\u83dc","perPerson":50,"recommended":"\u8d70\u5730\u9e21\u00b7\u9178\u6c64\u9c7c\u00b7\u91ce\u83dc","location":"\u660e\u4ed5\u6751"}},{"time":"13:00","name":"\u5b9d\u5b9d\u5348\u7761","duration":"2h","cost":0,"transport":"-","note":"\u56de\u9152\u5e97\u4f11\u606f"},{"time":"15:00","name":"\u79df\u516b\u560e\u8f66\u9a91\u884c\u5341\u91cc\u753b\u5eca","duration":"2h","cost":30,"transport":"\u516b\u560e\u8f66(3\u5ea7\u5bb6\u5ead\u7535\u52a8\u8f66)","note":"\u5e73\u5766\u9a91\u884c\u9053\u00b7\u90a3\u51a0\u6865\u00b7\u7530\u56ed\u98ce\u5149\u00b730\u5143/h"},{"time":"17:00","name":"\u9c7c\u9cde\u575d\u620f\u6c34","duration":"1h","cost":0,"transport":"\u9a91\u884c\u53ef\u8fbe","note":"\u5e26\u6c34\u978b!\u00b7\u5730\u9762\u6e7f\u6ed1\u6ce8\u610f\u5b89\u5168\u00b7\u5b9d\u5b9d\u53ef\u6d45\u6c34\u533a\u73a9\u00b7\u96e8\u540e\u6c34\u4f4d\u53ef\u80fd\u504f\u9ad8\u9700\u7559\u610f"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u660e\u4ed5\u5c71\u5e84\u4e2d\u9910\u5385","cuisine":"\u58ee\u65cf\u5bb4\u5e2d","perPerson":80,"recommended":"\u7c38\u7b95\u5bb4\u00b7\u7af9\u7b52\u996d\u00b7\u6cb3\u9c7c","location":"\u660e\u4ed5\u5c71\u5e84"}},{"time":"20:00","name":"\u7518\u8517\u6c41+\u6563\u6b65","duration":"1h","cost":5,"transport":"\u6b65\u884c","note":"\u8def\u8fb9\u644a\u7518\u8517\u6c41\uff0c\u4fbf\u5b9c\u597d\u559d"}]},{"date":"04/06","weekday":"\u5468\u4e00","theme":"\u82b1\u5c71\u5ca9\u753b\u00b7\u4e24\u5343\u5e74\u58ee\u6b4c","weather":{"icon":"cloudy","high":32,"low":23},"activities":[{"time":"07:30","name":"\u9152\u5e97\u65e9\u9910\u00b7\u9000\u623f","meal":{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","cuisine":"\u81ea\u52a9\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u9152\u5e97"}},{"time":"08:30","name":"\u5305\u8f66\u524d\u5f80\u82b1\u5c71\u666f\u533a","duration":"2h","cost":0,"transport":"\u5305\u8f66","note":"\u660e\u4ed5\u2192\u5b81\u660e\u82b1\u5c71\u7ea6120km/2h\uff0c\u9014\u7ecf\u5d07\u5de6\u5e02\u533a"},{"time":"10:30","name":"\u5de6\u6c5f\u82b1\u5c71\u5ca9\u753b(UNESCO)","duration":"2.5h","cost":90,"transport":"\u6e38\u8239","note":"\u5168\u7a0b\u8239\u4e0a\u89c2\u8d4f\u00b7\u65e0\u9700\u6b65\u884c\u00b7\u5b9d\u5b9d\u5750\u6000\u91cc\u5373\u53ef\u00b7\u8239\u4e0a\u6709\u906e\u9633\u00b71m\u4ee5\u4e0b\u514d\u7968\u00b72000\u5e74\u9a86\u8d8a\u5148\u6c11\u5d16\u58c1\u753b"},{"time":"13:00","name":"\u5348\u9910","meal":{"name":"\u5b81\u660e/\u5d07\u5de6\u6cbf\u9014\u9910\u9986","cuisine":"\u6842\u83dc","perPerson":50,"recommended":"\u767e\u9999\u679c\u6392\u9aa8\u00b7\u8d8a\u5357\u9e21\u8089\u7c89","location":"\u5b81\u660e\u53bf\u6216\u5d07\u5de6\u5e02\u533a"}},{"time":"14:30","name":"\u8fd4\u56de\u5d07\u5de6\u5e02\u533a","duration":"45min","cost":0,"transport":"\u5305\u8f66","note":"\u5165\u4f4f\u9152\u5e97\uff0c\u5b9d\u5b9d\u5348\u7761"},{"time":"16:00","name":"\u5d07\u5de6\u5e02\u533a\u6f2b\u6b65","duration":"2h","cost":0,"transport":"\u6b65\u884c/\u6253\u8f66","note":"\u592a\u5e73\u53e4\u57ce/\u56ed\u535a\u56ed\u8f7b\u677e\u901b\u901b\uff0c\u91c7\u8d2d\u4f34\u624b\u793c"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u5d07\u5de6\u6c5f\u5357\u591c\u5e02","cuisine":"\u70e7\u70e4\u5c0f\u5403","perPerson":60,"recommended":"\u70e4\u4e32\u00b7\u87ba\u86f3\u7c89\u00b7\u7518\u8517\u6c41\u00b7\u5f53\u5730\u5c0f\u5403","location":"\u5d07\u5de6\u5e02\u533a"}}]},{"date":"04/07","weekday":"\u5468\u4e8c","theme":"\u5f52\u7a0b\u00b7\u540e\u4f1a\u6709\u671f","weather":{"icon":"sunny","high":33,"low":22},"activities":[{"time":"07:30","name":"\u65e9\u9910\u00b7\u9000\u623f","meal":{"name":"\u9152\u5e97\u65e9\u9910 / \u6728\u70ad\u70e4\u9e2d\u7c89","cuisine":"\u5d07\u5de6\u7279\u8272","perPerson":20,"recommended":"\u70e4\u9e2d\u7c89(\u65b0\u534e\u8def13\u53f7)","location":"\u5d07\u5de6\u5e02\u533a"}},{"time":"08:45","name":"\u6253\u8f66\u5230\u5d07\u5de6\u5357\u7ad9","duration":"15min","cost":15,"transport":"\u6253\u8f66","note":"\u63d0\u524d\u5230\u7ad9\uff0c\u5e26\u5a03\u9884\u7559\u5145\u8db3\u65f6\u95f4"},{"time":"09:21","name":"\u5d07\u5de6\u5357\u2192\u5434\u5729\u673a\u573a\u7ad9","duration":"35min","cost":45,"transport":"\u9ad8\u94c1","note":"\u62b5\u8fbe\u540e\u6b65\u884c\u81f3T2\u822a\u7ad9\u697c(\u7ea68min)"},{"time":"10:30","name":"\u673a\u573a\u5348\u9910\u00b7\u5019\u673a","duration":"4h","cost":0,"transport":"-","note":"\u5357\u5b81\u673a\u573a\u6709\u6bcd\u5a74\u5ba4\uff0c\u5145\u88d5\u65f6\u95f4\u5e26\u5a03\u4f11\u606f"},{"time":"11:30","name":"\u5348\u9910","meal":{"name":"\u673a\u573a\u9910\u5385","cuisine":"\u5feb\u9910","perPerson":60,"recommended":"\u8001\u53cb\u7c89\u00b7\u6842\u6797\u7c73\u7c89\u00b7\u7b80\u9910","location":"\u5357\u5b81\u5434\u5729\u673a\u573aT2"}},{"time":"14:55","name":"\u5357\u5b81\u2192\u6210\u90fd\u5929\u5e9c(CA2668)","duration":"1h55m","cost":0,"transport":"\u56fd\u822aCA2668","note":"\u7ea616:50\u62b5\u8fbe\u6210\u90fd\uff0c\u65c5\u9014\u7ed3\u675f"}]}],"hotels":[{"name":"\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751\u9152\u5e97(\u5d07\u5de6\u5e02\u5e9c\u5e97)","area":"\u5d07\u5de6\u5e02\u533a\u00b7\u8fd1\u9ad8\u94c1\u5357\u7ad9","pricePerNight":300,"highlights":"\u9526\u6c5f\u54c1\u724c\u56db\u661f\u00b72020\u5e74\u88c5\u4fee\u00b7\u623f\u95f4\u5bbd\u655e\u00b7\u53ef\u7533\u8bf7\u5a74\u513f\u5e8a","rating":"4.2","nights":"4/2\u00b74/6(\u51712\u665a)","priceTag":"~"},{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","area":"\u660e\u4ed5\u7530\u56ed\u666f\u533a\u5185","pricePerNight":500,"highlights":"\u7a3b\u7530\u6cf3\u6c60\u00b7\u514d\u8d39\u81ea\u884c\u8f66\u00b7\u90a3\u8292\u9910\u5385\u00b7\u843d\u5730\u7a97\u7530\u56ed\u666f\u00b71900+\u597d\u8bc44.8\u5206","rating":"4.8","nights":"4/3-4/5(\u51713\u665a)","priceTag":"~"},{"name":"\u5907\u9009A: \u5fb7\u596161\u53f7\u6c11\u5bbf","area":"\u5fb7\u5929\u7011\u5e03\u5165\u53e31.3km","pricePerNight":350,"highlights":"9.4\u5206/567\u8bc4\u00b7\u542b\u65e9+\u4e0b\u5348\u8336\u00b7\u5168\u666f\u7a97\u00b7\u82b1\u56ed\u00b7\u8001\u677f\u5e2e\u4e70\u7968","rating":"4.7","nights":"\u5982\u9700\u5728\u5fb7\u5929\u4f4f\u4e00\u665a","priceTag":"~"},{"name":"\u5907\u9009B: \u671b\u8d8a\u5c45\u6c11\u5bbf","area":"\u5fb7\u5929\u7011\u5e03\u5165\u53e30.5km","pricePerNight":400,"highlights":"9.6\u5206\u00b72024\u5e74\u65b0\u5f00\u00b7\u6cb3\u666f\u623f\u671b\u8d8a\u5357\u00b7\u5e72\u6e7f\u5206\u79bb","rating":"4.8","nights":"\u5982\u9700\u5728\u5fb7\u5929\u4f4f\u4e00\u665a","priceTag":"~"}],"budget":{"transport":{"items":[{"name":"\u53bb\u7a0b\u673a\u7968 \u6210\u90fd\u2192\u5357\u5b81 (3U6747) \u00d74\u4eba","cost":3280,"tag":"flyai"},{"name":"\u53bb\u7a0b\u5a74\u513f\u7968","cost":82,"tag":"estimate"},{"name":"\u53bb\u7a0b\u9ad8\u94c1 \u5434\u5729\u673a\u573a\u2192\u5d07\u5de6\u5357 \u00d74","cost":180,"tag":"flyai"},{"name":"\u8fd4\u7a0b\u9ad8\u94c1 \u5d07\u5de6\u5357\u2192\u5434\u5729\u673a\u573a \u00d74","cost":180,"tag":"flyai"},{"name":"\u8fd4\u7a0b\u673a\u7968 \u5357\u5b81\u2192\u6210\u90fd (CA2668) \u00d74\u4eba","cost":2400,"tag":"flyai"},{"name":"\u8fd4\u7a0b\u5a74\u513f\u7968","cost":60,"tag":"estimate"},{"name":"\u5305\u8f667\u5ea7MPV(4\u5929)","cost":2200,"tag":"estimate"},{"name":"\u5d07\u5de6\u5e02\u5185\u6253\u8f66","cost":150,"tag":"estimate"}],"subtotal":8532},"accommodation":{"items":[{"name":"\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751 \u00d72\u95f4\u00d72\u665a (4/2,4/6)","cost":1200,"tag":"ref"},{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97 \u00d72\u95f4\u00d73\u665a (4/3-4/5)","cost":3000,"tag":"ref"}],"subtotal":4200},"food":{"items":[{"name":"Day1 \u665a\u9910(\u591c\u5e02)","cost":200},{"name":"Day2 \u4e09\u9910(\u5377\u7b52\u7c89+\u5927\u65b0+\u90a3\u8292)","cost":600},{"name":"Day3 \u5348\u9910+\u665a\u9910+\u5496\u5561","cost":550},{"name":"Day4 \u5348\u9910+\u665a\u9910(\u519c\u5bb6\u4e50+\u660e\u4ed5\u5c71\u5e84)","cost":520},{"name":"Day5 \u5348\u9910+\u665a\u9910(\u5b81\u660e+\u591c\u5e02)","cost":440},{"name":"Day6 \u65e9\u9910+\u5348\u9910(\u70e4\u9e2d\u7c89+\u673a\u573a)","cost":320}],"subtotal":2630},"tickets":{"items":[{"name":"\u5fb7\u5929\u7011\u5e03\u95e8\u7968(\u542b\u89c2\u5149\u8f66) \u00d74","cost":460,"tag":"ref"},{"name":"\u5fb7\u5929\u7af9\u7b4f \u00d74","cost":192,"tag":"ref"},{"name":"\u660e\u4ed5\u7530\u56ed\u5957\u7968(\u7af9\u7b4f+\u9c7c\u9cde\u575d) \u00d74","cost":540,"tag":"ref"},{"name":"\u82b1\u5c71\u5ca9\u753b(\u542b\u6e38\u8239) \u00d74","cost":360,"tag":"ref"},{"name":"\u660e\u4ed5\u516b\u560e\u8f66/\u7535\u52a8\u8f66\u79df\u8d41","cost":120,"tag":"estimate"},{"name":"\u7a3b\u7530\u5496\u5561","cost":112,"tag":"estimate"}],"subtotal":1784},"other":{"items":[{"name":"\u65c5\u884c\u4fdd\u9669(\u00d75\u4eba)","cost":250},{"name":"\u96f6\u98df\u996e\u54c1\u6c34\u679c","cost":300},{"name":"\u4f34\u624b\u793c+\u6742\u9879","cost":300}],"subtotal":850},"total":17996,"perPerson":4499,"note":"\u4eba\u5747\u63094\u4f4d\u6210\u4eba\u5206\u644a\uff0c\u5a74\u513f\u8d39\u7528\u5df2\u542b\u5728\u603b\u4ef7\u4e2d\u3002\u673a\u7968\u548c\u9ad8\u94c1\u4e3aFlyAI\u98de\u732a\u5b9e\u65f6\u62a5\u4ef7(\u5b9e\u67e5)\uff0c\u9152\u5e97\u4e3a\u53c2\u8003\u4ef7(~)\uff0c\u5305\u8f66\u548c\u9910\u996e\u4e3a\u4f30\u7b97(\u2248)\u3002"},"tips":["\u3010\u5fb7\u5929\u7011\u5e03\u65e0\u969c\u788d\u901a\u9053\u3011\u4ece\u89c2\u5149\u8f66\u4e0b\u8f66\u540e\u8d70\u53f3\u4fa7\u5761\u9053\uff0c\u5168\u7a0b\u5e73\u8def\u53ef\u63a8\u5a74\u513f\u8f66\uff0c\u98ce\u666f\u66f4\u597d\u4e14\u907f\u5f00\u6240\u6709\u53f0\u9636\u3002\u5207\u52ff\u8ddf\u968f\u4eba\u6d41\u8d70\u7af9\u7b4f\u540e\u65b9\u5411\uff08\u4f1a\u9047\u5230\u2018\u8ba9\u4eba\u6000\u7591\u4eba\u751f\u7684\u53f0\u9636\u2019\uff09","\u3010\u5fb7\u5929\u5bfc\u822a\u9677\u9631\u3011\u5305\u8f66\u53f8\u673a\u76f4\u63a5\u5bfc\u822a\u2018\u5fb7\u5929\u666f\u533a\u5165\u53e3\u2019\u6216\u2018\u5fb7\u5929\u5fa1\u666f\u6c11\u5bbf\u2019\uff0c\u4e0d\u8981\u5bfc\u822a\u5230\u2018\u6e38\u5ba2\u4e2d\u5fc3\u2019\u2014\u2014\u5426\u5219\u4f1a\u88ab\u5f3a\u5236\u4e58\u577035\u5143/\u4eba\u7684\u63a5\u9a73\u8f66\u7ed5\u884c10km","\u3010\u56db\u6708\u67af\u6c34\u671f\u5e94\u5bf9\u3011\u5fb7\u5929\u7011\u5e034\u6708\u6c34\u91cf\u8f83\u5c0f\uff0c\u4e0a\u6e38\u7ea611:30\u653e\u6c34\uff0c\u5efa\u8bae10:00\u524d\u5230\u666f\u533a\uff0c\u7b49\u523013:00-14:00\u53ef\u770b\u5230\u6700\u4f73\u6c34\u91cf\u3002\u964d\u96e8\u5929\u6c34\u91cf\u66f4\u5145\u6c9b","\u3010\u660e\u4ed5\u65e0\u51fa\u79df\u8f66\u3011\u660e\u4ed5\u7530\u56ed\u533a\u57df\u6ca1\u6709\u51fa\u79df\u8f66\uff0c\u51fa\u884c\u9760\u9152\u5e97\u501f\u81ea\u884c\u8f66\u6216\u79df\u7535\u52a8\u8f66/\u516b\u560e\u8f66(20-30\u5143/h)","\u3010\u9c7c\u9cde\u575d\u5b89\u5168\u3011\u5730\u9762\u975e\u5e38\u6ed1\uff0c\u52a1\u5fc5\u7a7f\u9632\u6ed1\u6c34\u978b\u3002\u96e8\u540e\u6c34\u4f4d\u53ef\u80fd\u504f\u9ad8\u4e34\u65f6\u5173\u95ed\uff0c\u51fa\u53d1\u524d\u95ee\u9152\u5e97\u786e\u8ba4","\u3010\u5b9d\u5b9d\u88c5\u5907\u6e05\u5355\u3011\u8f7b\u4fbf\u6298\u53e0\u63a8\u8f66+\u8170\u51f3\u80cc\u5e26(\u7af9\u7b4f/\u53f0\u9636\u7528)\u00b7\u9632\u6652\u971cSPF50+\u00b7\u9a71\u868a\u6db2\u00b7\u96e8\u8863\u96e8\u4f1e\u00b7\u6c34\u978b\u00b7\u624b\u673a\u9632\u6c34\u888b\u00b7\u8f85\u98df/\u96f6\u98df\u00b7\u9000\u70ed\u8d34/\u5e38\u7528\u836f","\u3010\u533b\u7597\u63d0\u9192\u3011\u6700\u8fd1\u7684\u7efc\u5408\u533b\u9662\u5728\u5927\u65b0\u53bf\u57ce(\u5927\u65b0\u53bf\u4eba\u6c11\u533b\u9662)\uff0c\u8ddd\u660e\u4ed5\u7ea640min\u8f66\u7a0b\u3002\u5907\u597d\u5b9d\u5b9d\u5e38\u7528\u836f\u7269","\u3010\u52a8\u6001\u4ef7\u683c\u63d0\u9192\u3011\u673a\u7968\u548c\u9152\u5e97\u4e3a\u52a8\u6001\u5b9a\u4ef7\uff0c\u4ee5\u4e0a\u4e3a\u67e5\u8be2\u65f6\u53c2\u8003\u4ef7\u3002\u51fa\u884c\u524d\u8bf7\u5728\u98de\u732a/\u643a\u7a0b\u786e\u8ba4\u5b9e\u9645\u4ef7\u683c\u5e76\u63d0\u524d\u9884\u8ba2","\u3010\u5929\u6c14\u9884\u62a5\u66f4\u65b0\u3011\u672c\u9884\u62a5\u57fa\u4e8e\u51fa\u53d1\u524d7\u5929\u7684\u6269\u5c55\u9884\u62a5\uff0c\u51c6\u786e\u5ea6\u6709\u9650\u30024\u67081\u65e5\u518d\u67e5weather.com.cn\u66f4\u65b0\uff08\u5d07\u5de6: 101300201\uff0c\u5927\u65b0: 101300205\uff09","\u3010\u9ad8\u94c1\u5173\u952e\u4fe1\u606f\u3011\u5357\u5b81\u5434\u5729\u673a\u573a\u81ea\u5e26\u9ad8\u94c1\u7ad9(GTC\u5730\u4e0b)\uff0c\u53ef\u76f4\u8fbe\u5d07\u5de6\u5357(35min/45\u5143)\uff0c\u65e0\u9700\u8fdb\u5357\u5b81\u5e02\u533a\u3002\u672b\u73ed\u8f66\u7ea620:41"]};
+
+/* ===== WEATHER ICON HELPER ===== */
+function weatherIcon(icon) {
+  var map = {
+    sunny: '\u2600\uFE0F',
+    cloudy: '\u2601\uFE0F',
+    partlyCloudy: '\u26C5',
+    rainy: '\uD83C\uDF27\uFE0F',
+    stormy: '\u26C8\uFE0F',
+    snowy: '\u2744\uFE0F',
+    overcast: '\uD83C\uDF25\uFE0F'
+  };
+  return map[icon] || '\u2601\uFE0F';
+}
+
+/* ===== RENDER HERO ===== */
+function renderHero() {
+  var d = tripData;
+  var h = '';
+  h += '<h1>' + d.title + '</h1>';
+  h += '<p class="hero-sub">' + d.dateRange + ' \u00b7 ' + d.travelers + '</p>';
+  h += '<div class="hero-stats">';
+  h += '<div class="hero-stat"><div class="hero-stat-val">' + d.days.length + '\u5929</div><div class="hero-stat-label">\u884c\u7a0b\u5929\u6570</div></div>';
+  h += '<div class="hero-stat"><div class="hero-stat-val">\u00a5' + d.budget.total.toLocaleString() + '</div><div class="hero-stat-label">\u9884\u4f30\u603b\u8d39</div></div>';
+  h += '<div class="hero-stat"><div class="hero-stat-val">\u00a5' + d.budget.perPerson.toLocaleString() + '</div><div class="hero-stat-label">\u4eba\u5747\u8d39\u7528</div></div>';
+  h += '<div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-label">\u6838\u5fc3\u666f\u70b9</div></div>';
+  h += '</div>';
+  h += '<div class="hero-weather-summary">' + d.weather.summary + ' \u00b7 ' + d.weather.clothing + '</div>';
+  document.getElementById('heroContent').innerHTML = h;
+}
+
+/* ===== RENDER WEATHER ===== */
+function renderWeather() {
+  var strip = document.getElementById('weatherStrip');
+  var h = '';
+  for (var i = 0; i < tripData.days.length; i++) {
+    var day = tripData.days[i];
+    var cls = 'weather-card ' + day.weather.icon;
+    h += '<div class="' + cls + '">';
+    h += '<div class="wc-date">' + day.date + '</div>';
+    h += '<div class="wc-weekday">' + day.weekday + '</div>';
+    h += '<div class="wc-icon">' + weatherIcon(day.weather.icon) + '</div>';
+    h += '<div class="wc-temp">' + day.weather.high + '\u00b0 <span>/ ' + day.weather.low + '\u00b0</span></div>';
+    h += '</div>';
+  }
+  strip.innerHTML = h;
+}
+
+/* ===== RENDER ACTIVITY CARD ===== */
+function renderActivity(act) {
+  var isMeal = !!act.meal;
+  var cls = 'activity' + (isMeal ? ' is-meal' : '');
+  var h = '<div class="' + cls + '">';
+  h += '<div class="act-time">' + act.time + '</div>';
+  h += '<div class="act-body">';
+  h += '<div class="act-name">' + act.name + '</div>';
+  h += '<div class="act-meta">';
+  if (act.duration) {
+    h += '<span class="act-tag">' + act.duration + '</span>';
+  }
+  if (act.transport && act.transport !== '-') {
+    h += '<span class="act-tag">' + act.transport + '</span>';
+  }
+  if (act.cost > 0) {
+    h += '<span class="act-tag cost">\u00a5' + act.cost + '/\u4eba</span>';
+  }
+  h += '</div>';
+  if (isMeal) {
+    var m = act.meal;
+    h += '<div class="meal-info">';
+    h += '<div>' + m.name + ' \u00b7 ' + m.cuisine + '</div>';
+    if (m.perPerson > 0) {
+      h += '<div>\u4eba\u5747\u7ea6\u00a5' + m.perPerson + ' \u00b7 ' + m.location + '</div>';
+    }
+    h += '<div class="meal-rec">\u63a8\u8350\uff1a' + m.recommended + '</div>';
+    h += '</div>';
+  }
+  if (act.note) {
+    h += '<div class="act-note">' + act.note + '</div>';
+  }
+  h += '</div></div>';
+  return h;
+}
+
+/* ===== RENDER ITINERARY ===== */
+function renderItinerary() {
+  var nav = document.getElementById('dayNav');
+  var content = document.getElementById('dayContent');
+  var navH = '';
+  var contentH = '';
+  for (var i = 0; i < tripData.days.length; i++) {
+    var day = tripData.days[i];
+    var isFirst = i === 0;
+    navH += '<button class="day-nav-btn' + (isFirst ? ' active' : '') + '" data-day="' + i + '" onclick="switchDay(' + i + ')">';
+    navH += '<span class="dn-date">' + day.date + ' ' + day.weekday + '</span>';
+    navH += '<span class="dn-theme">' + day.theme + '</span>';
+    navH += '</button>';
+    contentH += '<div class="day-panel' + (isFirst ? ' active' : '') + '" data-panel="' + i + '">';
+    contentH += '<div class="day-header">';
+    contentH += '<h3>' + day.theme + '</h3>';
+    contentH += '<span class="dh-weather">' + weatherIcon(day.weather.icon) + ' ' + day.weather.high + '\u00b0/' + day.weather.low + '\u00b0</span>';
+    contentH += '</div>';
+    for (var j = 0; j < day.activities.length; j++) {
+      contentH += renderActivity(day.activities[j]);
+    }
+    contentH += '</div>';
+  }
+  nav.innerHTML = navH;
+  content.innerHTML = contentH;
+}
+
+function switchDay(idx) {
+  var btns = document.querySelectorAll('.day-nav-btn');
+  var panels = document.querySelectorAll('.day-panel');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.toggle('active', i === idx);
+    panels[i].classList.toggle('active', i === idx);
+  }
+}
+
+/* ===== RENDER HOTELS ===== */
+function renderHotels() {
+  var grid = document.getElementById('hotelGrid');
+  var h = '';
+  for (var i = 0; i < tripData.hotels.length; i++) {
+    var hotel = tripData.hotels[i];
+    var isPrimary = i < 2;
+    h += '<div class="hotel-card ' + (isPrimary ? 'primary' : 'alt') + '">';
+    h += '<div class="hc-name">' + hotel.name + '</div>';
+    h += '<div class="hc-area">' + hotel.area + '</div>';
+    h += '<div class="hc-price">' + hotel.priceTag + '\u00a5' + hotel.pricePerNight + ' <span>/\u665a/\u95f4</span></div>';
+    h += '<div class="hc-rating">\u2605 ' + hotel.rating + '</div>';
+    h += '<div class="hc-tags">';
+    var tags = hotel.highlights.split('\u00b7');
+    for (var j = 0; j < tags.length; j++) {
+      if (tags[j].trim()) {
+        h += '<span class="hc-tag">' + tags[j].trim() + '</span>';
+      }
+    }
+    h += '</div>';
+    h += '<div class="hc-nights">' + hotel.nights + '</div>';
+    h += '</div>';
+  }
+  grid.innerHTML = h;
+}
+
+/* ===== RENDER BUDGET ===== */
+function renderBudget() {
+  var b = tripData.budget;
+  var cats = [
+    { key: 'transport', name: '\u4ea4\u901a', color: '#2d7a5e' },
+    { key: 'accommodation', name: '\u4f4f\u5bbf', color: '#4a9e7a' },
+    { key: 'food', name: '\u9910\u996e', color: '#c8956d' },
+    { key: 'tickets', name: '\u95e8\u7968', color: '#7fb3c9' },
+    { key: 'other', name: '\u5176\u4ed6', color: '#d4cec4' }
+  ];
+  /* Donut chart */
+  var total = b.total;
+  var angles = [];
+  var cum = 0;
+  for (var i = 0; i < cats.length; i++) {
+    var pct = b[cats[i].key].subtotal / total * 100;
+    angles.push({ start: cum, end: cum + pct, color: cats[i].color });
+    cum += pct;
+  }
+  var grad = '';
+  for (var i = 0; i < angles.length; i++) {
+    if (i > 0) grad += ', ';
+    grad += angles[i].color + ' ' + angles[i].start.toFixed(1) + '% ' + angles[i].end.toFixed(1) + '%';
+  }
+  var chartH = '<div class="donut" style="background:conic-gradient(' + grad + ')">';
+  chartH += '<div class="donut-center"><div class="donut-total">\u00a5' + total.toLocaleString() + '</div><div class="donut-label">\u9884\u4f30\u603b\u8d39</div></div>';
+  chartH += '</div>';
+  chartH += '<div class="budget-legend">';
+  for (var i = 0; i < cats.length; i++) {
+    var pct = (b[cats[i].key].subtotal / total * 100).toFixed(0);
+    chartH += '<div class="legend-item"><div class="legend-dot" style="background:' + cats[i].color + '"></div>' + cats[i].name + ' ' + pct + '%</div>';
+  }
+  chartH += '</div>';
+  document.getElementById('budgetChart').innerHTML = chartH;
+
+  /* Details */
+  var detH = '';
+  for (var i = 0; i < cats.length; i++) {
+    var cat = b[cats[i].key];
+    detH += '<div class="budget-category">';
+    detH += '<div class="budget-cat-header" onclick="this.nextElementSibling.classList.toggle(\'open\')">';
+    detH += '<span class="bch-name">' + cats[i].name + '</span>';
+    detH += '<span class="bch-cost">\u00a5' + cat.subtotal.toLocaleString() + '</span>';
+    detH += '</div>';
+    detH += '<div class="budget-cat-items">';
+    for (var j = 0; j < cat.items.length; j++) {
+      var item = cat.items[j];
+      var tagHtml = '';
+      if (item.tag === 'flyai') tagHtml = '<span class="bci-tag flyai">\u5b9e\u67e5</span>';
+      else if (item.tag === 'ref') tagHtml = '<span class="bci-tag ref">\u53c2\u8003</span>';
+      else if (item.tag === 'estimate') tagHtml = '<span class="bci-tag estimate">\u4f30\u7b97</span>';
+      detH += '<div class="bci-row"><span>' + item.name + tagHtml + '</span><span>\u00a5' + item.cost.toLocaleString() + '</span></div>';
+    }
+    detH += '</div></div>';
+  }
+  detH += '<div class="budget-total">';
+  detH += '<div><div class="bt-amount">\u00a5' + total.toLocaleString() + '</div><div class="bt-per">\u4eba\u5747 \u00a5' + b.perPerson.toLocaleString() + '</div></div>';
+  detH += '<div style="text-align:right;font-size:12px;opacity:.8">' + b.note + '</div>';
+  detH += '</div>';
+  document.getElementById('budgetDetails').innerHTML = detH;
+}
+
+/* ===== RENDER TIPS ===== */
+function renderTips() {
+  var list = document.getElementById('tipsList');
+  var importantKeys = ['\u65e0\u969c\u788d', '\u5bfc\u822a\u9677\u9631', '\u67af\u6c34\u671f', '\u5b89\u5168', '\u88c5\u5907', '\u533b\u7597'];
+  var h = '';
+  for (var i = 0; i < tripData.tips.length; i++) {
+    var tip = tripData.tips[i];
+    var isImportant = false;
+    for (var k = 0; k < importantKeys.length; k++) {
+      if (tip.indexOf(importantKeys[k]) !== -1) { isImportant = true; break; }
+    }
+    var title = '';
+    var body = tip;
+    var m = tip.match(/\u3010(.+?)\u3011(.*)/);
+    if (m) { title = m[1]; body = m[2]; }
+    h += '<div class="tip-item' + (isImportant ? ' important' : '') + '">';
+    h += '<details' + (i < 3 ? ' open' : '') + '>';
+    h += '<summary>' + (title || ('Tip ' + (i + 1))) + '</summary>';
+    h += '<div class="tip-content">' + body + '</div>';
+    h += '</details></div>';
+  }
+  list.innerHTML = h;
+}
+
+/* ===== RENDER FOOTER ===== */
+function renderFooter() {
+  var h = '<h4>\u6570\u636e\u53ef\u9760\u5ea6\u8bf4\u660e</h4>';
+  h += '<div class="rel-row"><div class="rel-dot green"></div><div><strong>\u5b9e\u67e5\u6570\u636e</strong>\uff1a\u673a\u7968\u4ef7\u683c\u3001\u822a\u73ed\u53f7\u3001\u9ad8\u94c1\u7968\u4ef7\u2014\u2014\u6765\u81eaFlyAI\u98de\u732a\u5b9e\u65f6\u62a5\u4ef7</div></div>';
+  h += '<div class="rel-row"><div class="rel-dot blue"></div><div><strong>\u53c2\u8003\u6570\u636e</strong>\uff1a\u9152\u5e97\u4ef7\u683c\u3001\u666f\u70b9\u95e8\u7968\u2014\u2014\u6765\u81ea\u7f51\u7edc\u641c\u7d22\uff0c\u975e\u5b9e\u65f6\u62a5\u4ef7\uff0c\u4ee5\u9884\u8ba2\u65f6\u4e3a\u51c6</div></div>';
+  h += '<div class="rel-row"><div class="rel-dot yellow"></div><div><strong>\u4f30\u7b97\u6570\u636e</strong>\uff1a\u5305\u8f66\u3001\u9910\u996e\u3001\u6742\u9879\u2014\u2014\u57fa\u4e8e\u540c\u7c7b\u7ecf\u9a8c\u63a8\u65ad\uff0c\u5b9e\u9645\u53ef\u80fd\u6709\u504f\u5dee</div></div>';
+  h += '<p style="margin-top:12px">\u5929\u6c14\u9884\u62a5\u6765\u6e90\uff1a\u4e2d\u56fd\u5929\u6c14\u7f51(weather.com.cn)\u6269\u5c55\u9884\u62a5 | \u653b\u7565\u4fe1\u606f\u6765\u6e90\uff1a\u5c0f\u7ea2\u4e66\u771f\u5b9e\u7528\u6237\u7b14\u8bb0 | \u751f\u6210\u65e5\u671f\uff1a' + tripData.generationDate + '</p>';
+  document.getElementById('footerReliability').innerHTML = h;
+  document.getElementById('footerGen').textContent = '\u5d07\u5de6 6\u65e5\u4eb2\u5b50\u6e38 \u00b7 \u7531AI\u751f\u6210 \u00b7 \u51fa\u884c\u524d\u8bf7\u786e\u8ba4\u673a\u7968\u9152\u5e97\u5e76\u63d0\u524d\u9884\u8ba2';
+}
+
+/* ===== INIT ===== */
+renderHero();
+renderWeather();
+renderItinerary();
+renderHotels();
+renderBudget();
+renderTips();
+renderFooter();
+</script>
+</body>
+</html>

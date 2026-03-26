@@ -1,0 +1,333 @@
+{
+  "search_date": "2026-03-26",
+  "searches": [
+    {
+      "query": "崇左",
+      "check_in": "2026-04-02",
+      "check_out": "2026-04-03",
+      "results": [
+        {
+          "name": "维纳斯度假村酒店(广西崇左市府店)",
+          "address": "广西省崇左市江州区友谊大道一号",
+          "brand": "锦江",
+          "star": "四星级",
+          "decoration_year": "2020",
+          "nearby": "近崇左国际客运中心",
+          "url": "https://a.feizhu.com/1eDBw8",
+          "shId": "67680165"
+        },
+        {
+          "name": "崇左四季假日酒店",
+          "address": "崇左市江州区江南路1号(新民路口)",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2015",
+          "nearby": "近崇左站",
+          "url": "https://a.feizhu.com/3EXLvh",
+          "shId": "50028472"
+        },
+        {
+          "name": "喜来得大酒店(崇左沿山路旧客运站店)",
+          "address": "崇左市沿山路168号",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2020",
+          "nearby": "近崇左站",
+          "url": "https://a.feizhu.com/2oruZO",
+          "shId": "12643125"
+        },
+        {
+          "name": "维也纳酒店（崇左扶绥店）",
+          "address": "思贤路165号",
+          "brand": "锦江",
+          "star": "舒适型",
+          "decoration_year": "2018",
+          "nearby": "近扶绥站",
+          "url": "https://a.feizhu.com/0DaEUN",
+          "shId": "51122105"
+        },
+        {
+          "name": "大新田间漫步客栈",
+          "address": "堪圩乡明仕村西贡吧旁",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2019",
+          "nearby": "近明仕田园风景区",
+          "url": "https://a.feizhu.com/4Fq251",
+          "shId": "53865247"
+        },
+        {
+          "name": "崇左嘉美大酒店（崇左友谊大道高铁南站店）",
+          "address": "友谊大道碧桂园一期一栋101号",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2022",
+          "nearby": "近崇左国际客运中心",
+          "url": "https://a.feizhu.com/3qtaXK",
+          "shId": "71971170"
+        },
+        {
+          "name": "逸米酒店（崇左友谊大道高铁南站店）",
+          "address": "广西壮族自治区崇左市江州区友谊大道弄岗路口西北角（崇左碧桂园第一期）第2栋105号房",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2025",
+          "nearby": "近崇左国际客运中心",
+          "url": "https://a.feizhu.com/2q9s1F",
+          "shId": "83454058"
+        },
+        {
+          "name": "逸米酒店（崇左中心步行街民师院店）",
+          "address": "城南新区嘉苑小区B01-B05栋",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2025",
+          "nearby": "近崇左国际客运中心",
+          "url": "https://a.feizhu.com/1Ys36x",
+          "shId": "88236725"
+        }
+      ]
+    },
+    {
+      "query": "德天瀑布",
+      "check_in": "2026-04-03",
+      "check_out": "2026-04-05",
+      "results": [
+        {
+          "name": "维也纳国际酒店（广西大新德天广场店）",
+          "address": "桂圆路65号",
+          "brand": "锦江",
+          "star": "四星级",
+          "decoration_year": "2017",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/11S4HV",
+          "shId": "53792047"
+        },
+        {
+          "name": "雅斯特酒店(大新德天瀑布店)",
+          "address": "硕龙镇硕龙街172号硕龙工商所对面",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2020",
+          "nearby": "近中越53号界碑边贸市场",
+          "url": "https://a.feizhu.com/2MssUs",
+          "shId": "60589386"
+        },
+        {
+          "name": "大新品尚假日酒店",
+          "address": "德天大道102 2号，大新收费站前方",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2018",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/40fq3n",
+          "shId": "12643973"
+        },
+        {
+          "name": "德天馨怡客栈",
+          "address": "大新县硕龙镇德天旅游区（景区入口前200米）",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2019",
+          "nearby": "近德天跨国瀑布景区",
+          "url": "https://a.feizhu.com/3Ri4vG",
+          "shId": "62527383"
+        },
+        {
+          "name": "尚客优精选酒店(大新汽车站店)",
+          "address": "养利路259-1号",
+          "brand": "尚客优",
+          "star": "舒适型",
+          "decoration_year": "2017",
+          "nearby": "近大新县教育局",
+          "url": "https://a.feizhu.com/1m2maK",
+          "shId": "53926014"
+        },
+        {
+          "name": "大新德天背包客客栈(崇左)",
+          "address": "德天瀑布景区门口",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2025",
+          "nearby": "近德天跨国瀑布景区",
+          "url": "https://a.feizhu.com/35LVGN",
+          "shId": "50052684"
+        },
+        {
+          "name": "渥尔Wow酒店(崇左大新县德天广场店)",
+          "address": "大新桃城镇民生路24号",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2025",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/2wy4dX",
+          "shId": "80791687"
+        },
+        {
+          "name": "大新德天瀑布情宾馆",
+          "address": "硕龙镇德天村德天屯38号(德天景区门口)",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2018",
+          "nearby": "近德天跨国瀑布景区",
+          "url": "https://a.feizhu.com/38X1G9",
+          "shId": "51386126"
+        }
+      ]
+    },
+    {
+      "query": "明仕田园",
+      "check_in": "2026-04-04",
+      "check_out": "2026-04-05",
+      "results": [
+        {
+          "name": "大新明仕艺术酒店",
+          "address": "堪圩乡明仕村明仕田园风景区，近壮族民居博物馆",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2018",
+          "nearby": "近明仕田园风景区",
+          "url": "https://a.feizhu.com/1zm9rl",
+          "shId": "10881690"
+        },
+        {
+          "name": "大新明仕庄园宾馆",
+          "address": "大新--堪圩乡廷农屯14号",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2017",
+          "nearby": "近壮家古寨",
+          "url": "https://a.feizhu.com/0ZbZs8",
+          "shId": "57374571"
+        },
+        {
+          "name": "崇左大新明仕稻香餐馆住宿",
+          "address": "崇左市大新县堪圩乡明仕村",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2024",
+          "nearby": "近明仕田园风景区",
+          "url": "https://a.feizhu.com/1ZlmtX",
+          "shId": "52345056"
+        },
+        {
+          "name": "大新明仕源生态农家乐餐馆住宿",
+          "address": "堪圩乡明仕村茶二屯15号",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2017",
+          "nearby": "近明仕田园风景区",
+          "url": "https://a.feizhu.com/301J6A",
+          "shId": "54296075"
+        }
+      ]
+    },
+    {
+      "query": "大新",
+      "check_in": "2026-04-03",
+      "check_out": "2026-04-05",
+      "results": [
+        {
+          "name": "维也纳国际酒店（广西大新德天广场店）",
+          "address": "桂圆路65号",
+          "brand": "锦江",
+          "star": "四星级",
+          "decoration_year": "2017",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/0ymbg5",
+          "shId": "53792047"
+        },
+        {
+          "name": "大新品尚假日酒店",
+          "address": "德天大道102 2号，大新收费站前方",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2018",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/1WHOf2",
+          "shId": "12643973"
+        },
+        {
+          "name": "雅斯特酒店(崇左大新德天大道店)",
+          "address": "广西壮族自治区崇左市大新县桃城镇德天大道141号",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2023",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/1Ij1yh",
+          "shId": "76463091"
+        },
+        {
+          "name": "城市便捷大新德天广场店",
+          "address": "大新县桃城镇冠林华府二期6#商住楼6-08号",
+          "brand": "东呈",
+          "star": "舒适型",
+          "decoration_year": "2023",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/3jVATJ",
+          "shId": "76601113"
+        },
+        {
+          "name": "尚客优精选酒店(大新汽车站店)",
+          "address": "养利路259-1号",
+          "brand": "尚客优",
+          "star": "舒适型",
+          "decoration_year": "2017",
+          "nearby": "近大新县教育局",
+          "url": "https://a.feizhu.com/1oMMVA",
+          "shId": "53926014"
+        },
+        {
+          "name": "大新德天背包客客栈(崇左)",
+          "address": "德天瀑布景区门口",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2025",
+          "nearby": "近德天跨国瀑布景区",
+          "url": "https://a.feizhu.com/4auYCx",
+          "shId": "50052684"
+        },
+        {
+          "name": "渥尔Wow酒店(崇左大新县德天广场店)",
+          "address": "大新桃城镇民生路24号",
+          "brand": null,
+          "star": "舒适型",
+          "decoration_year": "2025",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/1RSZta",
+          "shId": "80791687"
+        },
+        {
+          "name": "展鹏国际酒店(崇左大新店)",
+          "address": "大新县昌隆路158号",
+          "brand": null,
+          "star": "高档型",
+          "decoration_year": "2020",
+          "nearby": "近大新县人力资源和社会保障局",
+          "url": "https://a.feizhu.com/2X4YGc",
+          "shId": "60136140"
+        },
+        {
+          "name": "崇左大新明仕稻香餐馆住宿",
+          "address": "崇左市大新县堪圩乡明仕村",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2024",
+          "nearby": "近明仕田园风景区",
+          "url": "https://a.feizhu.com/0VZEZB",
+          "shId": "52345056"
+        },
+        {
+          "name": "大新时尚豪庭酒店（崇左大新县德天广场店）",
+          "address": "崇左市大新县桃源路与养利路交叉路口",
+          "brand": null,
+          "star": "经济型",
+          "decoration_year": "2020",
+          "nearby": "近大新县人民政府",
+          "url": "https://a.feizhu.com/0LEKk2",
+          "shId": "12642000"
+        }
+      ]
+    }
+  ]
+}
