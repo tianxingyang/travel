@@ -1,106 +1,530 @@
 {
-  "title": "崇左 6日亲子游",
+  "title": "崇左 6日亲子自驾游",
   "dateRange": "2026-04-02 ~ 04-07",
   "travelers": "4大1小(16月龄)",
-  "generationDate": "2026-03-26",
+  "generationDate": "2026-03-27",
   "weather": {
-    "summary": "前4日阵雨为主，后2日转晴，气温22-33\u00b0C",
+    "summary": "前2日阵雨为主，后2日转多云到晴，气温22-33\u00b0C",
     "avgHigh": 29,
     "avgLow": 21,
-    "rainfall": "60%（集中在4.3-4.5）",
+    "rainfall": "60%\uff08集中在4.3-4.4\uff09",
     "clothing": "短袖+薄外套+雨具，后两天注意防晒",
-    "tips": "4月初崇左湿度高，建议速干面料；雨天路滑注意宝宝安全"
+    "tips": "4月初崇左湿度高，建议速干面料；伏那秘境需溯溪鞋；雨天路滑注意宝宝安全"
   },
   "days": [
     {
       "date": "04/02",
       "weekday": "周四",
-      "theme": "启程\u00b7抵达崇左",
+      "theme": "启程\u00b7落地直奔崇左",
       "weather": { "icon": "cloudy", "high": 31, "low": 20 },
       "activities": [
-        { "time": "12:55", "name": "成都天府T1出发", "duration": "1h45m", "cost": 0, "transport": "四川航空3U6747", "note": "婴儿票约82元(成人10%)" },
-        { "time": "14:40", "name": "抵达南宁吴圩机场", "duration": "1h40m", "cost": 0, "transport": "步行至GTC地下高铁站(5-8min)", "note": "取行李后步行至机场高铁站，预留40min" },
-        { "time": "16:22", "name": "吴圩机场站\u2192崇左南站", "duration": "35min", "cost": 45, "transport": "高铁二等座", "note": "婴幼儿免票不占座" },
-        { "time": "17:00", "name": "抵达崇左南站", "duration": "20min", "cost": 0, "transport": "打车到酒店(约15元)", "note": "入住维纳斯度假村酒店" },
-        { "time": "18:30", "name": "晚餐", "meal": { "name": "崇左江南夜市 / 阿威粉店", "cuisine": "广西粉类", "perPerson": 50, "recommended": "老友粉\u00b7卷筒粉\u00b7烤鸭粉", "location": "市区步行可达" } }
+        {
+          "time": "15:15",
+          "name": "成都天府出发",
+          "duration": "2h15m",
+          "cost": 0,
+          "transport": "航班(待确认航班号)",
+          "note": "婴儿票约成人10%"
+        },
+        {
+          "time": "17:30",
+          "name": "抵达南宁吴圩机场",
+          "duration": "45min",
+          "cost": 0,
+          "transport": "T2航站楼",
+          "note": "取行李\u2192租车柜台办手续(神州/一嗨)\u2192验车取车\u00b7务必确认儿童安全座椅(16月龄必需)"
+        },
+        {
+          "time": "18:15",
+          "name": "自驾前往崇左",
+          "duration": "1h05m",
+          "cost": 0,
+          "transport": "自驾(G7211南友高速)",
+          "note": "南宁机场\u2192崇左98km/约65min\u00b7全程高速\u00b7宝宝车上可能小睡"
+        },
+        {
+          "time": "19:20",
+          "name": "抵达崇左\u00b7入住",
+          "duration": "30min",
+          "cost": 0,
+          "transport": "-",
+          "note": "入住维纳斯度假村酒店"
+        },
+        {
+          "time": "20:00",
+          "name": "晚餐",
+          "meal": {
+            "name": "崇左江南夜市 / 阿威粉店",
+            "cuisine": "广西粉类",
+            "perPerson": 50,
+            "recommended": "老友粉\u00b7卷筒粉\u00b7烤鸭粉",
+            "location": "市区步行可达"
+          }
+        }
       ]
     },
     {
       "date": "04/03",
       "weekday": "周五",
-      "theme": "转移明仕\u00b7慢享雨日",
+      "theme": "伏那秘境\u00b7初见明仕",
       "weather": { "icon": "rainy", "high": 23, "low": 19 },
       "activities": [
-        { "time": "08:30", "name": "早餐", "meal": { "name": "龙州美味卷筒粉店 / 酒店早餐", "cuisine": "崇左特色", "perPerson": 20, "recommended": "卷筒粉\u00b7沙糕", "location": "酒店附近" } },
-        { "time": "09:30", "name": "退房\u00b7包车前往明仕", "duration": "1.5h", "cost": 0, "transport": "包车(7座MPV)", "note": "途经大新县城，车程约90分钟" },
-        { "time": "11:00", "name": "途经大新县城", "duration": "1h", "cost": 0, "transport": "包车", "note": "可下车逛逛小城，买些水果零食" },
-        { "time": "12:00", "name": "午餐", "meal": { "name": "大新县城餐馆", "cuisine": "壮族家常", "perPerson": 50, "recommended": "柠檬鸭\u00b7酸笋鱼", "location": "大新县城" } },
-        { "time": "13:30", "name": "抵达明仕\u00b7入住", "duration": "1.5h", "cost": 0, "transport": "包车", "note": "入住明仕那里酒店，宝宝午睡" },
-        { "time": "15:30", "name": "酒店周边漫步", "duration": "2h", "cost": 0, "transport": "步行", "note": "雨天轻松活动：酒店稻田泳池、周边田园小路散步" },
-        { "time": "18:30", "name": "晚餐", "meal": { "name": "那芭餐厅(酒店内)", "cuisine": "壮族精致料理", "perPerson": 80, "recommended": "明仕珍珠鸭\u00b7五色糯米饭\u00b7香茅烤鱼", "location": "明仕那里酒店内" } }
+        {
+          "time": "08:00",
+          "name": "早餐",
+          "meal": {
+            "name": "龙州美味卷筒粉店 / 酒店早餐",
+            "cuisine": "崇左特色",
+            "perPerson": 20,
+            "recommended": "卷筒粉\u00b7沙糕",
+            "location": "酒店附近"
+          }
+        },
+        {
+          "time": "09:00",
+          "name": "退房\u00b7自驾出发",
+          "duration": "1h10m",
+          "cost": 0,
+          "transport": "自驾(S60\u2192536县道)",
+          "note": "崇左\u2192伏那秘境73.5km/约69min\u00b7走合那高速到大新恩城出口转县道"
+        },
+        {
+          "time": "10:10",
+          "name": "伏那秘境",
+          "duration": "2h",
+          "cost": 68,
+          "transport": "徒步",
+          "note": "2025年新开\u00b7恩城自然保护区内喀斯特雨林\u00b7丁达尔光效\u00b73.5km碎石浅滩路\u00b7推车不可用\u00b7需溯溪鞋\u00b7建议大人轮流进(2人带娃在入口休息区等\u00b72人进去体验1.5h再换)\u00b7雨天雾气更有意境\u00b7上午光线最佳",
+          "link": "https://amap.com/detail/B0FFF2QEF8"
+        },
+        {
+          "time": "12:15",
+          "name": "自驾前往明仕田园",
+          "duration": "37min",
+          "cost": 0,
+          "transport": "自驾(536县道\u2192359国道)",
+          "note": "伏那\u2192明仕仅28.4km/37min\u00b7一路喀斯特田园风光"
+        },
+        {
+          "time": "13:00",
+          "name": "抵达明仕\u00b7入住",
+          "duration": "30min",
+          "cost": 0,
+          "transport": "-",
+          "note": "入住明仕那里酒店\u00b7放行李休整"
+        },
+        {
+          "time": "13:30",
+          "name": "午餐",
+          "meal": {
+            "name": "那芭餐厅(酒店内) / 明仕村农家",
+            "cuisine": "壮族精致料理",
+            "perPerson": 60,
+            "recommended": "明仕珍珠鸭\u00b7五色糯米饭\u00b7香茅烤鱼",
+            "location": "明仕那里酒店内"
+          }
+        },
+        {
+          "time": "14:00",
+          "name": "宝宝午睡",
+          "duration": "1.5h",
+          "cost": 0,
+          "transport": "-",
+          "note": "酒店休息\u00b7大人可在稻田泳池旁放松"
+        },
+        {
+          "time": "15:30",
+          "name": "明仕田园竹筏+九曲桥",
+          "duration": "2h",
+          "cost": 135,
+          "transport": "步行至码头",
+          "note": "竹筏穿行喀斯特峰林间\u00b7九曲桥拍照\u00b7套票含壮族博物馆+鱼鳞坝\u00b7雨天山水雾气更有意境\u00b7如体力不佳可改为明天",
+          "link": "https://amap.com/detail/B06EB0MRUY",
+          "refs": [
+            { "title": "明仕田园游玩攻略(203赞)", "url": "https://www.xiaohongshu.com/explore/69a94b3a000000002603f4d8" },
+            { "title": "从德天到明仕\u00b7亲子怎么玩", "url": "https://www.xiaohongshu.com/explore/68899a84000000000403ed71" }
+          ]
+        },
+        {
+          "time": "18:00",
+          "name": "晚餐",
+          "meal": {
+            "name": "那芭餐厅(酒店内)",
+            "cuisine": "壮族精致料理",
+            "perPerson": 80,
+            "recommended": "簸箕宴\u00b7竹筒饭\u00b7河鱼",
+            "location": "明仕那里酒店"
+          }
+        }
       ]
     },
     {
       "date": "04/04",
       "weekday": "周六",
-      "theme": "德天瀑布\u00b7雨中壮阔",
+      "theme": "打屯秘境\u00b7峒那画舫\u00b7明仕骑行",
       "weather": { "icon": "rainy", "high": 28, "low": 21 },
       "activities": [
-        { "time": "08:00", "name": "酒店早餐", "meal": { "name": "明仕那里酒店", "cuisine": "自助早餐", "perPerson": 0, "recommended": "含早", "location": "酒店餐厅" } },
-        { "time": "09:00", "name": "包车前往德天瀑布", "duration": "1h", "cost": 0, "transport": "包车", "note": "明仕\u2192德天约37km/1h，提醒司机直接导航景区入口(非游客中心)" },
-        { "time": "10:00", "name": "德天跨国瀑布", "duration": "3.5h", "cost": 115, "transport": "景区观光车(含在门票内)", "note": "走右侧无障碍通道(平路可推车)\u00b7雨天水量充沛\u00b711:30等上游放水\u00b7穿雨衣" },
-        { "time": "11:30", "name": "竹筏漂流", "duration": "30min", "cost": 48, "transport": "竹筏", "note": "1.2m以下免费\u00b7有儿童救生衣\u00b7会被水花溅湿\u00b7手机装防水袋" },
-        { "time": "12:30", "name": "稻田咖啡休息", "duration": "30min", "cost": 28, "transport": "景区内步行", "note": "景区内咖啡馆，稻田景观位，适合休息" },
-        { "time": "13:30", "name": "午餐", "meal": { "name": "中越好吃街", "cuisine": "越南+壮族小吃", "perPerson": 40, "recommended": "越南春卷\u00b7竹筒饭\u00b7芒果糯米饭", "location": "德天景区外硕龙镇" } },
-        { "time": "14:30", "name": "返回明仕", "duration": "1h", "cost": 0, "transport": "包车", "note": "车上宝宝午睡" },
-        { "time": "16:00", "name": "自由活动", "duration": "2h", "cost": 0, "transport": "步行/电动车", "note": "酒店休息或租电动车(20元/h)骑行十里画廊" },
-        { "time": "18:30", "name": "晚餐", "meal": { "name": "夕塌餐厅", "cuisine": "西式+融合", "perPerson": 70, "recommended": "创意壮族菜\u00b7氛围好", "location": "明仕景区附近" } }
+        {
+          "time": "08:00",
+          "name": "酒店早餐",
+          "meal": {
+            "name": "明仕那里酒店",
+            "cuisine": "自助早餐",
+            "perPerson": 0,
+            "recommended": "含早",
+            "location": "酒店餐厅"
+          }
+        },
+        {
+          "time": "09:00",
+          "name": "自驾前往打屯村",
+          "duration": "15min",
+          "cost": 0,
+          "transport": "自驾",
+          "note": "明仕\u2192打屯约8km/15min\u00b7导航搜'雷平镇那岸村打屯'"
+        },
+        {
+          "time": "09:15",
+          "name": "打屯村船游",
+          "duration": "50min",
+          "cost": 50,
+          "transport": "村民小船",
+          "note": "免门票\u00b7船费50元/人(2人起)\u00b7镜面河道穿行喀斯特峰丛间\u00b7峒那屿湾+明仕田园的零商业原生态版\u00b7宝宝需全程抱稳\u00b7船上空间有限注意安全\u00b7提前联系船夫"
+        },
+        {
+          "time": "10:15",
+          "name": "自驾前往峒那屿湾",
+          "duration": "20min",
+          "cost": 0,
+          "transport": "自驾",
+          "note": "打屯\u2192峒那屿湾约15km/20min"
+        },
+        {
+          "time": "10:40",
+          "name": "峒那屿湾景区(4A)",
+          "duration": "1.5h",
+          "cost": 135,
+          "transport": "画舫游船+步行",
+          "note": "壮乡喀斯特水上秘境\u00b7画舫穿行岛屿瀑布湿地间\u00b7全程有顶不怕雨\u00b7宝宝坐怀里看山水\u00b7陆路栈道平坦可推车\u00b71.2m以下免票",
+          "link": "https://amap.com/detail/B0G26ULJX2"
+        },
+        {
+          "time": "12:15",
+          "name": "返回明仕\u00b7午餐",
+          "meal": {
+            "name": "卢哥餐馆 / 路边农家乐",
+            "cuisine": "壮族农家菜",
+            "perPerson": 50,
+            "recommended": "走地鸡\u00b7酸汤鱼\u00b7野菜",
+            "location": "明仕村(峒那屿湾\u2192明仕16km/25min)"
+          }
+        },
+        {
+          "time": "13:30",
+          "name": "宝宝午睡",
+          "duration": "2h",
+          "cost": 0,
+          "transport": "-",
+          "note": "回酒店休息"
+        },
+        {
+          "time": "15:30",
+          "name": "租八嘎车骑行十里画廊",
+          "duration": "1.5h",
+          "cost": 30,
+          "transport": "八嘎车(3座家庭电动车)",
+          "note": "平坦骑行道\u00b7那冠桥\u00b7田园风光\u00b730元/h\u00b7雨天路滑减速\u00b7如持续大雨可改为酒店休息"
+        },
+        {
+          "time": "17:00",
+          "name": "鱼鳞坝戏水",
+          "duration": "1h",
+          "cost": 0,
+          "transport": "骑行可达",
+          "note": "带水鞋!\u00b7地面湿滑注意安全\u00b7宝宝可浅水区玩\u00b7雨后水位偏高可能关闭\u00b7出发前问酒店确认"
+        },
+        {
+          "time": "18:30",
+          "name": "晚餐",
+          "meal": {
+            "name": "明仕山庄中餐厅",
+            "cuisine": "壮族宴席",
+            "perPerson": 80,
+            "recommended": "簸箕宴\u00b7竹筒饭\u00b7河鱼",
+            "location": "明仕山庄"
+          }
+        },
+        {
+          "time": "20:00",
+          "name": "甘蔗汁+散步",
+          "duration": "1h",
+          "cost": 5,
+          "transport": "步行",
+          "note": "路边摊甘蔗汁"
+        }
       ]
     },
     {
       "date": "04/05",
       "weekday": "周日",
-      "theme": "明仕田园\u00b7慢时光",
+      "theme": "德天瀑布\u00b7蓝洞咖啡\u00b7边境风情",
       "weather": { "icon": "partlyCloudy", "high": 27, "low": 23 },
       "activities": [
-        { "time": "08:00", "name": "酒店早餐", "meal": { "name": "明仕那里酒店", "cuisine": "自助早餐", "perPerson": 0, "recommended": "含早", "location": "酒店" } },
-        { "time": "09:00", "name": "明仕田园竹筏+九曲桥", "duration": "2h", "cost": 135, "transport": "步行至码头", "note": "竹筏穿行喀斯特峰林间\u00b7九曲桥拍照\u00b7套票含壮族博物馆+鱼鳞坝" },
-        { "time": "11:30", "name": "壮族博物馆", "duration": "30min", "cost": 0, "transport": "步行", "note": "含在套票内，了解壮族文化" },
-        { "time": "12:00", "name": "午餐", "meal": { "name": "卢哥餐馆 / 路边农家乐", "cuisine": "壮族农家菜", "perPerson": 50, "recommended": "走地鸡\u00b7酸汤鱼\u00b7野菜", "location": "明仕村" } },
-        { "time": "13:00", "name": "宝宝午睡", "duration": "2h", "cost": 0, "transport": "-", "note": "回酒店休息" },
-        { "time": "15:00", "name": "租八嘎车骑行十里画廊", "duration": "2h", "cost": 30, "transport": "八嘎车(3座家庭电动车)", "note": "平坦骑行道\u00b7那冠桥\u00b7田园风光\u00b730元/h" },
-        { "time": "17:00", "name": "鱼鳞坝戏水", "duration": "1h", "cost": 0, "transport": "骑行可达", "note": "带水鞋!\u00b7地面湿滑注意安全\u00b7宝宝可浅水区玩\u00b7雨后水位可能偏高需留意" },
-        { "time": "18:30", "name": "晚餐", "meal": { "name": "明仕山庄中餐厅", "cuisine": "壮族宴席", "perPerson": 80, "recommended": "簸箕宴\u00b7竹筒饭\u00b7河鱼", "location": "明仕山庄" } },
-        { "time": "20:00", "name": "甘蔗汁+散步", "duration": "1h", "cost": 5, "transport": "步行", "note": "路边摊甘蔗汁，便宜好喝" }
+        {
+          "time": "08:00",
+          "name": "酒店早餐",
+          "meal": {
+            "name": "明仕那里酒店",
+            "cuisine": "自助早餐",
+            "perPerson": 0,
+            "recommended": "含早",
+            "location": "酒店"
+          }
+        },
+        {
+          "time": "09:00",
+          "name": "退房\u00b7自驾前往德天",
+          "duration": "1h",
+          "cost": 0,
+          "transport": "自驾(532县道\u2192沿边公路)",
+          "note": "明仕\u2192德天37km/约1h\u00b7导航直接搜'德天景区入口'\u00b7不要导航'游客中心'(会被强制坐接驳车绕行)"
+        },
+        {
+          "time": "10:00",
+          "name": "德天跨国瀑布",
+          "duration": "3h",
+          "cost": 115,
+          "transport": "景区观光车(含在门票内)",
+          "note": "走右侧无障碍通道(平路可推车)\u00b7多云天拍照光线好\u00b711:30等上游放水\u00b7备雨衣\u00b74月枯水期水量较小但仍壮观",
+          "link": "https://amap.com/detail/B06EB009VO",
+          "refs": [
+            { "title": "德天瀑布避坑贴(无障碍通道详解)", "url": "https://www.xiaohongshu.com/explore/69907d98000000001b01d64b" },
+            { "title": "德天放水玄学+带娃实测", "url": "https://www.xiaohongshu.com/explore/694fedc2000000002200b21a" },
+            { "title": "4月枯水期也很美", "url": "https://www.xiaohongshu.com/explore/6808ab72000000001d01801d" }
+          ]
+        },
+        {
+          "time": "11:00",
+          "name": "竹筏漂流",
+          "duration": "30min",
+          "cost": 48,
+          "transport": "竹筏",
+          "note": "1.2m以下免费\u00b7有儿童救生衣\u00b7手机装防水袋"
+        },
+        {
+          "time": "13:00",
+          "name": "午餐",
+          "meal": {
+            "name": "老街土菜馆",
+            "cuisine": "壮族家常+越南风味",
+            "perPerson": 60,
+            "recommended": "越南春卷\u00b7酸笋炒牛肉\u00b7柠檬鸭",
+            "location": "硕龙镇硕龙街188号(景区外2km)",
+            "link": "https://amap.com/detail/B0FFH76KMN"
+          }
+        },
+        {
+          "time": "14:00",
+          "name": "蓝洞瀑布咖啡主题园区",
+          "duration": "1.5h",
+          "cost": 68,
+          "transport": "自驾(1.1km/4min)",
+          "note": "200亩主题园区\u00b7天然溶洞咖啡吧台(钟乳石穹顶内)\u00b7稻田雾气栈道\u00b7多处瀑布\u00b7亲水泡脚平台\u00b7还有猫可撸\u00b768元含一杯饮品\u00b7适合带娃轻松休憩\u00b7部分栈道可推车",
+          "link": "https://amap.com/detail/B0LADH7BG9"
+        },
+        {
+          "time": "15:30",
+          "name": "入住德天民宿\u00b7宝宝午睡",
+          "duration": "2h",
+          "cost": 0,
+          "transport": "自驾(5min)",
+          "note": "入住德天61号民宿(景区入口1.3km)\u00b7含下午茶\u00b7花园休息"
+        },
+        {
+          "time": "17:30",
+          "name": "硕龙古镇散步",
+          "duration": "1h",
+          "cost": 0,
+          "transport": "步行",
+          "note": "中越边境小镇\u00b7归春河畔散步\u00b7越南商品街"
+        },
+        {
+          "time": "18:30",
+          "name": "晚餐",
+          "meal": {
+            "name": "德天61号民宿餐厅 / 硕龙农家菜",
+            "cuisine": "壮族家常+越南风味",
+            "perPerson": 60,
+            "recommended": "烤鱼\u00b7越式春卷\u00b7酸笋排骨",
+            "location": "民宿内或硕龙镇"
+          }
+        }
       ]
     },
     {
       "date": "04/06",
       "weekday": "周一",
-      "theme": "花山岩画\u00b7两千年壮歌",
+      "theme": "通灵秘境\u00b7白头叶猴\u00b7环线归途",
       "weather": { "icon": "cloudy", "high": 32, "low": 23 },
       "activities": [
-        { "time": "07:30", "name": "酒店早餐\u00b7退房", "meal": { "name": "明仕那里酒店", "cuisine": "自助早餐", "perPerson": 0, "recommended": "含早", "location": "酒店" } },
-        { "time": "08:30", "name": "包车前往花山景区", "duration": "2.5h", "cost": 0, "transport": "包车", "note": "明仕\u2192宁明花山约116km/2-2.5h，途经崇左市区" },
-        { "time": "11:00", "name": "左江花山岩画(UNESCO)", "duration": "2.5h", "cost": 90, "transport": "游船", "note": "全程船上观赏\u00b7无需步行\u00b7宝宝坐怀里即可\u00b7船上有遮阳\u00b71m以下免票\u00b72000年骆越先民崖壁画" },
-        { "time": "13:00", "name": "午餐", "meal": { "name": "宁明/崇左沿途餐馆", "cuisine": "桂菜", "perPerson": 50, "recommended": "百香果排骨\u00b7越南鸡肉粉", "location": "宁明县或崇左市区" } },
-        { "time": "14:30", "name": "返回崇左市区", "duration": "45min", "cost": 0, "transport": "包车", "note": "入住酒店，宝宝午睡" },
-        { "time": "16:00", "name": "崇左市区漫步", "duration": "2h", "cost": 0, "transport": "步行/打车", "note": "太平古城/园博园轻松逛逛，采购伴手礼" },
-        { "time": "18:30", "name": "晚餐", "meal": { "name": "崇左江南夜市", "cuisine": "烧烤小吃", "perPerson": 60, "recommended": "烤串\u00b7螺蛳粉\u00b7甘蔗汁\u00b7当地小吃", "location": "崇左市区" } }
+        {
+          "time": "07:30",
+          "name": "早餐\u00b7退房",
+          "meal": {
+            "name": "德天61号民宿",
+            "cuisine": "民宿早餐",
+            "perPerson": 0,
+            "recommended": "含早",
+            "location": "民宿内"
+          }
+        },
+        {
+          "time": "08:30",
+          "name": "自驾前往通灵大峡谷",
+          "duration": "1h",
+          "cost": 0,
+          "transport": "自驾(219国道\u2192359国道)",
+          "note": "德天\u2192通灵44km/约60min\u00b7山路弯道多\u00b7宝宝备晕车贴"
+        },
+        {
+          "time": "09:30",
+          "name": "通灵大峡谷(5A)",
+          "duration": "3h",
+          "cost": 115,
+          "transport": "步行+接驳车",
+          "note": "818级台阶下行(绿色隧道负氧离子爆表)\u2192通灵大瀑布(188m\u00b7二层观景台最佳拍照位)\u2192水帘洞(穿瀑入洞\u00b7必穿雨衣)\u2192地下暗河溶洞\u2192念八峡\u2192出口坐接驳车返回\u00b7全程约2.8km\u00b7宝宝全程背带\u00b7推车不可用\u00b71.2m以下免票\u00b74月枯水期瀑布水量一般但峡谷雨林和溶洞是核心亮点",
+          "link": "https://amap.com/detail/B030800MJY",
+          "refs": [
+            { "title": "通灵大峡谷不走回头路攻略(234赞)", "url": "https://www.xiaohongshu.com/explore/6991e044000000000a02d678" },
+            { "title": "崇左5天4晚亲子避坑指南(375赞)", "url": "https://www.xiaohongshu.com/explore/688d9418000000002500e371" }
+          ]
+        },
+        {
+          "time": "12:30",
+          "name": "午餐",
+          "meal": {
+            "name": "通灵山庄餐厅",
+            "cuisine": "壮族家常",
+            "perPerson": 45,
+            "recommended": "竹筒饭\u00b7酸笋炒肉\u00b7山野菜",
+            "location": "通灵景区出口旁",
+            "link": "https://amap.com/detail/B0IU57Z4O1"
+          }
+        },
+        {
+          "time": "13:30",
+          "name": "自驾返回崇左",
+          "duration": "1h30m",
+          "cost": 0,
+          "transport": "自驾(S60合那高速)",
+          "note": "通灵\u2192崇左128km/约95min\u00b7全程高速\u00b7车上宝宝午睡\u00b7完成逆时针环线的西段"
+        },
+        {
+          "time": "15:00",
+          "name": "抵达崇左\u00b7入住",
+          "duration": "30min",
+          "cost": 0,
+          "transport": "-",
+          "note": "入住维纳斯度假村酒店\u00b7短暂休整"
+        },
+        {
+          "time": "15:45",
+          "name": "自驾前往白头叶猴保护区",
+          "duration": "30min",
+          "cost": 0,
+          "transport": "自驾(213省道)",
+          "note": "崇左市区\u2192白头叶猴约20km/30min"
+        },
+        {
+          "time": "16:15",
+          "name": "白头叶猴生态旅游区",
+          "duration": "2h",
+          "cost": 85,
+          "transport": "栈道+观猴平台",
+          "note": "全球仅存约1400只的国家一级保护动物\u00b7下午4点后猴群下山觅食是最佳观赏时段\u00b7带望远镜效果好\u00b7保持安静\u00b7严禁投喂\u00b74月非最佳季(10-3月最佳)但仍有概率看到\u00b7免费替代方案:路边远观白头叶猴保护区\u00b7下午4点猴群下山时最容易看到",
+          "link": "https://amap.com/detail/B0FFH3P7ZF"
+        },
+        {
+          "time": "18:30",
+          "name": "返回崇左\u00b7晚餐",
+          "meal": {
+            "name": "崇左江南夜市",
+            "cuisine": "烧烤小吃",
+            "perPerson": 60,
+            "recommended": "烤串\u00b7螺蛳粉\u00b7甘蔗汁",
+            "location": "崇左市区"
+          }
+        }
       ]
     },
     {
       "date": "04/07",
       "weekday": "周二",
-      "theme": "归程\u00b7后会有期",
+      "theme": "青秀山\u00b7归程",
       "weather": { "icon": "sunny", "high": 33, "low": 22 },
       "activities": [
-        { "time": "07:30", "name": "早餐\u00b7退房", "meal": { "name": "酒店早餐 / 木炭烤鸭粉", "cuisine": "崇左特色", "perPerson": 20, "recommended": "烤鸭粉(新华路13号)", "location": "崇左市区" } },
-        { "time": "08:45", "name": "打车到崇左南站", "duration": "15min", "cost": 15, "transport": "打车", "note": "提前到站，带娃预留充足时间" },
-        { "time": "09:21", "name": "崇左南\u2192吴圩机场站", "duration": "35min", "cost": 45, "transport": "高铁", "note": "抵达后步行至T2航站楼(约8min)" },
-        { "time": "10:30", "name": "机场午餐\u00b7候机", "duration": "4h", "cost": 0, "transport": "-", "note": "南宁机场有母婴室，充裕时间带娃休息" },
-        { "time": "11:30", "name": "午餐", "meal": { "name": "机场餐厅", "cuisine": "快餐", "perPerson": 60, "recommended": "老友粉\u00b7桂林米粉\u00b7简餐", "location": "南宁吴圩机场T2" } },
-        { "time": "14:55", "name": "南宁\u2192成都天府(CA2668)", "duration": "1h55m", "cost": 0, "transport": "国航CA2668", "note": "约16:50抵达成都，旅途结束" }
+        {
+          "time": "07:30",
+          "name": "早餐\u00b7退房",
+          "meal": {
+            "name": "酒店早餐 / 木炭烤鸭粉",
+            "cuisine": "崇左特色",
+            "perPerson": 20,
+            "recommended": "烤鸭粉(新华路13号)",
+            "location": "崇左市区"
+          }
+        },
+        {
+          "time": "08:15",
+          "name": "自驾前往南宁",
+          "duration": "1h05m",
+          "cost": 0,
+          "transport": "自驾(G7211南友高速)",
+          "note": "崇左\u2192南宁青秀山98km/约65min"
+        },
+        {
+          "time": "09:30",
+          "name": "青秀山风景区",
+          "duration": "2h",
+          "cost": 20,
+          "transport": "观光车+步行",
+          "note": "南宁城市绿肺\u00b7门票仅20元\u00b71.2m以下免票\u00b7观光车5元代步\u00b7推车友好\u00b7推荐路线:北门\u2192荫生植物园(水雾喷泉宝宝超爱)\u2192观光车到观音禅寺\u2192孔雀区(近距离观赏)\u2192天池(喂锦鲤)\u2192西门出"
+        },
+        {
+          "time": "11:30",
+          "name": "午餐",
+          "meal": {
+            "name": "青秀山附近/南宁市区",
+            "cuisine": "广西特色",
+            "perPerson": 50,
+            "recommended": "老友粉\u00b7柠檬鸭\u00b7南宁生榨米粉",
+            "location": "青秀山西门附近"
+          }
+        },
+        {
+          "time": "12:30",
+          "name": "自驾前往机场\u00b7还车",
+          "duration": "40min",
+          "cost": 0,
+          "transport": "自驾",
+          "note": "青秀山\u2192南宁机场约30km/40min\u00b7还车手续约15-20min\u00b7建议预留充裕时间"
+        },
+        {
+          "time": "13:30",
+          "name": "机场候机",
+          "duration": "1.5h",
+          "cost": 0,
+          "transport": "-",
+          "note": "南宁机场有母婴室\u00b7建议起飞前90min到达\u00b7带娃安检需额外时间"
+        },
+        {
+          "time": "15:00",
+          "name": "南宁\u2192成都(航班待确认)",
+          "duration": "2h",
+          "cost": 0,
+          "transport": "航班",
+          "note": "约17:00抵达成都\u00b7旅途结束\u00b7如航班在14:55前\u00b7可缩短青秀山至1.5h或跳过"
+        }
       ]
     }
   ],
@@ -112,7 +536,8 @@
       "highlights": "锦江品牌四星\u00b72020年装修\u00b7房间宽敞\u00b7可申请婴儿床",
       "rating": "4.2",
       "nights": "4/2\u00b74/6(共2晚)",
-      "priceTag": "~"
+      "priceTag": "~",
+      "link": "https://amap.com/detail/B0GUSUKZ6B"
     },
     {
       "name": "明仕那里酒店",
@@ -120,70 +545,78 @@
       "pricePerNight": 500,
       "highlights": "稻田泳池\u00b7免费自行车\u00b7那芭餐厅\u00b7落地窗田园景\u00b71900+好评4.8分",
       "rating": "4.8",
-      "nights": "4/3-4/5(共3晚)",
-      "priceTag": "~"
+      "nights": "4/3-4/4(共2晚)",
+      "priceTag": "~",
+      "link": "https://amap.com/detail/B0FFJPZK2I"
     },
     {
-      "name": "备选A: 德天61号民宿",
+      "name": "德天61号民宿",
       "area": "德天瀑布入口1.3km",
       "pricePerNight": 350,
       "highlights": "9.4分/567评\u00b7含早+下午茶\u00b7全景窗\u00b7花园\u00b7老板帮买票",
       "rating": "4.7",
-      "nights": "如需在德天住一晚",
+      "nights": "4/5(共1晚)",
       "priceTag": "~"
     },
     {
-      "name": "备选B: 望越居民宿",
+      "name": "备选: 望越居民宿",
       "area": "德天瀑布入口0.5km",
       "pricePerNight": 400,
       "highlights": "9.6分\u00b72024年新开\u00b7河景房望越南\u00b7干湿分离",
       "rating": "4.8",
-      "nights": "如需在德天住一晚",
+      "nights": "4/5(如61号满房)",
       "priceTag": "~"
     }
   ],
   "budget": {
     "transport": {
       "items": [
-        { "name": "去程机票 成都\u2192南宁 (3U6747) \u00d74人", "cost": 3280, "tag": "flyai" },
-        { "name": "去程婴儿票", "cost": 82, "tag": "estimate" },
-        { "name": "去程高铁 吴圩机场\u2192崇左南 \u00d74", "cost": 180, "tag": "flyai" },
-        { "name": "返程高铁 崇左南\u2192吴圩机场 \u00d74", "cost": 180, "tag": "flyai" },
-        { "name": "返程机票 南宁\u2192成都 (CA2668) \u00d74人", "cost": 2400, "tag": "flyai" },
+        { "name": "去程机票 成都\u2192南宁 15:15 \u00d74人", "cost": 3200, "tag": "ref" },
+        { "name": "去程婴儿票", "cost": 80, "tag": "estimate" },
+        { "name": "返程机票 南宁\u2192成都 ~15:00 \u00d74人", "cost": 2400, "tag": "ref" },
         { "name": "返程婴儿票", "cost": 60, "tag": "estimate" },
-        { "name": "包车7座MPV(4天)", "cost": 2200, "tag": "estimate" },
-        { "name": "崇左市内打车", "cost": 150, "tag": "estimate" }
+        { "name": "租车5天(含儿童安全座椅)", "cost": 1800, "tag": "estimate" },
+        { "name": "油费(全程约580km)", "cost": 500, "tag": "estimate" },
+        { "name": "高速通行费", "cost": 300, "tag": "estimate" }
       ],
-      "subtotal": 8532
+      "subtotal": 8340
     },
     "accommodation": {
       "items": [
         { "name": "维纳斯度假村 \u00d72间\u00d72晚 (4/2,4/6)", "cost": 1200, "tag": "ref" },
-        { "name": "明仕那里酒店 \u00d72间\u00d73晚 (4/3-4/5)", "cost": 3000, "tag": "ref" }
+        { "name": "明仕那里酒店 \u00d72间\u00d72晚 (4/3-4/4)", "cost": 2000, "tag": "ref" },
+        { "name": "德天61号民宿 \u00d72间\u00d71晚 (4/5)", "cost": 700, "tag": "ref" }
       ],
-      "subtotal": 4200
+      "subtotal": 3900
     },
     "food": {
       "items": [
-        { "name": "Day1 晚餐(夜市)", "cost": 200 },
-        { "name": "Day2 三餐(卷筒粉+大新+那芭)", "cost": 600 },
-        { "name": "Day3 午餐+晚餐+咖啡(中越街+夕塌)", "cost": 550 },
-        { "name": "Day4 午餐+晚餐(农家乐+明仕山庄)", "cost": 520 },
-        { "name": "Day5 午餐+晚餐(宁明+夜市)", "cost": 440 },
-        { "name": "Day6 早餐+午餐(烤鸭粉+机场)", "cost": 320 }
+        { "name": "Day1 晚餐(崇左夜市)", "cost": 200 },
+        { "name": "Day2 早+午+晚(卷筒粉+那芭\u00d72)", "cost": 640 },
+        { "name": "Day3 午+晚(农家乐+明仕山庄)", "cost": 520 },
+        { "name": "Day4 午+晚(老街土菜馆+德天61号)", "cost": 480 },
+        { "name": "Day5 午+晚(通灵山庄+崇左夜市)", "cost": 420 },
+        { "name": "Day6 早+午(烤鸭粉+南宁市区)", "cost": 280 }
       ],
-      "subtotal": 2630
+      "subtotal": 2540
     },
     "tickets": {
       "items": [
+        { "name": "伏那秘境(徒步票) \u00d74", "cost": 272, "tag": "ref" },
+        { "name": "明仕田园套票(竹筏+鱼鳞坝) \u00d74", "cost": 540, "tag": "ref" },
+        { "name": "峒那屿湾画舫套票 \u00d74", "cost": 540, "tag": "ref" },
+        { "name": "打屯村船费 \u00d74", "cost": 200, "tag": "estimate" },
         { "name": "德天瀑布门票(含观光车) \u00d74", "cost": 460, "tag": "ref" },
         { "name": "德天竹筏 \u00d74", "cost": 192, "tag": "ref" },
-        { "name": "明仕田园套票(竹筏+鱼鳞坝) \u00d74", "cost": 540, "tag": "ref" },
-        { "name": "花山岩画(含游船) \u00d74", "cost": 360, "tag": "ref" },
-        { "name": "明仕八嘎车/电动车租赁", "cost": 120, "tag": "estimate" },
-        { "name": "稻田咖啡", "cost": 112, "tag": "estimate" }
+        { "name": "蓝洞咖啡园区(含饮品) \u00d74", "cost": 272, "tag": "ref" },
+        { "name": "通灵大峡谷(含接驳车) \u00d74", "cost": 460, "tag": "ref" },
+        { "name": "通灵返程接驳车 \u00d74", "cost": 40, "tag": "estimate" },
+        { "name": "白头叶猴生态旅游区 \u00d74", "cost": 340, "tag": "ref" },
+        { "name": "青秀山门票 \u00d74", "cost": 80, "tag": "ref" },
+        { "name": "青秀山观光车", "cost": 20, "tag": "ref" },
+        { "name": "明仕八嘎车租赁(1.5h)", "cost": 90, "tag": "estimate" }
       ],
-      "subtotal": 1784
+      "subtotal": 3506
     },
     "other": {
       "items": [
@@ -193,20 +626,36 @@
       ],
       "subtotal": 850
     },
-    "total": 17996,
-    "perPerson": 4499,
-    "note": "人均按4位成人分摊，婴儿费用已含在总价中。机票和高铁为FlyAI飞猪实时报价(实查)，酒店为参考价(~)，包车和餐饮为估算(\u2248)。"
+    "total": 19136,
+    "perPerson": 4784,
+    "note": "人均按4位成人分摊，婴儿费用已含在总价中。机票为参考价(~)\u00b7酒店为参考价(~)\u00b7租车和餐饮为估算(\u2248)\u00b7出行前请在飞猪/携程确认实际价格并预订。"
   },
   "tips": [
-    "【德天瀑布无障碍通道】从观光车下车后走右侧坡道，全程平路可推婴儿车，风景更好且避开所有台阶。切勿跟随人流走竹筏后方向（会遇到'让人怀疑人生的台阶'）",
-    "【德天导航陷阱】包车司机直接导航'德天景区入口'或'德天御景民宿'，不要导航到'游客中心'——否则会被强制乘坐35元/人的接驳车绕行10km",
-    "【4月枯水期应对】德天瀑布4月水量较小，上游约11:30放水，建议10:00前到景区，等到13:00-14:00可看到最佳水量。降雨天水量更充沛",
-    "【明仕无出租车】明仕田园区域没有出租车，出行靠酒店借自行车或租电动车/八嘎车(20-30元/h)",
-    "【鱼鳞坝安全】地面非常滑，务必穿防滑水鞋。雨后水位可能偏高临时关闭，出发前问酒店确认",
-    "【宝宝装备清单】轻便折叠推车+腰凳背带(竹筏/台阶用)\u00b7防晒霜SPF50+\u00b7驱蚊液\u00b7雨衣雨伞\u00b7水鞋\u00b7手机防水袋\u00b7辅食/零食\u00b7退热贴/常用药",
-    "【医疗提醒】最近的综合医院在大新县城(大新县人民医院)，距明仕约40min车程。备好宝宝常用药物",
-    "【动态价格提醒】机票和酒店为动态定价，以上为查询时参考价。出行前请在飞猪/携程确认实际价格并提前预订",
-    "【天气预报更新】本预报基于出发前7天的扩展预报，准确度有限。建议4月1日再查weather.com.cn更新（崇左: 101300201，大新: 101300205）",
-    "【高铁关键信息】南宁吴圩机场自带高铁站(GTC地下)，可直达崇左南(35min/45元)，无需进南宁市区。末班车约20:41"
+    "【逆时针环线路线】崇左\u2192伏那\u2192明仕(住2晚)\u2192打屯+峒那屿湾\u2192德天+蓝洞(住1晚)\u2192通灵\u2192S60高速\u2192崇左(白头叶猴)\u2192南宁(青秀山)\u2192机场\u00b7全程零回头路",
+    "【租车注意事项】南宁吴圩机场T2有神州/一嗨24h服务点\u00b7App提前预订\u00b7务必确认儿童安全座椅(16月龄强制使用)\u00b7建议租7座MPV(行李+婴儿装备空间大)\u00b7自驾最大优势:沿途随时停靠拍照\u00b7还车时机场还车点约15-20min手续",
+    "【伏那秘境带娃要点】3.5km碎石浅滩路\u00b7推车不可用\u00b7需溯溪鞋+防水袋\u00b7建议大人轮流进(2人带娃在入口等\u00b72人进去1.5h再换)\u00b7上午光线最佳拍丁达尔光效\u00b7景区预约制+限流\u00b7需签生态承诺书",
+    "【德天瀑布无障碍通道】从观光车下车后走右侧坡道\u00b7全程平路可推婴儿车\u00b7风景更好且避开所有台阶。切勿跟随人流走竹筏后方向（会遇到'让人怀疑人生的台阶'）",
+    "【德天导航陷阱】直接导航'德天景区入口'\u00b7不要导航到'游客中心'\u2014\u2014否则会被强制乘坐35元/人的接驳车绕行10km",
+    "【蓝洞咖啡】距德天仅1.1km\u00b7200亩主题园区\u00b7天然溶洞内喝咖啡\u00b768元含饮品\u00b7适合德天游览后休憩\u00b7有猫可撸\u00b7亲水平台可泡脚",
+    "【通灵大峡谷带娃要点】全程2.8km需背带(推车不可用)\u00b7前半段818级台阶下行不太累\u00b7回程坐接驳车(10元/人)省体力\u00b7水帘洞必穿雨衣(提前备好一次性雨衣)\u00b7洞内温差大带薄外套\u00b7穿防滑鞋",
+    "【通灵游览路线】景区大门\u2192818级台阶下行(绿色隧道)\u2192通灵大瀑布(二层观景台最佳拍照位)\u2192水帘洞(穿瀑入洞)\u2192地下暗河溶洞\u2192念八峡\u2192出口\u2192接驳车回大门\u00b7跟着'入口方向'走\u00b7避开购物区",
+    "【白头叶猴】崇左特有珍稀灵长类\u00b7下午4点后猴群下山觅食最佳\u00b7保持安静+带望远镜\u00b74月不是最佳季(10-3月好)但仍有机会\u00b7免费替代:保护区路边远观",
+    "【青秀山亲子攻略】门票仅20元\u00b7观光车5元\u00b7推车全程友好\u00b7荫生植物园水雾喷泉宝宝超爱\u00b7孔雀区近距离观赏\u00b7天池喂锦鲤\u00b7美团或微信'青秀山风景区'提前预约",
+    "【打屯村提醒】免门票\u00b7船费50元/人\u00b7提前联系船夫\u00b7村内几乎无餐饮自带零食和水\u00b7船上空间有限抱好宝宝",
+    "【明仕无出租车】明仕田园区域没有出租车\u00b7自驾最方便\u00b7酒店也有免费自行车和八嘎车出租(30元/h)",
+    "【鱼鳞坝安全】地面非常滑\u00b7务必穿防滑水鞋\u00b7雨后水位可能偏高临时关闭\u00b7出发前问酒店确认",
+    "【宝宝装备清单】儿童安全座椅(租车必备)\u00b7轻便折叠推车+腰凳背带(通灵/伏那必备)\u00b7溯溪鞋(伏那)\u00b7防滑水鞋(鱼鳞坝)\u00b7防晒霜SPF50+\u00b7驱蚊液\u00b7雨衣雨伞\u00b7手机防水袋\u00b7辅食零食\u00b7退热贴常用药\u00b7晕车贴",
+    "【医疗提醒】最近的综合医院在大新县城(大新县人民医院)\u00b7距明仕约40min车程\u00b7备好宝宝常用药物",
+    "【动态价格提醒】机票和酒店为动态定价\u00b7以上为查询时参考价\u00b7出行前请在飞猪/携程确认实际价格并提前预订",
+    "【返程时间提醒】4/7青秀山安排取决于返程航班时间\u00b7如航班14:55前需缩短至1.5h或跳过\u00b7如航班15:30+可从容游玩2h"
+  ],
+  "references": [
+    { "title": "南宁-崇左带娃超满意版行程(401赞/767收藏)", "url": "https://www.xiaohongshu.com/explore/6983e6c0000000000d00ba0a" },
+    { "title": "崇左带娃+老人零爬山不赶路(426赞/600收藏)", "url": "https://www.xiaohongshu.com/explore/698d7f870000000015021846" },
+    { "title": "通灵大峡谷游览顺序不走回头路(234赞)", "url": "https://www.xiaohongshu.com/explore/6991e044000000000a02d678" },
+    { "title": "广西崇左5天4晚亲子游避坑指南(375赞)", "url": "https://www.xiaohongshu.com/explore/688d9418000000002500e371" },
+    { "title": "五一遶娃广西崇左小众秘境(202赞)", "url": "https://www.xiaohongshu.com/explore/6805bd43000000000d015b76" },
+    { "title": "3-4月去崇左\u00b7中越边境治愈春天", "url": "https://www.xiaohongshu.com/explore/69bd290d00000000280096cb" },
+    { "title": "中越边陉秘境之旅\u00b73天2晚亲子游", "url": "https://www.xiaohongshu.com/explore/68fad13c000000000301cd25" }
   ]
 }

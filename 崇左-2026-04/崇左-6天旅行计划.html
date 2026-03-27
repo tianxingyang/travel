@@ -3,1240 +3,623 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>崇左 6日亲子游</title>
+<title>崇左 6日亲子自驾游</title>
 <style>
-  :root {
-    --primary: #0EA5E9;
-    --primary-dark: #0284C7;
-    --primary-light: #E0F2FE;
-    --primary-50: #F0F9FF;
-    --accent: #F97316;
-    --accent-dark: #EA580C;
-    --accent-light: #FFF7ED;
-    --success: #10B981;
-    --success-light: #D1FAE5;
-    --rose: #F43F5E;
-    --rose-light: #FFF1F2;
-    --violet: #8B5CF6;
-    --bg: #F8FAFC;
-    --card: #FFFFFF;
-    --text: #0C4A6E;
-    --text-body: #334155;
-    --text-muted: #64748B;
-    --border: #E2E8F0;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
-    --shadow-lg: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
-    --radius: 16px;
-    --radius-sm: 10px;
-    --transition: 200ms ease-out;
-  }
+:root {
+  --green-dark: #1b4332;
+  --green-primary: #2d6a4f;
+  --green-mid: #40916c;
+  --green-light: #52b788;
+  --green-bg: #f0fdf4;
+  --rock-gray: #8d99ae;
+  --white: #f8f9fa;
+  --accent-red: #d62828;
+  --text-dark: #1b4332;
+  --text-body: #2d3436;
+  --text-muted: #8d99ae;
+  --border: #e0e7e3;
+  --card-bg: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(27,67,50,0.06);
+  --shadow: 0 4px 12px rgba(27,67,50,0.08);
+  --shadow-lg: 0 8px 24px rgba(27,67,50,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --xhs-red: #ff2442;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--green-bg);color:var(--text-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+.bento{max-width:1080px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:1fr}
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/* === HERO === */
+.hero-card{background:linear-gradient(135deg,#2d6a4f 0%,#40916c 50%,#52b788 100%);border-radius:var(--radius);padding:40px 32px 48px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.hero-card .karst-bg{position:absolute;bottom:0;left:0;width:100%;pointer-events:none}
+.hero-title{font-size:32px;font-weight:800;letter-spacing:1px;margin-bottom:12px;position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:14px;opacity:0.92;margin-bottom:20px;position:relative;z-index:1}
+.hero-meta-item{display:inline-flex;align-items:center;gap:6px}
+.hero-meta-item .icon-wrap{display:inline-flex;width:18px;height:18px;flex-shrink:0}
+.hero-meta-item .icon-wrap svg{width:100%;height:100%}
+.hero-weather-box{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:var(--radius-sm);padding:14px 18px;font-size:13px;line-height:1.6;position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px 24px}
+.hero-weather-box span{display:inline-flex;align-items:center;gap:6px}
+.hero-route{margin-top:16px;position:relative;z-index:1;background:rgba(255,255,255,0.12);border-radius:var(--radius-sm);padding:12px 18px;font-size:13px;letter-spacing:0.5px;line-height:1.7}
+.hero-route-label{font-weight:600;margin-right:8px}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--bg); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased;
-  }
+/* === WEATHER STRIP === */
+.weather-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.weather-day{background:var(--card-bg);border-radius:var(--radius-sm);padding:14px 8px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s}
+.weather-day:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.wd-label{font-size:12px;color:var(--text-muted);margin-bottom:2px}
+.wd-weekday{font-size:14px;font-weight:700;color:var(--text-dark)}
+.wd-icon{margin:8px auto;display:flex;justify-content:center;align-items:center;width:36px;height:36px}
+.wd-icon svg{width:100%;height:100%}
+.wd-temp{font-size:13px;color:var(--text-body)}
+.wd-temp strong{color:var(--accent-red);font-weight:700}
+.wd-theme{font-size:11px;color:var(--text-muted);margin-top:4px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-  .container { max-width: 980px; margin: 0 auto; padding: 24px 20px 48px; }
+/* === SECTION HEADERS === */
+.section-header{font-size:22px;font-weight:800;color:var(--green-dark);padding:24px 0 12px;display:flex;align-items:center;gap:10px}
+.section-header::before{content:'';display:block;width:4px;height:24px;background:linear-gradient(180deg,var(--green-primary),var(--green-light));border-radius:2px}
 
-  /* ---- SVG Icon System ---- */
-  .icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 20px; height: 20px; flex-shrink: 0;
-  }
-  .icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .icon-sm { width: 16px; height: 16px; }
-  .icon-lg { width: 24px; height: 24px; }
+/* === DAILY ITINERARY ACCORDION === */
+.day-accordion{display:flex;flex-direction:column;gap:0}
+.day-header{background:var(--card-bg);border:1px solid var(--border);padding:16px 20px;cursor:pointer;user-select:none;display:flex;align-items:center;gap:14px;transition:background 0.2s,box-shadow 0.2s;border-radius:var(--radius-sm);margin-bottom:2px}
+.day-header:hover{background:var(--green-bg)}
+.day-header.active{background:linear-gradient(135deg,var(--green-primary),var(--green-mid));color:#fff;box-shadow:var(--shadow);border-color:transparent}
+.day-header.active .dh-date,.day-header.active .dh-theme,.day-header.active .dh-weather{color:#fff}
+.day-header.active .dh-chevron svg{color:#fff}
+.dh-num{font-size:20px;font-weight:800;flex-shrink:0;width:32px;text-align:center}
+.dh-content{flex:1;min-width:0}
+.dh-date{font-size:12px;color:var(--text-muted)}
+.dh-theme{font-size:15px;font-weight:600;color:var(--text-dark)}
+.dh-weather{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--text-muted);margin-top:2px}
+.dh-weather .dh-weather-icon{display:inline-flex;width:16px;height:16px}
+.dh-weather .dh-weather-icon svg{width:100%;height:100%}
+.dh-chevron{flex-shrink:0;width:20px;height:20px;transition:transform 0.3s;display:flex;align-items:center;justify-content:center}
+.dh-chevron svg{width:20px;height:20px;color:var(--text-muted)}
+.day-header.active .dh-chevron{transform:rotate(180deg)}
+.day-panel{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.day-panel-inner{padding:12px 0 4px}
+.road-connector{border-left:3px dashed var(--green-light);margin-left:24px;height:24px}
 
-  /* ---- Hero ---- */
-  .hero {
-    position: relative; border-radius: var(--radius); padding: 56px 44px 48px;
-    margin-bottom: 36px; overflow: hidden; color: white;
-    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 50%, #8B5CF6 100%);
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 600px 400px at 20% 80%, rgba(249,115,22,0.2) 0%, transparent 70%),
-      radial-gradient(ellipse 500px 500px at 80% 20%, rgba(139,92,246,0.3) 0%, transparent 60%),
-      radial-gradient(ellipse 300px 300px at 60% 60%, rgba(255,255,255,0.06) 0%, transparent 50%);
-  }
-  .hero-content { position: relative; z-index: 1; }
-  .hero h1 { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2; }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.92rem; opacity: 0.92; }
-  .hero-meta-item { display: flex; align-items: center; gap: 7px; }
-  .hero-meta-item .icon { color: rgba(255,255,255,0.85); }
-  .hero-orb {
-    position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.12; pointer-events: none;
-    animation: orbFloat 10s ease-in-out infinite alternate;
-  }
-  .hero-orb-1 { width: 300px; height: 300px; background: #F97316; top: -80px; right: -60px; }
-  .hero-orb-2 { width: 200px; height: 200px; background: #38BDF8; bottom: -60px; left: -40px; animation-delay: -5s; }
+/* === ACTIVITY ITEMS === */
+.activity-item{display:flex;gap:12px;padding:10px 16px;background:var(--card-bg);border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:8px;transition:box-shadow 0.2s}
+.activity-item:hover{box-shadow:var(--shadow-sm)}
+.activity-item.is-meal{border-left:3px solid #f59e0b}
+.ai-time{flex:0 0 52px;font-size:14px;font-weight:700;color:var(--green-primary);font-variant-numeric:tabular-nums;padding-top:2px}
+.ai-body{flex:1;min-width:0}
+.ai-top-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.ai-name{font-size:14px;font-weight:600;color:var(--text-dark)}
+.ai-name a{color:var(--green-primary);text-decoration:none;border-bottom:1px dashed var(--green-light);transition:color 0.2s}
+.ai-name a:hover{color:var(--accent-red);border-bottom-color:var(--accent-red)}
+.ai-tag{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--green-bg);color:var(--green-primary);white-space:nowrap;border:1px solid var(--border)}
+.ai-tag.meal-tag{background:#fffbeb;color:#b45309;border-color:#fde68a}
+.ai-details{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--text-muted);margin-bottom:4px}
+.ai-details span{display:inline-flex;align-items:center;gap:3px}
+.ai-note{font-size:13px;color:var(--text-body);line-height:1.6;background:var(--green-bg);padding:8px 12px;border-radius:8px;margin-top:6px}
+.ai-meal-info{padding:4px 0}
+.ai-meal-name{font-size:14px;font-weight:500;color:var(--text-dark);margin-bottom:4px}
+.ai-meal-name a{color:var(--green-primary);text-decoration:none;border-bottom:1px dashed var(--green-light)}
+.ai-meal-name a:hover{color:var(--accent-red)}
+.ai-meal-meta{font-size:12px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.ai-meal-rec{font-size:13px;color:#b45309;margin-top:4px;font-weight:500}
+.ai-refs{margin-top:8px;padding-top:8px;border-top:1px dashed var(--border);display:flex;flex-wrap:wrap;gap:6px}
+.ai-ref-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--xhs-red);text-decoration:none;padding:3px 8px;border-radius:12px;background:#fff0f3;border:1px solid #fecdd3;transition:background 0.2s}
+.ai-ref-tag:hover{background:#fecdd3}
+.ai-ref-dot{width:6px;height:6px;border-radius:50%;background:var(--xhs-red);flex-shrink:0}
 
-  @keyframes orbFloat {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(20px, -15px) scale(1.1); }
-  }
+/* === HOTELS === */
+.hotels-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.hotel-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;gap:10px}
+.hotel-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.hc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hc-name{font-size:15px;font-weight:700;color:var(--text-dark)}
+.hc-rating{display:inline-flex;align-items:center;gap:3px;font-size:12px;color:#f59e0b;font-weight:600}
+.hc-area{font-size:12px;color:var(--text-muted)}
+.hc-tags{display:flex;flex-wrap:wrap;gap:4px}
+.hc-tag{font-size:11px;padding:3px 8px;border-radius:10px;background:var(--green-bg);color:var(--green-primary);border:1px solid var(--border)}
+.hc-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:auto}
+.hc-price{font-size:16px;font-weight:700;color:var(--accent-red)}
+.hc-nights{font-size:12px;color:var(--text-muted)}
+.hc-link{font-size:12px;padding:5px 14px;border-radius:14px;background:var(--green-primary);color:#fff;text-decoration:none;transition:background 0.2s;white-space:nowrap}
+.hc-link:hover{background:var(--green-dark)}
 
-  /* ---- Section Nav ---- */
-  .section-nav {
-    display: flex; gap: 8px; margin-bottom: 32px; overflow-x: auto;
-    padding-bottom: 4px; -webkit-overflow-scrolling: touch;
-  }
-  .section-nav::-webkit-scrollbar { height: 0; }
-  .nav-pill {
-    display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
-    border-radius: 99px; font-size: 0.85rem; font-weight: 500; white-space: nowrap;
-    background: var(--card); border: 1px solid var(--border); color: var(--text-muted);
-    cursor: pointer; transition: all var(--transition); text-decoration: none;
-  }
-  .nav-pill:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
-  .nav-pill .icon { width: 16px; height: 16px; }
+/* === BUDGET === */
+.budget-card{background:var(--card-bg);border-radius:var(--radius);padding:24px;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.budget-top{display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:20px}
+.donut-container{flex:0 0 160px;position:relative}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.donut-center-total{font-size:16px;font-weight:800;color:var(--text-dark)}
+.donut-center-label{font-size:11px;color:var(--text-muted)}
+.budget-legend{flex:1;min-width:180px;display:flex;flex-direction:column;gap:6px}
+.bl-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-body);cursor:pointer;padding:4px 0;transition:opacity 0.2s}
+.bl-item:hover{opacity:0.7}
+.bl-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.bl-amount{margin-left:auto;font-weight:700;color:var(--text-dark)}
+.bl-pct{font-size:11px;color:var(--text-muted);margin-left:4px}
+.budget-total-bar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(135deg,var(--green-primary),var(--green-mid));color:#fff;border-radius:var(--radius-sm);font-size:14px;font-weight:700;cursor:pointer;transition:box-shadow 0.2s;margin-bottom:12px}
+.budget-total-bar:hover{box-shadow:var(--shadow)}
+.budget-detail{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.budget-detail.expanded{max-height:1200px}
+.budget-table{width:100%;border-collapse:collapse;font-size:13px}
+.budget-table th{text-align:left;padding:10px 14px;background:var(--green-bg);color:var(--green-primary);font-weight:700}
+.budget-table td{padding:7px 14px;border-bottom:1px solid var(--border)}
+.budget-table td:last-child{text-align:right;font-weight:500}
+.budget-table .subtotal-row td{font-weight:700;background:var(--green-bg);color:var(--green-primary)}
+.budget-note{font-size:12px;color:var(--text-muted);margin-top:12px;line-height:1.6;padding:10px 14px;background:var(--green-bg);border-radius:8px}
 
-  /* ---- Section ---- */
-  .section { margin-bottom: 40px; scroll-margin-top: 20px; }
-  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-  .section-icon {
-    display: flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px; border-radius: var(--radius-sm);
-    background: var(--primary-light); color: var(--primary);
-  }
-  .section-title { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+/* === TIPS === */
+.tips-list{display:flex;flex-direction:column;gap:6px}
+.tip-item{background:var(--card-bg);border-radius:var(--radius-sm);border:1px solid var(--border);overflow:hidden}
+.tip-header{padding:12px 16px;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:var(--text-dark);transition:background 0.2s}
+.tip-header:hover{background:var(--green-bg)}
+.tip-chevron{flex-shrink:0;width:16px;height:16px;transition:transform 0.3s;display:flex;align-items:center;justify-content:center}
+.tip-chevron svg{width:16px;height:16px;color:var(--text-muted)}
+.tip-item.open .tip-chevron{transform:rotate(180deg)}
+.tip-body{max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 16px;font-size:13px;color:var(--text-body);line-height:1.7}
+.tip-item.open .tip-body{max-height:400px;padding:0 16px 14px}
 
-  /* ---- Weather ---- */
-  .weather-bar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
-  .weather-bar::-webkit-scrollbar { height: 4px; }
-  .weather-bar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
-  .weather-card {
-    flex: 0 0 auto; min-width: 108px; background: var(--card); border-radius: var(--radius-sm);
-    padding: 14px 12px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-    transition: all var(--transition);
-  }
-  .weather-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-  .weather-card .w-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 500; }
-  .weather-card .w-icon { font-size: 28px; line-height: 1; margin: 4px 0 8px; }
-  .weather-card .w-icon svg { width: 32px; height: 32px; }
-  .weather-card .w-temp { font-size: 0.88rem; font-weight: 600; color: var(--text); }
-  .weather-card .w-temp-low { color: var(--text-muted); font-weight: 400; }
-  .weather-tip {
-    display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; padding: 14px 18px;
-    background: var(--primary-50); border: 1px solid #BAE6FD; border-radius: var(--radius-sm); font-size: 0.88rem; color: var(--primary-dark);
-  }
-  .weather-tip .icon { flex-shrink: 0; margin-top: 1px; }
+/* === REFERENCES === */
+.refs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.ref-card{border:2px solid var(--xhs-red);border-radius:var(--radius-sm);padding:14px;background:var(--card-bg);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
+.ref-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.ref-card a{text-decoration:none;color:var(--text-dark);font-size:13px;font-weight:500;display:block;line-height:1.5}
+.ref-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:8px;background:var(--xhs-red);color:#fff;margin-bottom:8px;font-weight:600}
 
-  /* ---- Day Card ---- */
-  .day-card {
-    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-    border: 1px solid var(--border); margin-bottom: 16px; overflow: hidden;
-    transition: box-shadow var(--transition);
-  }
-  .day-card:hover { box-shadow: var(--shadow-md); }
-  .day-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 22px; cursor: pointer; user-select: none;
-    transition: background var(--transition);
-  }
-  .day-header:hover { background: var(--primary-50); }
-  .day-header:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
-  .day-num {
-    display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: var(--radius-sm);
-    background: linear-gradient(135deg, var(--primary), var(--violet));
-    color: white; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-right: 14px;
-  }
-  .day-header-left { display: flex; align-items: center; }
-  .day-header-info h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1.3; }
-  .day-header-info .day-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
-  .day-header .toggle-icon {
-    width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    background: var(--bg); color: var(--text-muted); transition: all var(--transition);
-  }
-  .day-card.collapsed .toggle-icon { transform: rotate(-90deg); }
-  .day-body {
-    padding: 4px 22px 22px; border-top: 1px solid var(--border);
-    max-height: 3000px; overflow: hidden; transition: max-height 0.35s ease-out, padding 0.35s ease-out;
-  }
-  .day-card.collapsed .day-body { max-height: 0; padding-top: 0; padding-bottom: 0; border-top-color: transparent; }
+/* === FOOTER === */
+.page-footer{text-align:center;padding:20px 0 32px;font-size:12px;color:var(--text-muted)}
 
-  /* ---- Timeline ---- */
-  .timeline { position: relative; padding-left: 32px; padding-top: 18px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 10px; top: 24px; bottom: 12px;
-    width: 2px; background: linear-gradient(to bottom, var(--primary), var(--border));
-    border-radius: 2px;
-  }
-  .tl-item { position: relative; margin-bottom: 22px; }
-  .tl-item:last-child { margin-bottom: 0; }
-  .tl-dot {
-    position: absolute; left: -28px; top: 4px; width: 14px; height: 14px;
-    border-radius: 50%; border: 2.5px solid var(--primary); background: white; z-index: 1;
-    box-shadow: 0 0 0 3px var(--primary-light);
-  }
-  .tl-item.is-meal .tl-dot { border-color: var(--accent); background: var(--accent-light); box-shadow: 0 0 0 3px var(--accent-light); }
-  .tl-time { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 3px; }
-  .tl-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-  .tl-content p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
-  .tl-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-  .tag {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-size: 0.73rem; padding: 3px 10px; border-radius: 99px; font-weight: 500;
-  }
-  .tag-cost { background: var(--accent-light); color: var(--accent-dark); }
-  .tag-transport { background: var(--success-light); color: #047857; }
-  .tag-free { background: var(--primary-light); color: var(--primary-dark); }
+/* === RESPONSIVE === */
+@media(max-width:768px){
+  .bento{padding:10px}
+  .hero-card{padding:28px 20px 40px}
+  .hero-title{font-size:24px}
+  .weather-strip{grid-template-columns:repeat(3,1fr)}
+  .hotels-grid{grid-template-columns:1fr}
+  .budget-top{flex-direction:column;align-items:center}
+  .donut-container{flex:none}
+  .refs-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-title{font-size:20px}
+  .hero-card{padding:20px 16px 36px}
+  .weather-strip{grid-template-columns:repeat(2,1fr)}
+  .day-header{padding:12px 14px;gap:10px}
+  .dh-num{font-size:16px;width:26px}
+  .activity-item{padding:8px 12px}
+  .ai-time{flex:0 0 44px;font-size:13px}
+  .budget-card{padding:16px}
+}
 
-  /* ---- Meal Card ---- */
-  .meal-card {
-    display: flex; align-items: center; gap: 14px; padding: 12px 16px;
-    background: linear-gradient(135deg, #FFF7ED, #FFFBEB); border: 1px solid #FED7AA;
-    border-radius: var(--radius-sm); margin-top: 6px;
-  }
-  .meal-icon {
-    width: 38px; height: 38px; border-radius: 10px;
-    background: white; display: flex; align-items: center; justify-content: center;
-    box-shadow: var(--shadow-sm); color: var(--accent); flex-shrink: 0;
-  }
-  .meal-info { flex: 1; min-width: 0; }
-  .meal-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
-  .meal-detail { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .meal-price { font-weight: 700; color: var(--accent-dark); white-space: nowrap; font-size: 0.95rem; }
-
-  /* ---- Hotels ---- */
-  .hotel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-  .hotel-card {
-    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-    border: 1px solid var(--border); padding: 22px; position: relative;
-    cursor: default; transition: all var(--transition);
-  }
-  .hotel-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-  .hotel-badge {
-    position: absolute; top: 14px; right: 14px;
-    background: linear-gradient(135deg, var(--primary), var(--violet));
-    color: white; font-size: 0.72rem; font-weight: 600;
-    padding: 3px 12px; border-radius: 99px;
-  }
-  .hotel-name { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 6px; padding-right: 60px; }
-  .hotel-area { display: flex; align-items: center; gap: 5px; font-size: 0.83rem; color: var(--text-muted); margin-bottom: 12px; }
-  .hotel-price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
-  .hotel-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
-  .hotel-price-unit { font-size: 0.8rem; color: var(--text-muted); }
-  .hotel-highlights { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
-  .hotel-tag { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; background: var(--primary-light); color: var(--primary-dark); margin-right: 4px; margin-bottom: 4px; }
-
-  /* ---- Budget ---- */
-  .budget-wrapper {
-    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-    border: 1px solid var(--border); overflow: hidden;
-  }
-  .budget-chart { display: flex; height: 8px; overflow: hidden; }
-  .budget-chart-seg { transition: width 0.6s ease-out; }
-  .budget-table { width: 100%; border-collapse: collapse; }
-  .budget-table th, .budget-table td { padding: 12px 18px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
-  .budget-table th { background: var(--bg); color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  .budget-table .cat-row td { font-weight: 600; color: var(--text); background: var(--primary-50); }
-  .budget-table .cat-row .cat-icon { display: inline-flex; align-items: center; gap: 8px; }
-  .budget-table .cat-row .cat-icon .icon { color: var(--primary); }
-  .budget-table .sub-row td { color: var(--text-muted); padding-left: 48px; }
-  .budget-table .subtotal { text-align: right; font-weight: 600; color: var(--primary); }
-  .budget-table td:last-child { text-align: right; }
-
-  .budget-total {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 22px 24px;
-    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 50%, #8B5CF6 100%);
-    border-radius: var(--radius); color: white; margin-top: 16px;
-  }
-  .budget-total-label { font-size: 0.95rem; font-weight: 500; opacity: 0.9; }
-  .budget-total-per { font-size: 0.85rem; opacity: 0.75; margin-top: 2px; }
-  .budget-total-amount { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
-
-  /* ---- Tips ---- */
-  .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
-  .tip-card {
-    display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px;
-    background: var(--accent-light); border: 1px solid #FED7AA; border-radius: var(--radius-sm);
-    font-size: 0.88rem; color: var(--text-body);
-  }
-  .tip-icon {
-    width: 28px; height: 28px; border-radius: 8px; background: white;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: var(--shadow-sm); color: var(--accent); flex-shrink: 0;
-  }
-  .tip-icon .icon { width: 14px; height: 14px; }
-
-  /* ---- Footer ---- */
-  .footer { text-align: center; padding: 28px 20px; color: var(--text-muted); font-size: 0.78rem; margin-top: 20px; }
-  .footer-line { width: 48px; height: 3px; background: linear-gradient(90deg, var(--primary), var(--violet)); border-radius: 99px; margin: 0 auto 12px; }
-
-  /* ---- Print ---- */
-  @media print {
-    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .container { padding: 0; max-width: 100%; }
-    .hero { break-inside: avoid; }
-    .day-card { break-inside: avoid; }
-    .day-card.collapsed .day-body { max-height: none !important; padding: 4px 22px 22px !important; border-top: 1px solid var(--border) !important; }
-    .toggle-icon, .section-nav { display: none !important; }
-    .hotel-card:hover, .weather-card:hover, .day-card:hover { transform: none; box-shadow: var(--shadow); }
-  }
-
-  /* ---- Responsive ---- */
-  @media (max-width: 640px) {
-    .container { padding: 16px 14px 32px; }
-    .hero { padding: 36px 24px 32px; }
-    .hero h1 { font-size: 1.55rem; }
-    .hero-meta { gap: 12px; font-size: 0.85rem; }
-    .day-header { padding: 14px 16px; }
-    .day-num { width: 34px; height: 34px; font-size: 0.78rem; margin-right: 10px; }
-    .day-body { padding: 4px 16px 16px; }
-    .timeline { padding-left: 26px; }
-    .hotel-grid { grid-template-columns: 1fr; }
-    .tips-grid { grid-template-columns: 1fr; }
-    .budget-total { flex-direction: column; text-align: center; gap: 8px; padding: 18px; }
-    .section-nav { gap: 6px; }
-    .nav-pill { padding: 6px 12px; font-size: 0.8rem; }
-  }
-
-  /* ---- Reduced Motion ---- */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    .day-body { transition: none; }
-  }
-
-  /* ---- Focus ---- */
-  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+/* === PRINT === */
+@media print{
+  body{background:#fff}
+  .hero-card{background:#2d6a4f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .day-panel{max-height:none!important;overflow:visible!important}
+  .day-header.active .dh-chevron,.tip-chevron{display:none}
+  .tip-item .tip-body{max-height:none!important;overflow:visible!important;padding:0 16px 14px!important}
+  .budget-detail{max-height:none!important;overflow:visible!important}
+  .hotel-card:hover,.ref-card:hover,.weather-day:hover{transform:none;box-shadow:none}
+}
 </style>
 </head>
 <body>
-<div class="container">
-
-  <!-- Hero -->
-  <div class="hero" role="banner">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-content">
-      <h1 id="heroTitle">崇左 6日亲子游</h1>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-          <span id="heroDate">2026-04-02 ~ 04-07</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <span id="heroTravelers">4大1小(16月龄)</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-          <span>预估 <strong id="heroBudget">¥17996</strong></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section Nav -->
-  <nav class="section-nav" aria-label="快速导航">
-    <a class="nav-pill" href="#sec-weather"><span class="icon"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M12 2v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg></span>天气</a>
-    <a class="nav-pill" href="#sec-days"><span class="icon"><svg viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>行程</a>
-    <a class="nav-pill" href="#sec-hotels"><span class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg></span>住宿</a>
-    <a class="nav-pill" href="#sec-budget"><span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>预算</a>
-    <a class="nav-pill" href="#sec-tips"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>贴士</a>
-  </nav>
-
-  <!-- Weather -->
-  <div class="section" id="sec-weather">
-    <div class="section-header">
-      <div class="section-icon"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/><path d="M12 2v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg></span></div>
-      <h2 class="section-title">天气概览</h2>
-    </div>
-    <div class="weather-bar" id="weatherBar"></div>
-    <div class="weather-tip" id="weatherTip"></div>
-  </div>
-
-  <!-- Daily Itinerary -->
-  <div class="section" id="sec-days">
-    <div class="section-header">
-      <div class="section-icon"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></span></div>
-      <h2 class="section-title">每日行程</h2>
-    </div>
-    <div id="daysContainer"></div>
-  </div>
-
-  <!-- Hotels -->
-  <div class="section" id="sec-hotels">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--accent-light);color:var(--accent);"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg></span></div>
-      <h2 class="section-title">住宿推荐</h2>
-    </div>
-    <div class="hotel-grid" id="hotelGrid"></div>
-  </div>
-
-  <!-- Budget -->
-  <div class="section" id="sec-budget">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--success-light);color:var(--success);"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span></div>
-      <h2 class="section-title">预算明细</h2>
-    </div>
-    <div class="budget-wrapper">
-      <div class="budget-chart" id="budgetChart"></div>
-      <table class="budget-table" id="budgetTable">
-        <thead><tr><th>分类</th><th>项目</th><th style="text-align:right">费用</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="budget-total" id="budgetTotal">
-      <div>
-        <div class="budget-total-label">预估总费用</div>
-        <div class="budget-total-per">人均 ¥4499</div>
-      </div>
-      <div class="budget-total-amount">¥17996</div>
-    </div>
-  </div>
-
-  <!-- Tips -->
-  <div class="section" id="sec-tips">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--rose-light);color:var(--rose);"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span></div>
-      <h2 class="section-title">实用贴士</h2>
-    </div>
-    <div class="tips-grid" id="tipsList"></div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-line"></div>
-    <p>由 AI 生成 · 价格与信息仅供参考，请以实际为准 · 2026-03-26</p>
-  </footer>
-
-</div>
-
+<div class="bento" id="app"></div>
 <script>
-const tripData = {
-  "title": "崇左 6日亲子游",
-  "dateRange": "2026-04-02 ~ 04-07",
-  "travelers": "4大1小(16月龄)",
-  "generationDate": "2026-03-26",
-  "weather": {
-    "summary": "前4日阵雨为主，后2日转晴，气温22-33°C",
-    "avgHigh": 29,
-    "avgLow": 21,
-    "rainfall": "60%（集中在4.3-4.5）",
-    "clothing": "短袖+薄外套+雨具，后两天注意防晒",
-    "tips": "4月初崇左湿度高，建议速干面料；雨天路滑注意宝宝安全"
-  },
-  "days": [
-    {
-      "date": "04/02",
-      "weekday": "周四",
-      "theme": "启程·抵达崇左",
-      "weather": {
-        "icon": "cloudy",
-        "high": 31,
-        "low": 20
-      },
-      "activities": [
-        {
-          "time": "12:55",
-          "name": "成都天府T1出发",
-          "duration": "1h45m",
-          "cost": 0,
-          "transport": "四川航空3U6747",
-          "note": "婴儿票约82元(成人10%)"
-        },
-        {
-          "time": "14:40",
-          "name": "抵达南宁吴圩机场",
-          "duration": "1h40m",
-          "cost": 0,
-          "transport": "步行至GTC地下高铁站(5-8min)",
-          "note": "取行李后步行至机场高铁站，预留40min"
-        },
-        {
-          "time": "16:22",
-          "name": "吴圩机场站→崇左南站",
-          "duration": "35min",
-          "cost": 45,
-          "transport": "高铁二等座",
-          "note": "婴幼儿免票不占座"
-        },
-        {
-          "time": "17:00",
-          "name": "抵达崇左南站",
-          "duration": "20min",
-          "cost": 0,
-          "transport": "打车到酒店(约15元)",
-          "note": "入住维纳斯度假村酒店"
-        },
-        {
-          "time": "18:30",
-          "name": "晚餐",
-          "meal": {
-            "name": "崇左江南夜市 / 阿威粉店",
-            "cuisine": "广西粉类",
-            "perPerson": 50,
-            "recommended": "老友粉·卷筒粉·烤鸭粉",
-            "location": "市区步行可达"
-          }
-        }
-      ]
-    },
-    {
-      "date": "04/03",
-      "weekday": "周五",
-      "theme": "转移明仕·慢享雨日",
-      "weather": {
-        "icon": "rainy",
-        "high": 23,
-        "low": 19
-      },
-      "activities": [
-        {
-          "time": "08:30",
-          "name": "早餐",
-          "meal": {
-            "name": "龙州美味卷筒粉店 / 酒店早餐",
-            "cuisine": "崇左特色",
-            "perPerson": 20,
-            "recommended": "卷筒粉·沙糕",
-            "location": "酒店附近"
-          }
-        },
-        {
-          "time": "09:30",
-          "name": "退房·包车前往明仕",
-          "duration": "1.5h",
-          "cost": 0,
-          "transport": "包车(7座MPV)",
-          "note": "途经大新县城，车程约90分钟"
-        },
-        {
-          "time": "11:00",
-          "name": "途经大新县城",
-          "duration": "1h",
-          "cost": 0,
-          "transport": "包车",
-          "note": "可下车逛逛小城，买些水果零食"
-        },
-        {
-          "time": "12:00",
-          "name": "午餐",
-          "meal": {
-            "name": "大新县城餐馆",
-            "cuisine": "壮族家常",
-            "perPerson": 50,
-            "recommended": "柠檬鸭·酸笋鱼",
-            "location": "大新县城"
-          }
-        },
-        {
-          "time": "13:30",
-          "name": "抵达明仕·入住",
-          "duration": "1.5h",
-          "cost": 0,
-          "transport": "包车",
-          "note": "入住明仕那里酒店，宝宝午睡"
-        },
-        {
-          "time": "15:30",
-          "name": "酒店周边漫步",
-          "duration": "2h",
-          "cost": 0,
-          "transport": "步行",
-          "note": "雨天轻松活动：酒店稻田泳池、周边田园小路散步"
-        },
-        {
-          "time": "18:30",
-          "name": "晚餐",
-          "meal": {
-            "name": "那芭餐厅(酒店内)",
-            "cuisine": "壮族精致料理",
-            "perPerson": 80,
-            "recommended": "明仕珍珠鸭·五色糯米饭·香茅烤鱼",
-            "location": "明仕那里酒店内"
-          }
-        }
-      ]
-    },
-    {
-      "date": "04/04",
-      "weekday": "周六",
-      "theme": "德天瀑布·雨中壮阔",
-      "weather": {
-        "icon": "rainy",
-        "high": 28,
-        "low": 21
-      },
-      "activities": [
-        {
-          "time": "08:00",
-          "name": "酒店早餐",
-          "meal": {
-            "name": "明仕那里酒店",
-            "cuisine": "自助早餐",
-            "perPerson": 0,
-            "recommended": "含早",
-            "location": "酒店餐厅"
-          }
-        },
-        {
-          "time": "09:00",
-          "name": "包车前往德天瀑布",
-          "duration": "1h",
-          "cost": 0,
-          "transport": "包车",
-          "note": "明仕→德天约37km/1h，提醒司机直接导航景区入口(非游客中心)"
-        },
-        {
-          "time": "10:00",
-          "name": "德天跨国瀑布",
-          "duration": "3.5h",
-          "cost": 115,
-          "transport": "景区观光车(含在门票内)",
-          "note": "走右侧无障碍通道(平路可推车)·雨天水量充沛·11:30等上游放水·穿雨衣"
-        },
-        {
-          "time": "11:30",
-          "name": "竹筏漂流",
-          "duration": "30min",
-          "cost": 48,
-          "transport": "竹筏",
-          "note": "1.2m以下免费·有儿童救生衣·会被水花溅湿·手机装防水袋"
-        },
-        {
-          "time": "12:30",
-          "name": "稻田咖啡休息",
-          "duration": "30min",
-          "cost": 28,
-          "transport": "景区内步行",
-          "note": "景区内咖啡馆，稻田景观位，适合休息"
-        },
-        {
-          "time": "13:30",
-          "name": "午餐",
-          "meal": {
-            "name": "中越好吃街",
-            "cuisine": "越南+壮族小吃",
-            "perPerson": 40,
-            "recommended": "越南春卷·竹筒饭·芒果糯米饭",
-            "location": "德天景区外硕龙镇"
-          }
-        },
-        {
-          "time": "14:30",
-          "name": "返回明仕",
-          "duration": "1h",
-          "cost": 0,
-          "transport": "包车",
-          "note": "车上宝宝午睡"
-        },
-        {
-          "time": "16:00",
-          "name": "自由活动",
-          "duration": "2h",
-          "cost": 0,
-          "transport": "步行/电动车",
-          "note": "酒店休息或租电动车(20元/h)骑行十里画廊"
-        },
-        {
-          "time": "18:30",
-          "name": "晚餐",
-          "meal": {
-            "name": "夕塌餐厅",
-            "cuisine": "西式+融合",
-            "perPerson": 70,
-            "recommended": "创意壮族菜·氛围好",
-            "location": "明仕景区附近"
-          }
-        }
-      ]
-    },
-    {
-      "date": "04/05",
-      "weekday": "周日",
-      "theme": "明仕田园·慢时光",
-      "weather": {
-        "icon": "partlyCloudy",
-        "high": 27,
-        "low": 23
-      },
-      "activities": [
-        {
-          "time": "08:00",
-          "name": "酒店早餐",
-          "meal": {
-            "name": "明仕那里酒店",
-            "cuisine": "自助早餐",
-            "perPerson": 0,
-            "recommended": "含早",
-            "location": "酒店"
-          }
-        },
-        {
-          "time": "09:00",
-          "name": "明仕田园竹筏+九曲桥",
-          "duration": "2h",
-          "cost": 135,
-          "transport": "步行至码头",
-          "note": "竹筏穿行喀斯特峰林间·九曲桥拍照·套票含壮族博物馆+鱼鳞坝"
-        },
-        {
-          "time": "11:30",
-          "name": "壮族博物馆",
-          "duration": "30min",
-          "cost": 0,
-          "transport": "步行",
-          "note": "含在套票内，了解壮族文化"
-        },
-        {
-          "time": "12:00",
-          "name": "午餐",
-          "meal": {
-            "name": "卢哥餐馆 / 路边农家乐",
-            "cuisine": "壮族农家菜",
-            "perPerson": 50,
-            "recommended": "走地鸡·酸汤鱼·野菜",
-            "location": "明仕村"
-          }
-        },
-        {
-          "time": "13:00",
-          "name": "宝宝午睡",
-          "duration": "2h",
-          "cost": 0,
-          "transport": "-",
-          "note": "回酒店休息"
-        },
-        {
-          "time": "15:00",
-          "name": "租八嘎车骑行十里画廊",
-          "duration": "2h",
-          "cost": 30,
-          "transport": "八嘎车(3座家庭电动车)",
-          "note": "平坦骑行道·那冠桥·田园风光·30元/h"
-        },
-        {
-          "time": "17:00",
-          "name": "鱼鳞坝戏水",
-          "duration": "1h",
-          "cost": 0,
-          "transport": "骑行可达",
-          "note": "带水鞋!·地面湿滑注意安全·宝宝可浅水区玩·雨后水位可能偏高需留意"
-        },
-        {
-          "time": "18:30",
-          "name": "晚餐",
-          "meal": {
-            "name": "明仕山庄中餐厅",
-            "cuisine": "壮族宴席",
-            "perPerson": 80,
-            "recommended": "簸箕宴·竹筒饭·河鱼",
-            "location": "明仕山庄"
-          }
-        },
-        {
-          "time": "20:00",
-          "name": "甘蔗汁+散步",
-          "duration": "1h",
-          "cost": 5,
-          "transport": "步行",
-          "note": "路边摊甘蔗汁，便宜好喝"
-        }
-      ]
-    },
-    {
-      "date": "04/06",
-      "weekday": "周一",
-      "theme": "花山岩画·两千年壮歌",
-      "weather": {
-        "icon": "cloudy",
-        "high": 32,
-        "low": 23
-      },
-      "activities": [
-        {
-          "time": "07:30",
-          "name": "酒店早餐·退房",
-          "meal": {
-            "name": "明仕那里酒店",
-            "cuisine": "自助早餐",
-            "perPerson": 0,
-            "recommended": "含早",
-            "location": "酒店"
-          }
-        },
-        {
-          "time": "08:30",
-          "name": "包车前往花山景区",
-          "duration": "2.5h",
-          "cost": 0,
-          "transport": "包车",
-          "note": "明仕→宁明花山约116km/2-2.5h，途经崇左市区"
-        },
-        {
-          "time": "11:00",
-          "name": "左江花山岩画(UNESCO)",
-          "duration": "2.5h",
-          "cost": 90,
-          "transport": "游船",
-          "note": "全程船上观赏·无需步行·宝宝坐怀里即可·船上有遮阳·1m以下免票·2000年骆越先民崖壁画"
-        },
-        {
-          "time": "13:00",
-          "name": "午餐",
-          "meal": {
-            "name": "宁明/崇左沿途餐馆",
-            "cuisine": "桂菜",
-            "perPerson": 50,
-            "recommended": "百香果排骨·越南鸡肉粉",
-            "location": "宁明县或崇左市区"
-          }
-        },
-        {
-          "time": "14:30",
-          "name": "返回崇左市区",
-          "duration": "45min",
-          "cost": 0,
-          "transport": "包车",
-          "note": "入住酒店，宝宝午睡"
-        },
-        {
-          "time": "16:00",
-          "name": "崇左市区漫步",
-          "duration": "2h",
-          "cost": 0,
-          "transport": "步行/打车",
-          "note": "太平古城/园博园轻松逛逛，采购伴手礼"
-        },
-        {
-          "time": "18:30",
-          "name": "晚餐",
-          "meal": {
-            "name": "崇左江南夜市",
-            "cuisine": "烧烤小吃",
-            "perPerson": 60,
-            "recommended": "烤串·螺蛳粉·甘蔗汁·当地小吃",
-            "location": "崇左市区"
-          }
-        }
-      ]
-    },
-    {
-      "date": "04/07",
-      "weekday": "周二",
-      "theme": "归程·后会有期",
-      "weather": {
-        "icon": "sunny",
-        "high": 33,
-        "low": 22
-      },
-      "activities": [
-        {
-          "time": "07:30",
-          "name": "早餐·退房",
-          "meal": {
-            "name": "酒店早餐 / 木炭烤鸭粉",
-            "cuisine": "崇左特色",
-            "perPerson": 20,
-            "recommended": "烤鸭粉(新华路13号)",
-            "location": "崇左市区"
-          }
-        },
-        {
-          "time": "08:45",
-          "name": "打车到崇左南站",
-          "duration": "15min",
-          "cost": 15,
-          "transport": "打车",
-          "note": "提前到站，带娃预留充足时间"
-        },
-        {
-          "time": "09:21",
-          "name": "崇左南→吴圩机场站",
-          "duration": "35min",
-          "cost": 45,
-          "transport": "高铁",
-          "note": "抵达后步行至T2航站楼(约8min)"
-        },
-        {
-          "time": "10:30",
-          "name": "机场午餐·候机",
-          "duration": "4h",
-          "cost": 0,
-          "transport": "-",
-          "note": "南宁机场有母婴室，充裕时间带娃休息"
-        },
-        {
-          "time": "11:30",
-          "name": "午餐",
-          "meal": {
-            "name": "机场餐厅",
-            "cuisine": "快餐",
-            "perPerson": 60,
-            "recommended": "老友粉·桂林米粉·简餐",
-            "location": "南宁吴圩机场T2"
-          }
-        },
-        {
-          "time": "14:55",
-          "name": "南宁→成都天府(CA2668)",
-          "duration": "1h55m",
-          "cost": 0,
-          "transport": "国航CA2668",
-          "note": "约16:50抵达成都，旅途结束"
-        }
-      ]
+var tripData = {"title":"\u5d07\u5de6 6\u65e5\u4eb2\u5b50\u81ea\u9a7e\u6e38","dateRange":"2026-04-02 ~ 04-07","travelers":"4\u5927 1\u5c0f(16\u6708\u9f84)","generationDate":"2026-03-27","weather":{"summary":"\u524d2\u65e5\u9635\u96e8\u4e3a\u4e3b\uff0c\u540e2\u65e5\u8f6c\u591a\u4e91\u5230\u6674\uff0c\u6c14\u6e2922-33\u00b0C","avgHigh":29,"avgLow":21,"rainfall":"60%\uff08\u96c6\u4e2d\u57284.3-4.4\uff09","clothing":"\u77ed\u8896+\u8584\u5916\u5957+\u96e8\u5177\uff0c\u540e\u4e24\u5929\u6ce8\u610f\u9632\u6652","tips":"4\u6708\u521d\u5d07\u5de6\u6e7f\u5ea6\u9ad8\uff0c\u5efa\u8bae\u901f\u5e72\u9762\u6599\uff1b\u4f0f\u90a3\u79d8\u5883\u9700\u6eaf\u6eaa\u978b\uff1b\u96e8\u5929\u8def\u6ed1\u6ce8\u610f\u5b9d\u5b9d\u5b89\u5168"},"days":[{"date":"04/02","weekday":"\u5468\u56db","theme":"\u542f\u7a0b\u00b7\u843d\u5730\u76f4\u5954\u5d07\u5de6","weather":{"icon":"cloudy","high":31,"low":20},"activities":[{"time":"15:15","name":"\u6210\u90fd\u5929\u5e9c\u51fa\u53d1","duration":"2h15m","cost":0,"transport":"\u822a\u73ed(\u5f85\u786e\u8ba4\u822a\u73ed\u53f7)","note":"\u5a74\u513f\u7968\u7ea6\u6210\u4eba10%"},{"time":"17:30","name":"\u62b5\u8fbe\u5357\u5b81\u5434\u5729\u673a\u573a","duration":"45min","cost":0,"transport":"T2\u822a\u7ad9\u697c","note":"\u53d6\u884c\u674e\u2192\u79df\u8f66\u67dc\u53f0\u529e\u624b\u7eed(\u795e\u5dde/\u4e00\u5634)\u2192\u9a8c\u8f66\u53d6\u8f66\u00b7\u52a1\u5fc5\u786e\u8ba4\u513f\u7ae5\u5b89\u5168\u5ea7\u6905(16\u6708\u9f84\u5fc5\u9700)"},{"time":"18:15","name":"\u81ea\u9a7e\u524d\u5f80\u5d07\u5de6","duration":"1h05m","cost":0,"transport":"\u81ea\u9a7e(G7211\u5357\u53cb\u9ad8\u901f)","note":"\u5357\u5b81\u673a\u573a\u2192\u5d07\u5de698km/\u7ea665min\u00b7\u5168\u7a0b\u9ad8\u901f\u00b7\u5b9d\u5b9d\u8f66\u4e0a\u53ef\u80fd\u5c0f\u7761"},{"time":"19:20","name":"\u62b5\u8fbe\u5d07\u5de6\u00b7\u5165\u4f4f","duration":"30min","cost":0,"transport":"-","note":"\u5165\u4f4f\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751\u9152\u5e97"},{"time":"20:00","name":"\u665a\u9910","meal":{"name":"\u5d07\u5de6\u6c5f\u5357\u591c\u5e02 / \u963f\u5a01\u7c89\u5e97","cuisine":"\u5e7f\u897f\u7c89\u7c7b","perPerson":50,"recommended":"\u8001\u53cb\u7c89\u00b7\u5377\u7b52\u7c89\u00b7\u70e4\u9e2d\u7c89","location":"\u5e02\u533a\u6b65\u884c\u53ef\u8fbe"}}]},{"date":"04/03","weekday":"\u5468\u4e94","theme":"\u4f0f\u90a3\u79d8\u5883\u00b7\u521d\u89c1\u660e\u4ed5","weather":{"icon":"rainy","high":23,"low":19},"activities":[{"time":"08:00","name":"\u65e9\u9910","meal":{"name":"\u9f99\u5dde\u7f8e\u5473\u5377\u7b52\u7c89\u5e97 / \u9152\u5e97\u65e9\u9910","cuisine":"\u5d07\u5de6\u7279\u8272","perPerson":20,"recommended":"\u5377\u7b52\u7c89\u00b7\u6c99\u7cd5","location":"\u9152\u5e97\u9644\u8fd1"}},{"time":"09:00","name":"\u9000\u623f\u00b7\u81ea\u9a7e\u51fa\u53d1","duration":"1h10m","cost":0,"transport":"\u81ea\u9a7e(S60\u2192536\u53bf\u9053)","note":"\u5d07\u5de6\u2192\u4f0f\u90a3\u79d8\u583573.5km/\u7ea669min\u00b7\u8d70\u5408\u90a3\u9ad8\u901f\u5230\u5927\u65b0\u6069\u57ce\u51fa\u53e3\u8f6c\u53bf\u9053"},{"time":"10:10","name":"\u4f0f\u90a3\u79d8\u5883","duration":"2h","cost":68,"transport":"\u5f92\u6b65","note":"2025\u5e74\u65b0\u5f00\u00b7\u6069\u57ce\u81ea\u7136\u4fdd\u62a4\u533a\u5185\u5580\u65af\u7279\u96e8\u6797\u00b7\u4e01\u8fbe\u5c14\u5149\u6548\u00b73.5km\u788e\u77f3\u6d45\u6ee9\u8def\u00b7\u63a8\u8f66\u4e0d\u53ef\u7528\u00b7\u9700\u6eaf\u6eaa\u978b\u00b7\u5efa\u8bae\u5927\u4eba\u8f6e\u6d41\u8fdb(2\u4eba\u5e26\u5a03\u5728\u5165\u53e3\u4f11\u606f\u533a\u7b49\u00b72\u4eba\u8fdb\u53bb\u4f53\u9a8c1.5h\u518d\u6362)\u00b7\u96e8\u5929\u96fe\u6c14\u66f4\u6709\u610f\u5883\u00b7\u4e0a\u5348\u5149\u7ebf\u6700\u4f73","link":"https://amap.com/detail/B0FFF2QEF8"},{"time":"12:15","name":"\u81ea\u9a7e\u524d\u5f80\u660e\u4ed5\u7530\u56ed","duration":"37min","cost":0,"transport":"\u81ea\u9a7e(536\u53bf\u9053\u2192359\u56fd\u9053)","note":"\u4f0f\u90a3\u2192\u660e\u4ed5\u4ec528.4km/37min\u00b7\u4e00\u8def\u5580\u65af\u7279\u7530\u56ed\u98ce\u5149"},{"time":"13:00","name":"\u62b5\u8fbe\u660e\u4ed5\u00b7\u5165\u4f4f","duration":"30min","cost":0,"transport":"-","note":"\u5165\u4f4f\u660e\u4ed5\u90a3\u91cc\u9152\u5e97\u00b7\u653e\u884c\u674e\u4f11\u6574"},{"time":"13:30","name":"\u5348\u9910","meal":{"name":"\u90a3\u82ad\u9910\u5385(\u9152\u5e97\u5185) / \u660e\u4ed5\u6751\u519c\u5bb6","cuisine":"\u58ee\u65cf\u7cbe\u81f4\u6599\u7406","perPerson":60,"recommended":"\u660e\u4ed5\u73cd\u73e0\u9e2d\u00b7\u4e94\u8272\u7cef\u7c73\u996d\u00b7\u9999\u8305\u70e4\u9c7c","location":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97\u5185"}},{"time":"14:00","name":"\u5b9d\u5b9d\u5348\u7761","duration":"1.5h","cost":0,"transport":"-","note":"\u9152\u5e97\u4f11\u606f\u00b7\u5927\u4eba\u53ef\u5728\u7a3b\u7530\u6cf3\u6c60\u65c1\u653e\u677e"},{"time":"15:30","name":"\u660e\u4ed5\u7530\u56ed\u7af9\u7b4f+\u4e5d\u66f2\u6865","duration":"2h","cost":135,"transport":"\u6b65\u884c\u81f3\u7801\u5934","note":"\u7af9\u7b4f\u7a7f\u884c\u5580\u65af\u7279\u5cf0\u6797\u95f4\u00b7\u4e5d\u66f2\u6865\u62cd\u7167\u00b7\u5957\u7968\u542b\u58ee\u65cf\u535a\u7269\u9986+\u9c7c\u9cde\u575d\u00b7\u96e8\u5929\u5c71\u6c34\u96fe\u6c14\u66f4\u6709\u610f\u5883\u00b7\u5982\u4f53\u529b\u4e0d\u4f73\u53ef\u6539\u4e3a\u660e\u5929","link":"https://amap.com/detail/B06EB0MRUY","refs":[{"title":"\u660e\u4ed5\u7530\u56ed\u6e38\u73a9\u653b\u7565(203\u8d5e)","url":"https://www.xiaohongshu.com/explore/69a94b3a000000002603f4d8"},{"title":"\u4ece\u5fb7\u5929\u5230\u660e\u4ed5\u00b7\u4eb2\u5b50\u600e\u4e48\u73a9","url":"https://www.xiaohongshu.com/explore/68899a84000000000403ed71"}]},{"time":"18:00","name":"\u665a\u9910","meal":{"name":"\u90a3\u82ad\u9910\u5385(\u9152\u5e97\u5185)","cuisine":"\u58ee\u65cf\u7cbe\u81f4\u6599\u7406","perPerson":80,"recommended":"\u7c38\u7b95\u5bb4\u00b7\u7af9\u7b52\u996d\u00b7\u6cb3\u9c7c","location":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97"}}]},{"date":"04/04","weekday":"\u5468\u516d","theme":"\u6253\u5c6f\u79d8\u5883\u00b7\u5cd2\u90a3\u753b\u8235\u00b7\u660e\u4ed5\u9a91\u884c","weather":{"icon":"rainy","high":28,"low":21},"activities":[{"time":"08:00","name":"\u9152\u5e97\u65e9\u9910","meal":{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","cuisine":"\u81ea\u52a9\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u9152\u5e97\u9910\u5385"}},{"time":"09:00","name":"\u81ea\u9a7e\u524d\u5f80\u6253\u5c6f\u6751","duration":"15min","cost":0,"transport":"\u81ea\u9a7e","note":"\u660e\u4ed5\u2192\u6253\u5c6f\u7ea68km/15min\u00b7\u5bfc\u822a\u641c'\u96f7\u5e73\u9547\u90a3\u5cb8\u6751\u6253\u5c6f'"},{"time":"09:15","name":"\u6253\u5c6f\u6751\u8239\u6e38","duration":"50min","cost":50,"transport":"\u6751\u6c11\u5c0f\u8239","note":"\u514d\u95e8\u7968\u00b7\u8239\u8d5050\u5143/\u4eba(2\u4eba\u8d77)\u00b7\u955c\u9762\u6cb3\u9053\u7a7f\u884c\u5580\u65af\u7279\u5cf0\u4e1b\u95f4\u00b7\u5cd2\u90a3\u5c7f\u6e7e+\u660e\u4ed5\u7530\u56ed\u7684\u96f6\u5546\u4e1a\u539f\u751f\u6001\u7248\u00b7\u5b9d\u5b9d\u9700\u5168\u7a0b\u62b1\u7a33\u00b7\u8239\u4e0a\u7a7a\u95f4\u6709\u9650\u6ce8\u610f\u5b89\u5168\u00b7\u63d0\u524d\u8054\u7cfb\u8239\u592b"},{"time":"10:15","name":"\u81ea\u9a7e\u524d\u5f80\u5cd2\u90a3\u5c7f\u6e7e","duration":"20min","cost":0,"transport":"\u81ea\u9a7e","note":"\u6253\u5c6f\u2192\u5cd2\u90a3\u5c7f\u6e7e\u7ea615km/20min"},{"time":"10:40","name":"\u5cd2\u90a3\u5c7f\u6e7e\u666f\u533a(4A)","duration":"1.5h","cost":135,"transport":"\u753b\u8235\u6e38\u8239+\u6b65\u884c","note":"\u58ee\u4e61\u5580\u65af\u7279\u6c34\u4e0a\u79d8\u5883\u00b7\u753b\u8235\u7a7f\u884c\u5c9b\u5c7f\u7011\u5e03\u6e7f\u5730\u95f4\u00b7\u5168\u7a0b\u6709\u9876\u4e0d\u6015\u96e8\u00b7\u5b9d\u5b9d\u5750\u6000\u91cc\u770b\u5c71\u6c34\u00b7\u9646\u8def\u6808\u9053\u5e73\u5766\u53ef\u63a8\u8f66\u00b71.2m\u4ee5\u4e0b\u514d\u7968","link":"https://amap.com/detail/B0G26ULJX2"},{"time":"12:15","name":"\u8fd4\u56de\u660e\u4ed5\u00b7\u5348\u9910","meal":{"name":"\u5362\u54e5\u9910\u9986 / \u8def\u8fb9\u519c\u5bb6\u4e50","cuisine":"\u58ee\u65cf\u519c\u5bb6\u83dc","perPerson":50,"recommended":"\u8d70\u5730\u9e21\u00b7\u9178\u6c64\u9c7c\u00b7\u91ce\u83dc","location":"\u660e\u4ed5\u6751(\u5cd2\u90a3\u5c7f\u6e7e\u2192\u660e\u4ed516km/25min)"}},{"time":"13:30","name":"\u5b9d\u5b9d\u5348\u7761","duration":"2h","cost":0,"transport":"-","note":"\u56de\u9152\u5e97\u4f11\u606f"},{"time":"15:30","name":"\u79df\u516b\u5693\u8f66\u9a91\u884c\u5341\u91cc\u753b\u5eca","duration":"1.5h","cost":30,"transport":"\u516b\u5693\u8f66(3\u5ea7\u5bb6\u5ead\u7535\u52a8\u8f66)","note":"\u5e73\u5766\u9a91\u884c\u9053\u00b7\u90a3\u51a0\u6865\u00b7\u7530\u56ed\u98ce\u5149\u00b730\u5143/h\u00b7\u96e8\u5929\u8def\u6ed1\u51cf\u901f\u00b7\u5982\u6301\u7eed\u5927\u96e8\u53ef\u6539\u4e3a\u9152\u5e97\u4f11\u606f"},{"time":"17:00","name":"\u9c7c\u9cde\u575d\u620f\u6c34","duration":"1h","cost":0,"transport":"\u9a91\u884c\u53ef\u8fbe","note":"\u5e26\u6c34\u978b!\u00b7\u5730\u9762\u6e7f\u6ed1\u6ce8\u610f\u5b89\u5168\u00b7\u5b9d\u5b9d\u53ef\u6d45\u6c34\u533a\u73a9\u00b7\u96e8\u540e\u6c34\u4f4d\u504f\u9ad8\u53ef\u80fd\u5173\u95ed\u00b7\u51fa\u53d1\u524d\u95ee\u9152\u5e97\u786e\u8ba4"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u660e\u4ed5\u5c71\u5e84\u4e2d\u9910\u5385","cuisine":"\u58ee\u65cf\u5bb4\u5e2d","perPerson":80,"recommended":"\u7c38\u7b95\u5bb4\u00b7\u7af9\u7b52\u996d\u00b7\u6cb3\u9c7c","location":"\u660e\u4ed5\u5c71\u5e84"}},{"time":"20:00","name":"\u7518\u8517\u6c41+\u6563\u6b65","duration":"1h","cost":5,"transport":"\u6b65\u884c","note":"\u8def\u8fb9\u644a\u7518\u8517\u6c41"}]},{"date":"04/05","weekday":"\u5468\u65e5","theme":"\u5fb7\u5929\u7011\u5e03\u00b7\u84dd\u6d1e\u5496\u5561\u00b7\u8fb9\u5883\u98ce\u60c5","weather":{"icon":"partlyCloudy","high":27,"low":23},"activities":[{"time":"08:00","name":"\u9152\u5e97\u65e9\u9910","meal":{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","cuisine":"\u81ea\u52a9\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u9152\u5e97"}},{"time":"09:00","name":"\u9000\u623f\u00b7\u81ea\u9a7e\u524d\u5f80\u5fb7\u5929","duration":"1h","cost":0,"transport":"\u81ea\u9a7e(532\u53bf\u9053\u2192\u6cbf\u8fb9\u516c\u8def)","note":"\u660e\u4ed5\u2192\u5fb7\u592937km/\u7ea61h\u00b7\u5bfc\u822a\u76f4\u63a5\u641c'\u5fb7\u5929\u666f\u533a\u5165\u53e3'\u00b7\u4e0d\u8981\u5bfc\u822a'\u6e38\u5ba2\u4e2d\u5fc3'(\u4f1a\u88ab\u5f3a\u5236\u5750\u63a5\u99c1\u8f66\u7ed5\u884c)"},{"time":"10:00","name":"\u5fb7\u5929\u8de8\u56fd\u7011\u5e03","duration":"3h","cost":115,"transport":"\u666f\u533a\u89c2\u5149\u8f66(\u542b\u5728\u95e8\u7968\u5185)","note":"\u8d70\u53f3\u4fa7\u65e0\u969c\u788d\u901a\u9053(\u5e73\u8def\u53ef\u63a8\u8f66)\u00b7\u591a\u4e91\u5929\u62cd\u7167\u5149\u7ebf\u597d\u00b711:30\u7b49\u4e0a\u6e38\u653e\u6c34\u00b7\u5907\u96e8\u8863\u00b74\u6708\u67af\u6c34\u671f\u6c34\u91cf\u8f83\u5c0f\u4f46\u4ecd\u58ee\u89c2","link":"https://amap.com/detail/B06EB009VO","refs":[{"title":"\u5fb7\u5929\u7011\u5e03\u907f\u5751\u8d34(\u65e0\u969c\u788d\u901a\u9053\u8be6\u89e3)","url":"https://www.xiaohongshu.com/explore/69907d98000000001b01d64b"},{"title":"\u5fb7\u5929\u653e\u6c34\u7384\u5b66+\u5e26\u5a03\u5b9e\u6d4b","url":"https://www.xiaohongshu.com/explore/694fedc2000000002200b21a"},{"title":"4\u6708\u67af\u6c34\u671f\u4e5f\u5f88\u7f8e","url":"https://www.xiaohongshu.com/explore/6808ab72000000001d01801d"}]},{"time":"11:00","name":"\u7af9\u7b4f\u6f02\u6d41","duration":"30min","cost":48,"transport":"\u7af9\u7b4f","note":"1.2m\u4ee5\u4e0b\u514d\u8d39\u00b7\u6709\u513f\u7ae5\u6551\u751f\u8863\u00b7\u624b\u673a\u88c5\u9632\u6c34\u888b"},{"time":"13:00","name":"\u5348\u9910","meal":{"name":"\u8001\u8857\u571f\u83dc\u9986","cuisine":"\u58ee\u65cf\u5bb6\u5e38+\u8d8a\u5357\u98ce\u5473","perPerson":60,"recommended":"\u8d8a\u5357\u6625\u5377\u00b7\u9178\u7b0b\u7092\u725b\u8089\u00b7\u67e0\u6aac\u9e2d","location":"\u7855\u9f99\u9547\u7855\u9f99\u8857188\u53f7(\u666f\u533a\u59162km)","link":"https://amap.com/detail/B0FFH76KMN"}},{"time":"14:00","name":"\u84dd\u6d1e\u7011\u5e03\u5496\u5561\u4e3b\u9898\u56ed\u533a","duration":"1.5h","cost":68,"transport":"\u81ea\u9a7e(1.1km/4min)","note":"200\u4ea9\u4e3b\u9898\u56ed\u533a\u00b7\u5929\u7136\u6eb6\u6d1e\u5496\u5561\u5427\u53f0(\u949f\u4e73\u77f3\u7a79\u9876\u5185)\u00b7\u7a3b\u7530\u96fe\u6c14\u6808\u9053\u00b7\u591a\u5904\u7011\u5e03\u00b7\u4eb2\u6c34\u6ce1\u811a\u5e73\u53f0\u00b7\u8fd8\u6709\u732b\u53ef\u64b8\u00b768\u5143\u542b\u4e00\u676f\u996e\u54c1\u00b7\u9002\u5408\u5e26\u5a03\u8f7b\u677e\u4f11\u61a9\u00b7\u90e8\u5206\u6808\u9053\u53ef\u63a8\u8f66","link":"https://amap.com/detail/B0LADH7BG9"},{"time":"15:30","name":"\u5165\u4f4f\u5fb7\u5929\u6c11\u5bbf\u00b7\u5b9d\u5b9d\u5348\u7761","duration":"2h","cost":0,"transport":"\u81ea\u9a7e(5min)","note":"\u5165\u4f4f\u5fb7\u590961\u53f7\u6c11\u5bbf(\u666f\u533a\u5165\u53e31.3km)\u00b7\u542b\u4e0b\u5348\u8336\u00b7\u82b1\u56ed\u4f11\u606f"},{"time":"17:30","name":"\u7855\u9f99\u53e4\u9547\u6563\u6b65","duration":"1h","cost":0,"transport":"\u6b65\u884c","note":"\u4e2d\u8d8a\u8fb9\u5883\u5c0f\u9547\u00b7\u5f52\u6625\u6cb3\u7554\u6563\u6b65\u00b7\u8d8a\u5357\u5546\u54c1\u8857"},{"time":"18:30","name":"\u665a\u9910","meal":{"name":"\u5fb7\u590961\u53f7\u6c11\u5bbf\u9910\u5385 / \u7855\u9f99\u519c\u5bb6\u83dc","cuisine":"\u58ee\u65cf\u5bb6\u5e38+\u8d8a\u5357\u98ce\u5473","perPerson":60,"recommended":"\u70e4\u9c7c\u00b7\u8d8a\u5f0f\u6625\u5377\u00b7\u9178\u7b0b\u6392\u9aa8","location":"\u6c11\u5bbf\u5185\u6216\u7855\u9f99\u9547"}}]},{"date":"04/06","weekday":"\u5468\u4e00","theme":"\u901a\u7075\u79d8\u5883\u00b7\u767d\u5934\u53f6\u7334\u00b7\u73af\u7ebf\u5f52\u9014","weather":{"icon":"cloudy","high":32,"low":23},"activities":[{"time":"07:30","name":"\u65e9\u9910\u00b7\u9000\u623f","meal":{"name":"\u5fb7\u590961\u53f7\u6c11\u5bbf","cuisine":"\u6c11\u5bbf\u65e9\u9910","perPerson":0,"recommended":"\u542b\u65e9","location":"\u6c11\u5bbf\u5185"}},{"time":"08:30","name":"\u81ea\u9a7e\u524d\u5f80\u901a\u7075\u5927\u5ce1\u8c37","duration":"1h","cost":0,"transport":"\u81ea\u9a7e(219\u56fd\u9053\u2192359\u56fd\u9053)","note":"\u5fb7\u5929\u2192\u901a\u706444km/\u7ea660min\u00b7\u5c71\u8def\u5f2f\u9053\u591a\u00b7\u5b9d\u5b9d\u5907\u6655\u8f66\u8d34"},{"time":"09:30","name":"\u901a\u7075\u5927\u5ce1\u8c37(5A)","duration":"3h","cost":115,"transport":"\u6b65\u884c+\u63a5\u99c1\u8f66","note":"818\u7ea7\u53f0\u9636\u4e0b\u884c(\u7eff\u8272\u96a7\u9053\u8d1f\u6c27\u79bb\u5b50\u7206\u8868)\u2192\u901a\u7075\u5927\u7011\u5e03(188m\u00b7\u4e8c\u5c42\u89c2\u666f\u53f0\u6700\u4f73\u62cd\u7167\u4f4d)\u2192\u6c34\u5e18\u6d1e(\u7a7f\u7011\u5165\u6d1e\u00b7\u5fc5\u7a7f\u96e8\u8863)\u2192\u5730\u4e0b\u6697\u6cb3\u6eb6\u6d1e\u2192\u5ff5\u516b\u5ce1\u2192\u51fa\u53e3\u5750\u63a5\u99c1\u8f66\u8fd4\u56de\u00b7\u5168\u7a0b\u7ea62.8km\u00b7\u5b9d\u5b9d\u5168\u7a0b\u80cc\u5e26\u00b7\u63a8\u8f66\u4e0d\u53ef\u7528\u00b71.2m\u4ee5\u4e0b\u514d\u7968\u00b74\u6708\u67af\u6c34\u671f\u7011\u5e03\u6c34\u91cf\u4e00\u822c\u4f46\u5ce1\u8c37\u96e8\u6797\u548c\u6eb6\u6d1e\u662f\u6838\u5fc3\u4eae\u70b9","link":"https://amap.com/detail/B030800MJY","refs":[{"title":"\u901a\u7075\u5927\u5ce1\u8c37\u4e0d\u8d70\u56de\u5934\u8def\u653b\u7565(234\u8d5e)","url":"https://www.xiaohongshu.com/explore/6991e044000000000a02d678"},{"title":"\u5d07\u5de65\u59294\u665a\u4eb2\u5b50\u907f\u5751\u6307\u5357(375\u8d5e)","url":"https://www.xiaohongshu.com/explore/688d9418000000002500e371"}]},{"time":"12:30","name":"\u5348\u9910","meal":{"name":"\u901a\u7075\u5c71\u5e84\u9910\u5385","cuisine":"\u58ee\u65cf\u5bb6\u5e38","perPerson":45,"recommended":"\u7af9\u7b52\u996d\u00b7\u9178\u7b0b\u7092\u8089\u00b7\u5c71\u91ce\u83dc","location":"\u901a\u7075\u666f\u533a\u51fa\u53e3\u65c1","link":"https://amap.com/detail/B0IU57Z4O1"}},{"time":"13:30","name":"\u81ea\u9a7e\u8fd4\u56de\u5d07\u5de6","duration":"1h30m","cost":0,"transport":"\u81ea\u9a7e(S60\u5408\u90a3\u9ad8\u901f)","note":"\u901a\u7075\u2192\u5d07\u5de6128km/\u7ea695min\u00b7\u5168\u7a0b\u9ad8\u901f\u00b7\u8f66\u4e0a\u5b9d\u5b9d\u5348\u7761\u00b7\u5b8c\u6210\u9006\u65f6\u9488\u73af\u7ebf\u7684\u897f\u6bb5"},{"time":"15:00","name":"\u62b5\u8fbe\u5d07\u5de6\u00b7\u5165\u4f4f","duration":"30min","cost":0,"transport":"-","note":"\u5165\u4f4f\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751\u9152\u5e97\u00b7\u77ed\u6682\u4f11\u6574"},{"time":"15:45","name":"\u81ea\u9a7e\u524d\u5f80\u767d\u5934\u53f6\u7334\u4fdd\u62a4\u533a","duration":"30min","cost":0,"transport":"\u81ea\u9a7e(213\u7701\u9053)","note":"\u5d07\u5de6\u5e02\u533a\u2192\u767d\u5934\u53f6\u7334\u7ea620km/30min"},{"time":"16:15","name":"\u767d\u5934\u53f6\u7334\u751f\u6001\u65c5\u6e38\u533a","duration":"2h","cost":85,"transport":"\u6808\u9053+\u89c2\u7334\u5e73\u53f0","note":"\u5168\u7403\u4ec5\u5b58\u7ea61400\u53ea\u7684\u56fd\u5bb6\u4e00\u7ea7\u4fdd\u62a4\u52a8\u7269\u00b7\u4e0b\u53484\u70b9\u540e\u7334\u7fa4\u4e0b\u5c71\u89c5\u98df\u662f\u6700\u4f73\u89c2\u8d4f\u65f6\u6bb5\u00b7\u5e26\u671b\u8fdc\u955c\u6548\u679c\u597d\u00b7\u4fdd\u6301\u5b89\u9759\u00b7\u4e25\u7981\u6295\u558742\u6708\u975e\u6700\u4f73\u5b63(10-3\u6708\u6700\u4f73)\u4f46\u4ecd\u6709\u6982\u7387\u770b\u5230\u00b7\u514d\u8d39\u66ff\u4ee3\u65b9\u6848:\u8def\u8fb9\u8fdc\u89c2\u767d\u5934\u53f6\u7334\u4fdd\u62a4\u533a\u00b7\u4e0b\u53484\u70b9\u7334\u7fa4\u4e0b\u5c71\u65f6\u6700\u5bb9\u6613\u770b\u5230","link":"https://amap.com/detail/B0FFH3P7ZF"},{"time":"18:30","name":"\u8fd4\u56de\u5d07\u5de6\u00b7\u665a\u9910","meal":{"name":"\u5d07\u5de6\u6c5f\u5357\u591c\u5e02","cuisine":"\u70e7\u70e4\u5c0f\u5403","perPerson":60,"recommended":"\u70e4\u4e32\u00b7\u87ba\u86f3\u7c89\u00b7\u7518\u8517\u6c41","location":"\u5d07\u5de6\u5e02\u533a"}}]},{"date":"04/07","weekday":"\u5468\u4e8c","theme":"\u9752\u79c0\u5c71\u00b7\u5f52\u7a0b","weather":{"icon":"sunny","high":33,"low":22},"activities":[{"time":"07:30","name":"\u65e9\u9910\u00b7\u9000\u623f","meal":{"name":"\u9152\u5e97\u65e9\u9910 / \u6728\u70ad\u70e4\u9e2d\u7c89","cuisine":"\u5d07\u5de6\u7279\u8272","perPerson":20,"recommended":"\u70e4\u9e2d\u7c89(\u65b0\u534e\u8def13\u53f7)","location":"\u5d07\u5de6\u5e02\u533a"}},{"time":"08:15","name":"\u81ea\u9a7e\u524d\u5f80\u5357\u5b81","duration":"1h05m","cost":0,"transport":"\u81ea\u9a7e(G7211\u5357\u53cb\u9ad8\u901f)","note":"\u5d07\u5de6\u2192\u5357\u5b81\u9752\u79c0\u5c7198km/\u7ea665min"},{"time":"09:30","name":"\u9752\u79c0\u5c71\u98ce\u666f\u533a","duration":"2h","cost":20,"transport":"\u89c2\u5149\u8f66+\u6b65\u884c","note":"\u5357\u5b81\u57ce\u5e02\u7eff\u80ba\u00b7\u95e8\u7968\u4ec520\u5143\u00b71.2m\u4ee5\u4e0b\u514d\u7968\u00b7\u89c2\u5149\u8f665\u5143\u4ee3\u6b65\u00b7\u63a8\u8f66\u53cb\u597d\u00b7\u63a8\u8350\u8def\u7ebf:\u5317\u95e8\u2192\u836b\u751f\u690d\u7269\u56ed(\u6c34\u96fe\u55b7\u6cc9\u5b9d\u5b9d\u8d85\u7231)\u2192\u89c2\u5149\u8f66\u5230\u89c2\u97f3\u7985\u5bfa\u2192\u5b54\u96c0\u533a(\u8fd1\u8ddd\u79bb\u89c2\u8d4f)\u2192\u5929\u6c60(\u5582\u9526\u9ca4)\u2192\u897f\u95e8\u51fa"},{"time":"11:30","name":"\u5348\u9910","meal":{"name":"\u9752\u79c0\u5c71\u9644\u8fd1/\u5357\u5b81\u5e02\u533a","cuisine":"\u5e7f\u897f\u7279\u8272","perPerson":50,"recommended":"\u8001\u53cb\u7c89\u00b7\u67e0\u6aac\u9e2d\u00b7\u5357\u5b81\u751f\u69a8\u7c73\u7c89","location":"\u9752\u79c0\u5c71\u897f\u95e8\u9644\u8fd1"}},{"time":"12:30","name":"\u81ea\u9a7e\u524d\u5f80\u673a\u573a\u00b7\u8fd8\u8f66","duration":"40min","cost":0,"transport":"\u81ea\u9a7e","note":"\u9752\u79c0\u5c71\u2192\u5357\u5b81\u673a\u573a\u7ea630km/40min\u00b7\u8fd8\u8f66\u624b\u7eed\u7ea615-20min\u00b7\u5efa\u8bae\u9884\u7559\u5145\u88d5\u65f6\u95f4"},{"time":"13:30","name":"\u673a\u573a\u5019\u673a","duration":"1.5h","cost":0,"transport":"-","note":"\u5357\u5b81\u673a\u573a\u6709\u6bcd\u5a74\u5ba4\u00b7\u5efa\u8bae\u8d77\u98de\u524d90min\u5230\u8fbe\u00b7\u5e26\u5a03\u5b89\u68c0\u9700\u989d\u5916\u65f6\u95f4"},{"time":"15:00","name":"\u5357\u5b81\u2192\u6210\u90fd(\u822a\u73ed\u5f85\u786e\u8ba4)","duration":"2h","cost":0,"transport":"\u822a\u73ed","note":"\u7ea617:00\u62b5\u8fbe\u6210\u90fd\u00b7\u65c5\u9014\u7ed3\u675f\u00b7\u5982\u822a\u73ed\u572814:55\u524d\u00b7\u53ef\u7f29\u77ed\u9752\u79c0\u5c71\u81f31.5h\u6216\u8df3\u8fc7"}]}],"hotels":[{"name":"\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751\u9152\u5e97(\u5d07\u5de6\u5e02\u5e9c\u5e97)","area":"\u5d07\u5de6\u5e02\u533a\u00b7\u8fd1\u9ad8\u94c1\u5357\u7ad9","pricePerNight":300,"highlights":"\u9526\u6c5f\u54c1\u724c\u56db\u661f\u00b72020\u5e74\u88c5\u4fee\u00b7\u623f\u95f4\u5bbd\u655e\u00b7\u53ef\u7533\u8bf7\u5a74\u513f\u5e8a","rating":"4.2","nights":"4/2\u00b74/6(\u51712\u665a)","priceTag":"~","link":"https://amap.com/detail/B0GUSUKZ6B"},{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97","area":"\u660e\u4ed5\u7530\u56ed\u666f\u533a\u5185","pricePerNight":500,"highlights":"\u7a3b\u7530\u6cf3\u6c60\u00b7\u514d\u8d39\u81ea\u884c\u8f66\u00b7\u90a3\u82ad\u9910\u5385\u00b7\u843d\u5730\u7a97\u7530\u56ed\u666f\u00b71900+\u597d\u8bc44.8\u5206","rating":"4.8","nights":"4/3-4/4(\u51712\u665a)","priceTag":"~","link":"https://amap.com/detail/B0FFJPZK2I"},{"name":"\u5fb7\u590961\u53f7\u6c11\u5bbf","area":"\u5fb7\u5929\u7011\u5e03\u5165\u53e31.3km","pricePerNight":350,"highlights":"9.4\u5206/567\u8bc4\u00b7\u542b\u65e9+\u4e0b\u5348\u8336\u00b7\u5168\u666f\u7a97\u00b7\u82b1\u56ed\u00b7\u8001\u677f\u5e2e\u4e70\u7968","rating":"4.7","nights":"4/5(\u51711\u665a)","priceTag":"~"},{"name":"\u5907\u9009: \u671b\u8d8a\u5c45\u6c11\u5bbf","area":"\u5fb7\u5929\u7011\u5e03\u5165\u53e30.5km","pricePerNight":400,"highlights":"9.6\u5206\u00b72024\u5e74\u65b0\u5f00\u00b7\u6cb3\u666f\u623f\u671b\u8d8a\u5357\u00b7\u5e72\u6e7f\u5206\u79bb","rating":"4.8","nights":"4/5(\u598261\u53f7\u6ee1\u623f)","priceTag":"~"}],"budget":{"transport":{"items":[{"name":"\u53bb\u7a0b\u673a\u7968 \u6210\u90fd\u2192\u5357\u5b81 15:15 \u00d74\u4eba","cost":3200,"tag":"ref"},{"name":"\u53bb\u7a0b\u5a74\u513f\u7968","cost":80,"tag":"estimate"},{"name":"\u8fd4\u7a0b\u673a\u7968 \u5357\u5b81\u2192\u6210\u90fd ~15:00 \u00d74\u4eba","cost":2400,"tag":"ref"},{"name":"\u8fd4\u7a0b\u5a74\u513f\u7968","cost":60,"tag":"estimate"},{"name":"\u79df\u8f665\u5929(\u542b\u513f\u7ae5\u5b89\u5168\u5ea7\u6905)","cost":1800,"tag":"estimate"},{"name":"\u6cb9\u8d39(\u5168\u7a0b\u7ea6580km)","cost":500,"tag":"estimate"},{"name":"\u9ad8\u901f\u901a\u884c\u8d39","cost":300,"tag":"estimate"}],"subtotal":8340},"accommodation":{"items":[{"name":"\u7ef4\u7eb3\u65af\u5ea6\u5047\u6751 \u00d72\u95f4\u00d72\u665a (4/2,4/6)","cost":1200,"tag":"ref"},{"name":"\u660e\u4ed5\u90a3\u91cc\u9152\u5e97 \u00d72\u95f4\u00d72\u665a (4/3-4/4)","cost":2000,"tag":"ref"},{"name":"\u5fb7\u590961\u53f7\u6c11\u5bbf \u00d72\u95f4\u00d71\u665a (4/5)","cost":700,"tag":"ref"}],"subtotal":3900},"food":{"items":[{"name":"Day1 \u665a\u9910(\u5d07\u5de6\u591c\u5e02)","cost":200},{"name":"Day2 \u65e9+\u5348+\u665a(\u5377\u7b52\u7c89+\u90a3\u82ad\u00d72)","cost":640},{"name":"Day3 \u5348+\u665a(\u519c\u5bb6\u4e50+\u660e\u4ed5\u5c71\u5e84)","cost":520},{"name":"Day4 \u5348+\u665a(\u8001\u8857\u571f\u83dc\u9986+\u5fb7\u590961\u53f7)","cost":480},{"name":"Day5 \u5348+\u665a(\u901a\u7075\u5c71\u5e84+\u5d07\u5de6\u591c\u5e02)","cost":420},{"name":"Day6 \u65e9+\u5348(\u70e4\u9e2d\u7c89+\u5357\u5b81\u5e02\u533a)","cost":280}],"subtotal":2540},"tickets":{"items":[{"name":"\u4f0f\u90a3\u79d8\u5883(\u5f92\u6b65\u7968) \u00d74","cost":272,"tag":"ref"},{"name":"\u660e\u4ed5\u7530\u56ed\u5957\u7968(\u7af9\u7b4f+\u9c7c\u9cde\u575d) \u00d74","cost":540,"tag":"ref"},{"name":"\u5cd2\u90a3\u5c7f\u6e7e\u753b\u8235\u5957\u7968 \u00d74","cost":540,"tag":"ref"},{"name":"\u6253\u5c6f\u6751\u8239\u8d39 \u00d74","cost":200,"tag":"estimate"},{"name":"\u5fb7\u5929\u7011\u5e03\u95e8\u7968(\u542b\u89c2\u5149\u8f66) \u00d74","cost":460,"tag":"ref"},{"name":"\u5fb7\u5929\u7af9\u7b4f \u00d74","cost":192,"tag":"ref"},{"name":"\u84dd\u6d1e\u5496\u5561\u56ed\u533a(\u542b\u996e\u54c1) \u00d74","cost":272,"tag":"ref"},{"name":"\u901a\u7075\u5927\u5ce1\u8c37(\u542b\u63a5\u99c1\u8f66) \u00d74","cost":460,"tag":"ref"},{"name":"\u901a\u7075\u8fd4\u7a0b\u63a5\u99c1\u8f66 \u00d74","cost":40,"tag":"estimate"},{"name":"\u767d\u5934\u53f6\u7334\u751f\u6001\u65c5\u6e38\u533a \u00d74","cost":340,"tag":"ref"},{"name":"\u9752\u79c0\u5c71\u95e8\u7968 \u00d74","cost":80,"tag":"ref"},{"name":"\u9752\u79c0\u5c71\u89c2\u5149\u8f66","cost":20,"tag":"ref"},{"name":"\u660e\u4ed5\u516b\u5693\u8f66\u79df\u8d41(1.5h)","cost":90,"tag":"estimate"}],"subtotal":3506},"other":{"items":[{"name":"\u65c5\u884c\u4fdd\u9669(\u00d75\u4eba)","cost":250},{"name":"\u96f6\u98df\u996e\u54c1\u6c34\u679c","cost":300},{"name":"\u4f34\u624b\u793c+\u6742\u9879","cost":300}],"subtotal":850},"total":19136,"perPerson":4784,"note":"\u4eba\u5747\u62894\u4f4d\u6210\u4eba\u5206\u644a\uff0c\u5a74\u513f\u8d39\u7528\u5df2\u542b\u5728\u603b\u4ef7\u4e2d\u3002\u673a\u7968\u4e3a\u53c2\u8003\u4ef7(~)\u00b7\u9152\u5e97\u4e3a\u53c2\u8003\u4ef7(~)\u00b7\u79df\u8f66\u548c\u9910\u996e\u4e3a\u4f30\u7b97(\u2248)\u00b7\u51fa\u884c\u524d\u8bf7\u5728\u98de\u732a/\u643a\u7a0b\u786e\u8ba4\u5b9e\u9645\u4ef7\u683c\u5e76\u9884\u8ba2\u3002"},"tips":["\u3010\u9006\u65f6\u9488\u73af\u7ebf\u8def\u7ebf\u3011\u5d07\u5de6\u2192\u4f0f\u90a3\u2192\u660e\u4ed5(\u4f4f2\u665a)\u2192\u6253\u5c6f+\u5cd2\u90a3\u5c7f\u6e7e\u2192\u5fb7\u5929+\u84dd\u6d1e(\u4f4f1\u665a)\u2192\u901a\u7075\u2192S60\u9ad8\u901f\u2192\u5d07\u5de6(\u767d\u5934\u53f6\u7334)\u2192\u5357\u5b81(\u9752\u79c0\u5c71)\u2192\u673a\u573a\u00b7\u5168\u7a0b\u96f6\u56de\u5934\u8def","\u3010\u79df\u8f66\u6ce8\u610f\u4e8b\u9879\u3011\u5357\u5b81\u5434\u5729\u673a\u573aT2\u6709\u795e\u5dde/\u4e00\u5634 24h\u670d\u52a1\u70b9\u00b7App\u63d0\u524d\u9884\u8ba2\u00b7\u52a1\u5fc5\u786e\u8ba4\u513f\u7ae5\u5b89\u5168\u5ea7\u6905(16\u6708\u9f84\u5f3a\u5236\u4f7f\u7528)\u00b7\u5efa\u8bae\u79df7\u5ea7MPV(\u884c\u674e+\u5a74\u513f\u88c5\u5907\u7a7a\u95f4\u5927)\u00b7\u81ea\u9a7e\u6700\u5927\u4f18\u52bf:\u6cbf\u9014\u968f\u65f6\u505c\u9760\u62cd\u7167\u00b7\u8fd8\u8f66\u65f6\u673a\u573a\u8fd8\u8f66\u70b9\u7ea615-20min\u624b\u7eed","\u3010\u4f0f\u90a3\u79d8\u5883\u5e26\u5a03\u8981\u70b9\u30113.5km\u788e\u77f3\u6d45\u6ee9\u8def\u00b7\u63a8\u8f66\u4e0d\u53ef\u7528\u00b7\u9700\u6eaf\u6eaa\u978b+\u9632\u6c34\u888b\u00b7\u5efa\u8bae\u5927\u4eba\u8f6e\u6d41\u8fdb(2\u4eba\u5e26\u5a03\u5728\u5165\u53e3\u7b49\u00b72\u4eba\u8fdb\u53bb1.5h\u518d\u6362)\u00b7\u4e0a\u5348\u5149\u7ebf\u6700\u4f73\u62cd\u4e01\u8fbe\u5c14\u5149\u6548\u00b7\u666f\u533a\u9884\u7ea6\u5236+\u9650\u6d41\u00b7\u9700\u7b7e\u751f\u6001\u627f\u8bfa\u4e66","\u3010\u5fb7\u5929\u7011\u5e03\u65e0\u969c\u788d\u901a\u9053\u3011\u4ece\u89c2\u5149\u8f66\u4e0b\u8f66\u540e\u8d70\u53f3\u4fa7\u5761\u9053\u00b7\u5168\u7a0b\u5e73\u8def\u53ef\u63a8\u5a74\u513f\u8f66\u00b7\u98ce\u666f\u66f4\u597d\u4e14\u907f\u5f00\u6240\u6709\u53f0\u9636\u3002\u5207\u52ff\u8ddf\u968f\u4eba\u6d41\u8d70\u7af9\u7b4f\u540e\u65b9\u5411\uff08\u4f1a\u9047\u5230\u2018\u8ba9\u4eba\u6000\u7591\u4eba\u751f\u7684\u53f0\u9636\u2019\uff09","\u3010\u5fb7\u5929\u5bfc\u822a\u9677\u9631\u3011\u76f4\u63a5\u5bfc\u822a'\u5fb7\u5929\u666f\u533a\u5165\u53e3'\u00b7\u4e0d\u8981\u5bfc\u822a\u5230'\u6e38\u5ba2\u4e2d\u5fc3'\u2014\u2014\u5426\u5219\u4f1a\u88ab\u5f3a\u5236\u4e58\u574235\u5143/\u4eba\u7684\u63a5\u99c1\u8f66\u7ed5\u884c10km","\u3010\u84dd\u6d1e\u5496\u5561\u3011\u8ddd\u5fb7\u5929\u4ec51.1km\u00b7200\u4ea9\u4e3b\u9898\u56ed\u533a\u00b7\u5929\u7136\u6eb6\u6d1e\u5185\u559d\u5496\u5561\u00b768\u5143\u542b\u996e\u54c1\u00b7\u9002\u5408\u5fb7\u5929\u6e38\u89c8\u540e\u4f11\u61a9\u00b7\u6709\u732b\u53ef\u64b8\u00b7\u4eb2\u6c34\u5e73\u53f0\u53ef\u6ce1\u811a","\u3010\u901a\u7075\u5927\u5ce1\u8c37\u5e26\u5a03\u8981\u70b9\u3011\u5168\u7a0b2.8km\u9700\u80cc\u5e26(\u63a8\u8f66\u4e0d\u53ef\u7528)\u00b7\u524d\u534a\u6bb5818\u7ea7\u53f0\u9636\u4e0b\u884c\u4e0d\u592a\u7d2f\u00b7\u56de\u7a0b\u5750\u63a5\u99c1\u8f66(10\u5143/\u4eba)\u7701\u4f53\u529b\u00b7\u6c34\u5e18\u6d1e\u5fc5\u7a7f\u96e8\u8863(\u63d0\u524d\u5907\u597d\u4e00\u6b21\u6027\u96e8\u8863)\u00b7\u6d1e\u5185\u6e29\u5dee\u5927\u5e26\u8584\u5916\u5957\u00b7\u7a7f\u9632\u6ed1\u978b","\u3010\u901a\u7075\u6e38\u89c8\u8def\u7ebf\u3011\u666f\u533a\u5927\u95e8\u2192818\u7ea7\u53f0\u9636\u4e0b\u884c(\u7eff\u8272\u96a7\u9053)\u2192\u901a\u7075\u5927\u7011\u5e03(\u4e8c\u5c42\u89c2\u666f\u53f0\u6700\u4f73\u62cd\u7167\u4f4d)\u2192\u6c34\u5e18\u6d1e(\u7a7f\u7011\u5165\u6d1e)\u2192\u5730\u4e0b\u6697\u6cb3\u6eb6\u6d1e\u2192\u5ff5\u516b\u5ce1\u2192\u51fa\u53e3\u2192\u63a5\u99c1\u8f66\u56de\u5927\u95e8\u00b7\u8ddf\u7740'\u5165\u53e3\u65b9\u5411'\u8d70\u00b7\u907f\u5f00\u8d2d\u7269\u533a","\u3010\u767d\u5934\u53f6\u7334\u3011\u5d07\u5de6\u7279\u6709\u73cd\u7a00\u7075\u957f\u7c7b\u00b7\u4e0b\u53484\u70b9\u540e\u7334\u7fa4\u4e0b\u5c71\u89c5\u98df\u6700\u4f73\u00b7\u4fdd\u6301\u5b89\u9759+\u5e26\u671b\u8fdc\u955c\u00b74\u6708\u4e0d\u662f\u6700\u4f73\u5b63(10-3\u6708\u597d)\u4f46\u4ecd\u6709\u673a\u4f1a\u00b7\u514d\u8d39\u66ff\u4ee3:\u4fdd\u62a4\u533a\u8def\u8fb9\u8fdc\u89c2","\u3010\u9752\u79c0\u5c71\u4eb2\u5b50\u653b\u7565\u3011\u95e8\u7968\u4ec520\u5143\u00b7\u89c2\u5149\u8f665\u5143\u00b7\u63a8\u8f66\u5168\u7a0b\u53cb\u597d\u00b7\u836b\u751f\u690d\u7269\u56ed\u6c34\u96fe\u55b7\u6cc9\u5b9d\u5b9d\u8d85\u7231\u00b7\u5b54\u96c0\u533a\u8fd1\u8ddd\u79bb\u89c2\u8d4f\u00b7\u5929\u6c60\u5582\u9526\u9ca4\u00b7\u7f8e\u56e2\u6216\u5fae\u4fe1'\u9752\u79c0\u5c71\u98ce\u666f\u533a'\u63d0\u524d\u9884\u7ea6","\u3010\u6253\u5c6f\u6751\u63d0\u9192\u3011\u514d\u95e8\u7968\u00b7\u8239\u8d5050\u5143/\u4eba\u00b7\u63d0\u524d\u8054\u7cfb\u8239\u592b\u00b7\u6751\u5185\u51e0\u4e4e\u65e0\u9910\u996e\u81ea\u5e26\u96f6\u98df\u548c\u6c34\u00b7\u8239\u4e0a\u7a7a\u95f4\u6709\u9650\u62b1\u597d\u5b9d\u5b9d","\u3010\u660e\u4ed5\u65e0\u51fa\u79df\u8f66\u3011\u660e\u4ed5\u7530\u56ed\u533a\u57df\u6ca1\u6709\u51fa\u79df\u8f66\u00b7\u81ea\u9a7e\u6700\u65b9\u4fbf\u00b7\u9152\u5e97\u4e5f\u6709\u514d\u8d39\u81ea\u884c\u8f66\u548c\u516b\u5693\u8f66\u51fa\u79df(30\u5143/h)","\u3010\u9c7c\u9cde\u575d\u5b89\u5168\u3011\u5730\u9762\u975e\u5e38\u6ed1\u00b7\u52a1\u5fc5\u7a7f\u9632\u6ed1\u6c34\u978b\u00b7\u96e8\u540e\u6c34\u4f4d\u53ef\u80fd\u504f\u9ad8\u4e34\u65f6\u5173\u95ed\u00b7\u51fa\u53d1\u524d\u95ee\u9152\u5e97\u786e\u8ba4","\u3010\u5b9d\u5b9d\u88c5\u5907\u6e05\u5355\u3011\u513f\u7ae5\u5b89\u5168\u5ea7\u6905(\u79df\u8f66\u5fc5\u5907)\u00b7\u8f7b\u4fbf\u6298\u53e0\u63a8\u8f66+\u8170\u51f3\u80cc\u5e26(\u901a\u7075/\u4f0f\u90a3\u5fc5\u5907)\u00b7\u6eaf\u6eaa\u978b(\u4f0f\u90a3)\u00b7\u9632\u6ed1\u6c34\u978b(\u9c7c\u9cde\u575d)\u00b7\u9632\u6652\u971cSPF50+\u00b7\u9a71\u868a\u6db2\u00b7\u96e8\u8863\u96e8\u4f1e\u00b7\u624b\u673a\u9632\u6c34\u888b\u00b7\u8f85\u98df\u96f6\u98df\u00b7\u9000\u70ed\u8d34\u5e38\u7528\u836f\u00b7\u6655\u8f66\u8d34","\u3010\u533b\u7597\u63d0\u9192\u3011\u6700\u8fd1\u7684\u7efc\u5408\u533b\u9662\u5728\u5927\u65b0\u53bf\u57ce(\u5927\u65b0\u53bf\u4eba\u6c11\u533b\u9662)\u00b7\u8ddd\u660e\u4ed5\u7ea640min\u8f66\u7a0b\u00b7\u5907\u597d\u5b9d\u5b9d\u5e38\u7528\u836f\u7269","\u3010\u52a8\u6001\u4ef7\u683c\u63d0\u9192\u3011\u673a\u7968\u548c\u9152\u5e97\u4e3a\u52a8\u6001\u5b9a\u4ef7\u00b7\u4ee5\u4e0a\u4e3a\u67e5\u8be2\u65f6\u53c2\u8003\u4ef7\u00b7\u51fa\u884c\u524d\u8bf7\u5728\u98de\u732a/\u643a\u7a0b\u786e\u8ba4\u5b9e\u9645\u4ef7\u683c\u5e76\u63d0\u524d\u9884\u8ba2","\u3010\u8fd4\u7a0b\u65f6\u95f4\u63d0\u9192\u30114/7\u9752\u79c0\u5c71\u5b89\u6392\u53d6\u51b3\u4e8e\u8fd4\u7a0b\u822a\u73ed\u65f6\u95f4\u00b7\u5982\u822a\u73ed14:55\u524d\u9700\u7f29\u77ed\u81f31.5h\u6216\u8df3\u8fc7\u00b7\u5982\u822a\u73ed15:30+\u53ef\u4ece\u5bb9\u6e38\u73a92h"],"references":[{"title":"\u5357\u5b81-\u5d07\u5de6\u5e26\u5a03\u8d85\u6ee1\u610f\u7248\u884c\u7a0b(401\u8d5e/767\u6536\u85cf)","url":"https://www.xiaohongshu.com/explore/6983e6c0000000000d00ba0a"},{"title":"\u5d07\u5de6\u5e26\u5a03+\u8001\u4eba\u96f6\u722c\u5c71\u4e0d\u8d76\u8def(426\u8d5e/600\u6536\u85cf)","url":"https://www.xiaohongshu.com/explore/698d7f870000000015021846"},{"title":"\u901a\u7075\u5927\u5ce1\u8c37\u6e38\u89c8\u987a\u5e8f\u4e0d\u8d70\u56de\u5934\u8def(234\u8d5e)","url":"https://www.xiaohongshu.com/explore/6991e044000000000a02d678"},{"title":"\u5e7f\u897f\u5d07\u5de65\u59294\u665a\u4eb2\u5b50\u6e38\u907f\u5751\u6307\u5357(375\u8d5e)","url":"https://www.xiaohongshu.com/explore/688d9418000000002500e371"},{"title":"\u4e94\u4e00\u9076\u5a03\u5e7f\u897f\u5d07\u5de6\u5c0f\u4f17\u79d8\u5883(202\u8d5e)","url":"https://www.xiaohongshu.com/explore/6805bd43000000000d015b76"},{"title":"3-4\u6708\u53bb\u5d07\u5de6\u00b7\u4e2d\u8d8a\u8fb9\u5883\u6cbb\u6108\u6625\u5929","url":"https://www.xiaohongshu.com/explore/69bd290d00000000280096cb"},{"title":"\u4e2d\u8d8a\u8fb9\u9649\u79d8\u5883\u4e4b\u65c5\u00b73\u59292\u665a\u4eb2\u5b50\u6e38","url":"https://www.xiaohongshu.com/explore/68fad13c000000000301cd25"}]};
+
+/* ===== SVG HELPERS ===== */
+function esc(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'):''}
+
+function getWeatherSVG(icon){
+  var icons={
+    sunny:'<circle cx="12" cy="12" r="5" fill="#f59e0b"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>',
+    cloudy:'<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/>',
+    rainy:'<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/><path d="M8 19v2M12 19v2M16 19v2" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>',
+    partlyCloudy:'<circle cx="8" cy="10" r="4" fill="#f59e0b"/><path d="M18 12h-1.26A6 6 0 1 0 10 18h8a4 4 0 0 0 0-8z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>',
+    overcast:'<path d="M17 9h-1.26A7 7 0 1 0 9 17h8a4 4 0 0 0 0-8z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/><path d="M20 13h-.63A4 4 0 1 0 15 19h5a3 3 0 0 0 0-6z" fill="#94a3b8" stroke="#64748b" stroke-width="1"/>',
+    stormy:'<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" fill="#64748b" stroke="#475569" stroke-width="1.5"/><path d="M13 11l-2 5h4l-2 5" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+    snowy:'<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/><circle cx="8" cy="20" r="1" fill="#bfdbfe"/><circle cx="12" cy="22" r="1" fill="#bfdbfe"/><circle cx="16" cy="20" r="1" fill="#bfdbfe"/>'
+  };
+  return '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">'+(icons[icon]||icons.cloudy)+'</svg>';
+}
+
+function chevronSVG(){
+  return '<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>';
+}
+
+function svgIcon(pathD,color,vb){
+  vb=vb||'0 0 24 24';
+  return '<svg viewBox="'+vb+'" fill="none" stroke="'+(color||'currentColor')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="'+pathD+'"/></svg>';
+}
+
+function starsSVG(rating){
+  var full=Math.floor(parseFloat(rating));
+  var half=(parseFloat(rating)-full)>=0.5;
+  var html='';
+  for(var i=0;i<full;i++){
+    html+='<span style="display:inline-flex;width:14px;height:14px"><svg viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>';
+  }
+  if(half){
+    html+='<span style="display:inline-flex;width:14px;height:14px"><svg viewBox="0 0 24 24" fill="none" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#e5e7eb"/><path d="M12 2v15.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f59e0b"/></svg></span>';
+  }
+  return html;
+}
+
+/* ===== RENDER: HERO ===== */
+function renderHero(){
+  var w=tripData.weather;
+  var b=tripData.budget;
+  var html='<div class="hero-card">';
+  html+='<svg viewBox="0 0 1440 200" preserveAspectRatio="none" class="karst-bg" style="height:80px;opacity:0.15">';
+  html+='<path d="M0,200 L0,120 Q60,40 120,100 Q150,60 180,90 Q210,30 240,80 Q280,10 320,70 Q360,20 400,60 Q440,5 480,50 Q520,15 560,45 Q600,0 640,55 Q680,20 720,65 Q760,10 800,50 Q840,25 880,70 Q920,15 960,55 Q1000,5 1040,40 Q1080,20 1120,60 Q1160,10 1200,50 Q1240,30 1280,80 Q1320,50 1360,90 Q1400,70 1440,100 L1440,200 Z" fill="#fff"/>';
+  html+='</svg>';
+  html+='<div class="hero-title">'+esc(tripData.title)+'</div>';
+  html+='<div class="hero-meta">';
+  html+=metaItem('M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',tripData.dateRange);
+  html+=metaItem('M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2m22-4l-4-4-4 4m4-4v12',tripData.travelers);
+  html+=metaItem('M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z','\u00a5'+b.total+' (\u4eba\u5747\u00a5'+b.perPerson+')');
+  html+='</div>';
+  html+='<div class="hero-weather-box">';
+  html+='<span><span style="display:inline-flex;width:18px;height:18px">'+getWeatherSVG('partlyCloudy')+'</span> '+esc(w.summary)+'</span>';
+  html+='<span><span style="display:inline-flex;width:18px;height:18px">'+svgIcon('M20.38 3.46L16 2 12 5.5 8 2 3.62 3.46 4.53 8.24A10 10 0 002 16.5a10 10 0 0020 0 10 10 0 00-2.53-8.26L20.38 3.46z','#fff')+'</span> '+esc(w.clothing)+'</span>';
+  html+='</div>';
+  html+='<div class="hero-route">';
+  html+='<span class="hero-route-label">\u73af\u7ebf\u8def\u7ebf</span>';
+  html+='\u5357\u5b81 \u2192 \u5d07\u5de6 \u2192 \u4f0f\u90a3 \u2192 \u660e\u4ed5 \u2192 \u6253\u5c6f/\u5cd2\u90a3 \u2192 \u5fb7\u5929 \u2192 \u901a\u7075 \u2192 \u5d07\u5de6 \u2192 \u5357\u5b81';
+  html+='</div>';
+  html+='</div>';
+  return html;
+}
+
+function metaItem(pathD,text){
+  var html='<span class="hero-meta-item">';
+  html+='<span class="icon-wrap">'+svgIcon(pathD,'#fff')+'</span>';
+  html+=esc(text);
+  html+='</span>';
+  return html;
+}
+
+/* ===== RENDER: WEATHER STRIP ===== */
+function renderWeatherStrip(){
+  var html='<div class="weather-strip">';
+  for(var i=0;i<tripData.days.length;i++){
+    var d=tripData.days[i];
+    html+='<div class="weather-day">';
+    html+='<div class="wd-label">Day'+(i+1)+' '+esc(d.date)+'</div>';
+    html+='<div class="wd-weekday">'+esc(d.weekday)+'</div>';
+    html+='<div class="wd-icon">'+getWeatherSVG(d.weather.icon)+'</div>';
+    html+='<div class="wd-temp"><strong>'+d.weather.high+'\u00b0</strong> / '+d.weather.low+'\u00b0</div>';
+    var shortTheme=d.theme.length>8?d.theme.substring(0,8)+'...':d.theme;
+    html+='<div class="wd-theme" title="'+esc(d.theme)+'">'+esc(shortTheme)+'</div>';
+    html+='</div>';
+  }
+  html+='</div>';
+  return html;
+}
+
+/* ===== RENDER: DAILY ITINERARY ===== */
+function renderItinerary(){
+  var html='<div class="section-header" id="itinerary">\u6BCF\u65E5\u884C\u7A0B</div>';
+  html+='<div class="day-accordion" role="tablist">';
+  for(var i=0;i<tripData.days.length;i++){
+    var d=tripData.days[i];
+    html+='<div class="day-header" role="tab" aria-expanded="false" aria-controls="day-'+i+'" tabindex="0" onclick="toggleDay('+i+')" onkeydown="handleDayKey(event,'+i+')">';
+    html+='<span class="dh-num">D'+(i+1)+'</span>';
+    html+='<div class="dh-content">';
+    html+='<div class="dh-date">'+esc(d.date)+' '+esc(d.weekday)+'</div>';
+    html+='<div class="dh-theme">'+esc(d.theme)+'</div>';
+    html+='<div class="dh-weather"><span class="dh-weather-icon">'+getWeatherSVG(d.weather.icon)+'</span> '+d.weather.high+'/'+d.weather.low+'\u00b0C</div>';
+    html+='</div>';
+    html+='<span class="dh-chevron">'+chevronSVG()+'</span>';
+    html+='</div>';
+    html+='<div class="day-panel" id="day-'+i+'" role="tabpanel" style="max-height:0px">';
+    html+='<div class="day-panel-inner">';
+    html+=renderDayActivities(d.activities);
+    html+='</div></div>';
+    if(i<tripData.days.length-1){
+      html+='<div class="road-connector" aria-hidden="true"></div>';
     }
-  ],
-  "hotels": [
-    {
-      "name": "维纳斯度假村酒店(崇左市府店)",
-      "area": "崇左市区·近高铁南站",
-      "pricePerNight": 300,
-      "highlights": "锦江品牌四星·2020年装修·房间宽敞·可申请婴儿床",
-      "rating": "4.2",
-      "nights": "4/2·4/6(共2晚)",
-      "priceTag": "~"
-    },
-    {
-      "name": "明仕那里酒店",
-      "area": "明仕田园景区内",
-      "pricePerNight": 500,
-      "highlights": "稻田泳池·免费自行车·那芭餐厅·落地窗田园景·1900+好评4.8分",
-      "rating": "4.8",
-      "nights": "4/3-4/5(共3晚)",
-      "priceTag": "~"
-    },
-    {
-      "name": "备选A: 德天61号民宿",
-      "area": "德天瀑布入口1.3km",
-      "pricePerNight": 350,
-      "highlights": "9.4分/567评·含早+下午茶·全景窗·花园·老板帮买票",
-      "rating": "4.7",
-      "nights": "如需在德天住一晚",
-      "priceTag": "~"
-    },
-    {
-      "name": "备选B: 望越居民宿",
-      "area": "德天瀑布入口0.5km",
-      "pricePerNight": 400,
-      "highlights": "9.6分·2024年新开·河景房望越南·干湿分离",
-      "rating": "4.8",
-      "nights": "如需在德天住一晚",
-      "priceTag": "~"
+  }
+  html+='</div>';
+  return html;
+}
+
+function renderDayActivities(activities){
+  var html='';
+  for(var i=0;i<activities.length;i++){
+    html+=renderActivityItem(activities[i]);
+  }
+  return html;
+}
+
+function renderActivityItem(act){
+  var isMeal=!!act.meal;
+  var html='<div class="activity-item'+(isMeal?' is-meal':'')+'">';
+  html+='<div class="ai-time">'+esc(act.time)+'</div>';
+  html+='<div class="ai-body">';
+  html+='<div class="ai-top-row">';
+  html+='<span class="ai-name">';
+  if(!isMeal && act.link){
+    html+='<a href="'+esc(act.link)+'" target="_blank" rel="noopener">'+esc(act.name)+'</a>';
+  } else {
+    html+=esc(act.name);
+  }
+  html+='</span>';
+  if(isMeal){
+    var cuisineTag=act.meal.cuisine||'';
+    if(cuisineTag) html+='<span class="ai-tag meal-tag">'+esc(cuisineTag)+'</span>';
+  } else {
+    var transport=act.transport||'';
+    if(transport && transport!=='-') html+='<span class="ai-tag">'+esc(transport)+'</span>';
+  }
+  html+='</div>';
+
+  if(isMeal){
+    html+=renderMealInfo(act.meal);
+  } else {
+    if(act.duration || act.cost>0){
+      html+='<div class="ai-details">';
+      if(act.duration) html+='<span>'+esc(act.duration)+'</span>';
+      if(act.cost>0) html+='<span>\u00a5'+act.cost+'/\u4eba</span>';
+      html+='</div>';
     }
-  ],
-  "budget": {
-    "transport": {
-      "items": [
-        {
-          "name": "去程机票 成都→南宁 (3U6747) ×4人",
-          "cost": 3280,
-          "tag": "flyai"
-        },
-        {
-          "name": "去程婴儿票",
-          "cost": 82,
-          "tag": "estimate"
-        },
-        {
-          "name": "去程高铁 吴圩机场→崇左南 ×4",
-          "cost": 180,
-          "tag": "flyai"
-        },
-        {
-          "name": "返程高铁 崇左南→吴圩机场 ×4",
-          "cost": 180,
-          "tag": "flyai"
-        },
-        {
-          "name": "返程机票 南宁→成都 (CA2668) ×4人",
-          "cost": 2400,
-          "tag": "flyai"
-        },
-        {
-          "name": "返程婴儿票",
-          "cost": 60,
-          "tag": "estimate"
-        },
-        {
-          "name": "包车7座MPV(4天)",
-          "cost": 2200,
-          "tag": "estimate"
-        },
-        {
-          "name": "崇左市内打车",
-          "cost": 150,
-          "tag": "estimate"
-        }
-      ],
-      "subtotal": 8532
-    },
-    "accommodation": {
-      "items": [
-        {
-          "name": "维纳斯度假村 ×2间×2晚 (4/2,4/6)",
-          "cost": 1200,
-          "tag": "ref"
-        },
-        {
-          "name": "明仕那里酒店 ×2间×3晚 (4/3-4/5)",
-          "cost": 3000,
-          "tag": "ref"
-        }
-      ],
-      "subtotal": 4200
-    },
-    "food": {
-      "items": [
-        {
-          "name": "Day1 晚餐(夜市)",
-          "cost": 200
-        },
-        {
-          "name": "Day2 三餐(卷筒粉+大新+那芭)",
-          "cost": 600
-        },
-        {
-          "name": "Day3 午餐+晚餐+咖啡(中越街+夕塌)",
-          "cost": 550
-        },
-        {
-          "name": "Day4 午餐+晚餐(农家乐+明仕山庄)",
-          "cost": 520
-        },
-        {
-          "name": "Day5 午餐+晚餐(宁明+夜市)",
-          "cost": 440
-        },
-        {
-          "name": "Day6 早餐+午餐(烤鸭粉+机场)",
-          "cost": 320
-        }
-      ],
-      "subtotal": 2630
-    },
-    "tickets": {
-      "items": [
-        {
-          "name": "德天瀑布门票(含观光车) ×4",
-          "cost": 460,
-          "tag": "ref"
-        },
-        {
-          "name": "德天竹筏 ×4",
-          "cost": 192,
-          "tag": "ref"
-        },
-        {
-          "name": "明仕田园套票(竹筏+鱼鳞坝) ×4",
-          "cost": 540,
-          "tag": "ref"
-        },
-        {
-          "name": "花山岩画(含游船) ×4",
-          "cost": 360,
-          "tag": "ref"
-        },
-        {
-          "name": "明仕八嘎车/电动车租赁",
-          "cost": 120,
-          "tag": "estimate"
-        },
-        {
-          "name": "稻田咖啡",
-          "cost": 112,
-          "tag": "estimate"
-        }
-      ],
-      "subtotal": 1784
-    },
-    "other": {
-      "items": [
-        {
-          "name": "旅行保险(×5人)",
-          "cost": 250
-        },
-        {
-          "name": "零食饮品水果",
-          "cost": 300
-        },
-        {
-          "name": "伴手礼+杂项",
-          "cost": 300
-        }
-      ],
-      "subtotal": 850
-    },
-    "total": 17996,
-    "perPerson": 4499,
-    "note": "人均按4位成人分摊，婴儿费用已含在总价中。机票和高铁为FlyAI飞猪实时报价(实查)，酒店为参考价(~)，包车和餐饮为估算(≈)。"
-  },
-  "tips": [
-    "【德天瀑布无障碍通道】从观光车下车后走右侧坡道，全程平路可推婴儿车，风景更好且避开所有台阶。切勿跟随人流走竹筏后方向（会遇到'让人怀疑人生的台阶'）",
-    "【德天导航陷阱】包车司机直接导航'德天景区入口'或'德天御景民宿'，不要导航到'游客中心'——否则会被强制乘坐35元/人的接驳车绕行10km",
-    "【4月枯水期应对】德天瀑布4月水量较小，上游约11:30放水，建议10:00前到景区，等到13:00-14:00可看到最佳水量。降雨天水量更充沛",
-    "【明仕无出租车】明仕田园区域没有出租车，出行靠酒店借自行车或租电动车/八嘎车(20-30元/h)",
-    "【鱼鳞坝安全】地面非常滑，务必穿防滑水鞋。雨后水位可能偏高临时关闭，出发前问酒店确认",
-    "【宝宝装备清单】轻便折叠推车+腰凳背带(竹筏/台阶用)·防晒霜SPF50+·驱蚊液·雨衣雨伞·水鞋·手机防水袋·辅食/零食·退热贴/常用药",
-    "【医疗提醒】最近的综合医院在大新县城(大新县人民医院)，距明仕约40min车程。备好宝宝常用药物",
-    "【动态价格提醒】机票和酒店为动态定价，以上为查询时参考价。出行前请在飞猪/携程确认实际价格并提前预订",
-    "【天气预报更新】本预报基于出发前7天的扩展预报，准确度有限。建议4月1日再查weather.com.cn更新（崇左: 101300201，大新: 101300205）",
-    "【高铁关键信息】南宁吴圩机场自带高铁站(GTC地下)，可直达崇左南(35min/45元)，无需进南宁市区。末班车约20:41"
-  ]
-};
-
-// SVG icon templates (inline, no external deps)
-const SVG = {
-  sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>',
-  cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>',
-  cloudSun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M4.93 4.93l1.41 1.41M20 12h2M4 12H2M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="9" r="4" opacity=".5"/><path d="M18 13h-1.26A7 7 0 0 0 6 15.26 5 5 0 1 0 9 23h9a5 5 0 0 0 0-10z"/></svg>',
-  rain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 13V4a4 4 0 0 0-8 0v1H6a4 4 0 0 0 0 8h10a4 4 0 0 0 0-8Z"/><path d="M8 19v2M12 19v2M16 19v2"/></svg>',
-  storm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><path d="m13 12-3 5h4l-3 5"/></svg>',
-  snow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><path d="M8 18l.01 0M12 18l.01 0M16 18l.01 0"/></svg>',
-  utensils: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>',
-  mapPin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
-  lightbulb: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 22h4M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>',
-  info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
-  plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
-  hotel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3"/><rect x="7" y="10" width="3" height="3" rx=".5"/><rect x="14" y="10" width="3" height="3" rx=".5"/><path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg>',
-  ticket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>',
-  box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',
-  chevDown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>'
-};
-
-const weatherIcons = { sunny: SVG.sun, cloudy: SVG.cloud, rainy: SVG.rain, stormy: SVG.storm, snowy: SVG.snow, partlyCloudy: SVG.cloudSun, overcast: SVG.cloud };
-const budgetColors = { transport: '#0EA5E9', accommodation: '#8B5CF6', food: '#F97316', tickets: '#F43F5E', other: '#64748B' };
-const budgetIcons = { transport: SVG.plane, accommodation: SVG.hotel, food: SVG.utensils, tickets: SVG.ticket, other: SVG.box };
-const budgetLabels = { transport: '交通', accommodation: '住宿', food: '餐饮', tickets: '门票', other: '其他' };
-
-function renderWeather(weather, days) {
-  const bar = document.getElementById('weatherBar');
-  bar.innerHTML = days.map(d => {
-    const icon = weatherIcons[d.weather.icon] || SVG.cloudSun;
-    return `<div class="weather-card">
-      <div class="w-date">${d.date} ${d.weekday}</div>
-      <div class="w-icon" style="color:${d.weather.icon === 'sunny' ? '#F59E0B' : d.weather.icon === 'rainy' ? '#0EA5E9' : '#64748B'}">${icon}</div>
-      <div class="w-temp">${d.weather.high}° <span class="w-temp-low">/ ${d.weather.low}°</span></div>
-    </div>`;
-  }).join('');
-
-  const tip = document.getElementById('weatherTip');
-  tip.innerHTML = `<span class="icon" style="color:var(--primary)">${SVG.info}</span>
-    <span>${weather.clothing} · 降水概率 ${weather.rainfall} · ${weather.tips}</span>`;
+    if(act.note){
+      html+='<div class="ai-note">'+esc(act.note)+'</div>';
+    }
+    if(act.refs && act.refs.length>0){
+      html+=renderActRefs(act.refs);
+    }
+  }
+  html+='</div></div>';
+  return html;
 }
 
-function renderDays(days) {
-  const container = document.getElementById('daysContainer');
-  container.innerHTML = days.map((day, i) => {
-    const wIcon = weatherIcons[day.weather.icon] || SVG.cloudSun;
-    const acts = day.activities.map(a => {
-      const isMeal = a.meal || /[午晚早]餐/.test(a.name);
-      let html = `<div class="tl-item${isMeal ? ' is-meal' : ''}"><div class="tl-dot"></div>`;
-      html += `<div class="tl-time">${a.time}${a.duration ? ' · ' + a.duration : ''}</div><div class="tl-content">`;
-      html += `<h4>${a.name}</h4>`;
-      if (a.note) html += `<p>${a.note}</p>`;
-      if (a.meal) {
-        html += `<div class="meal-card">
-          <div class="meal-icon"><span class="icon">${SVG.utensils}</span></div>
-          <div class="meal-info">
-            <div class="meal-name">${a.meal.name}</div>
-            <div class="meal-detail">${a.meal.cuisine} · ${a.meal.location}${a.meal.recommended ? ' · 推荐：' + a.meal.recommended : ''}</div>
-          </div>
-          <div class="meal-price">¥${a.meal.perPerson}/人</div>
-        </div>`;
-      }
-      const tags = [];
-      if (a.cost === 0) tags.push(`<span class="tag tag-free">免费</span>`);
-      else if (a.cost) tags.push(`<span class="tag tag-cost">¥${a.cost}</span>`);
-      if (a.transport) tags.push(`<span class="tag tag-transport">${a.transport}</span>`);
-      if (tags.length) html += `<div class="tl-tags">${tags.join('')}</div>`;
-      html += `</div></div>`;
-      return html;
-    }).join('');
-
-    return `<div class="day-card">
-      <div class="day-header" tabindex="0" role="button" aria-expanded="true"
-           onclick="toggleDay(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDay(this)}">
-        <div class="day-header-left">
-          <div class="day-num">D${i + 1}</div>
-          <div class="day-header-info">
-            <h3>${day.theme}</h3>
-            <div class="day-meta">
-              <span>${day.date} ${day.weekday}</span>
-              <span style="display:inline-flex;align-items:center;gap:3px;color:${day.weather.icon === 'sunny' ? '#F59E0B' : '#64748B'}">
-                <span class="icon icon-sm">${wIcon}</span> ${day.weather.high}°/${day.weather.low}°
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="toggle-icon"><span class="icon icon-sm">${SVG.chevDown}</span></div>
-      </div>
-      <div class="day-body"><div class="timeline">${acts}</div></div>
-    </div>`;
-  }).join('');
+function renderMealInfo(meal){
+  var html='<div class="ai-meal-info">';
+  html+='<div class="ai-meal-name">';
+  if(meal.link){
+    html+='<a href="'+esc(meal.link)+'" target="_blank" rel="noopener">'+esc(meal.name)+'</a>';
+  } else {
+    html+=esc(meal.name);
+  }
+  html+='</div>';
+  html+='<div class="ai-meal-meta">';
+  if(meal.perPerson>0) html+='<span>\u00a5'+meal.perPerson+'/\u4eba</span>';
+  if(meal.location) html+='<span>'+esc(meal.location)+'</span>';
+  html+='</div>';
+  if(meal.recommended){
+    html+='<div class="ai-meal-rec">'+esc(meal.recommended)+'</div>';
+  }
+  html+='</div>';
+  return html;
 }
 
-function toggleDay(el) {
-  const card = el.closest('.day-card');
-  const expanded = !card.classList.contains('collapsed');
-  card.classList.toggle('collapsed');
-  el.setAttribute('aria-expanded', !expanded);
+function renderActRefs(refs){
+  var html='<div class="ai-refs">';
+  for(var i=0;i<refs.length;i++){
+    html+='<a href="'+esc(refs[i].url)+'" target="_blank" rel="noopener" class="ai-ref-tag">';
+    html+='<span class="ai-ref-dot"></span>'+esc(refs[i].title);
+    html+='</a>';
+  }
+  html+='</div>';
+  return html;
 }
 
-function renderHotels(hotels) {
-  document.getElementById('hotelGrid').innerHTML = hotels.map((h, i) => {
-    const tags = h.highlights.split(/[;；、,，]/).filter(Boolean).map(t => `<span class="hotel-tag">${t.trim()}</span>`).join('');
-    return `<div class="hotel-card">
-      ${i === 0 ? '<div class="hotel-badge">推荐</div>' : ''}
-      <div class="hotel-name">${h.name}</div>
-      <div class="hotel-area"><span class="icon icon-sm" style="color:var(--accent)">${SVG.mapPin}</span>${h.area}</div>
-      <div class="hotel-price-row"><span class="hotel-price">¥${h.pricePerNight}</span><span class="hotel-price-unit">/晚</span></div>
-      <div class="hotel-highlights">${tags}</div>
-    </div>`;
-  }).join('');
+/* ===== RENDER: HOTELS ===== */
+function renderHotels(){
+  var html='<div class="section-header" id="hotels">\u4F4F\u5BBF\u63A8\u8350</div>';
+  html+='<div class="hotels-grid">';
+  for(var i=0;i<tripData.hotels.length;i++){
+    var h=tripData.hotels[i];
+    html+='<div class="hotel-card">';
+    html+='<div class="hc-top">';
+    html+='<span class="hc-name">'+esc(h.name)+'</span>';
+    html+='<span class="hc-rating">'+starsSVG(h.rating)+' '+esc(h.rating)+'</span>';
+    html+='</div>';
+    html+='<div class="hc-area">'+esc(h.area)+'</div>';
+    html+='<div class="hc-tags">';
+    var tags=(h.highlights||'').split('\u00b7');
+    for(var j=0;j<tags.length;j++){
+      if(tags[j].trim()) html+='<span class="hc-tag">'+esc(tags[j].trim())+'</span>';
+    }
+    html+='</div>';
+    html+='<div class="hc-bottom">';
+    html+='<span class="hc-price">'+(h.priceTag==='~'?'~':'')+'\u00a5'+h.pricePerNight+'/\u665a</span>';
+    html+='<span class="hc-nights">'+esc(h.nights)+'</span>';
+    if(h.link) html+='<a href="'+esc(h.link)+'" target="_blank" rel="noopener" class="hc-link">\u67E5\u770B\u5730\u56FE</a>';
+    html+='</div>';
+    html+='</div>';
+  }
+  html+='</div>';
+  return html;
 }
 
-function renderBudget(budget) {
-  // Chart bar
-  const cats = Object.entries(budget).filter(([k]) => !['total', 'perPerson'].includes(k));
-  const total = budget.total || cats.reduce((s, [, d]) => s + d.subtotal, 0);
-  document.getElementById('budgetChart').innerHTML = cats.map(([cat, data]) =>
-    `<div class="budget-chart-seg" style="width:${(data.subtotal / total * 100).toFixed(1)}%;background:${budgetColors[cat] || '#94A3B8'}"></div>`
-  ).join('');
+/* ===== RENDER: BUDGET ===== */
+function renderBudget(){
+  var b=tripData.budget;
+  var cats=[
+    {name:'\u4EA4\u901A',data:b.transport,color:'#2d6a4f'},
+    {name:'\u4F4F\u5BBF',data:b.accommodation,color:'#d62828'},
+    {name:'\u9910\u996E',data:b.food,color:'#f59e0b'},
+    {name:'\u95E8\u7968',data:b.tickets,color:'#52b788'},
+    {name:'\u5176\u4ED6',data:b.other,color:'#8d99ae'}
+  ];
+  var total=b.total;
+  var circumference=2*Math.PI*60;
 
-  // Table
-  const tbody = document.querySelector('#budgetTable tbody');
-  tbody.innerHTML = cats.map(([cat, data]) => {
-    const icon = budgetIcons[cat] || SVG.box;
-    const label = budgetLabels[cat] || cat;
-    let rows = `<tr class="cat-row"><td colspan="2"><span class="cat-icon"><span class="icon icon-sm" style="color:${budgetColors[cat]}">${icon}</span>${label}</span></td><td class="subtotal">¥${data.subtotal.toLocaleString()}</td></tr>`;
-    data.items.forEach(item => { rows += `<tr class="sub-row"><td></td><td>${item.name}</td><td>¥${item.cost.toLocaleString()}</td></tr>`; });
-    return rows;
-  }).join('');
+  var html='<div class="section-header" id="budget">\u9884\u7B97\u660E\u7EC6</div>';
+  html+='<div class="budget-card">';
+  html+='<div class="budget-top">';
 
-  // Total bar
-  const el = document.getElementById('budgetTotal');
-  el.querySelector('.budget-total-amount').textContent = `¥${total.toLocaleString()}`;
-  el.querySelector('.budget-total-per').textContent = `人均 ¥${(budget.perPerson || 0).toLocaleString()}`;
+  /* SVG Donut */
+  html+='<div class="donut-container">';
+  html+='<svg width="160" height="160" viewBox="0 0 160 160">';
+  var offset=0;
+  for(var i=0;i<cats.length;i++){
+    var pct=cats[i].data.subtotal/total;
+    var dashLen=pct*circumference;
+    var dashGap=circumference-dashLen;
+    var rotation=-90+(offset/circumference)*360;
+    html+='<circle cx="80" cy="80" r="60" fill="none" stroke="'+cats[i].color+'" stroke-width="20"';
+    html+=' stroke-dasharray="'+dashLen.toFixed(2)+' '+dashGap.toFixed(2)+'"';
+    html+=' transform="rotate('+rotation.toFixed(2)+' 80 80)"';
+    html+=' style="transition:stroke-dasharray 0.5s"/>';
+    offset+=dashLen;
+  }
+  html+='</svg>';
+  html+='<div class="donut-center">';
+  html+='<div class="donut-center-total">\u00a5'+total+'</div>';
+  html+='<div class="donut-center-label">\u603B\u9884\u7B97</div>';
+  html+='</div></div>';
+
+  /* Legend */
+  html+='<div class="budget-legend">';
+  for(var i=0;i<cats.length;i++){
+    var pct=((cats[i].data.subtotal/total)*100).toFixed(0);
+    html+='<div class="bl-item">';
+    html+='<span class="bl-dot" style="background:'+cats[i].color+'"></span>';
+    html+='<span>'+cats[i].name+'</span>';
+    html+='<span class="bl-pct">'+pct+'%</span>';
+    html+='<span class="bl-amount">\u00a5'+cats[i].data.subtotal+'</span>';
+    html+='</div>';
+  }
+  html+='</div></div>';
+
+  /* Total bar */
+  html+='<div class="budget-total-bar" onclick="toggleBudgetDetail()" role="button" tabindex="0" aria-expanded="false" aria-controls="budgetDetail">';
+  html+='<span>\u603B\u8BA1 \u00a5'+total+' \u00b7 \u4EBA\u5747 \u00a5'+b.perPerson+'</span>';
+  html+='<span style="font-size:12px;opacity:0.8">\u70B9\u51FB\u5C55\u5F00\u660E\u7EC6</span>';
+  html+='</div>';
+
+  /* Detail table */
+  html+='<div class="budget-detail" id="budgetDetail">';
+  html+='<table class="budget-table"><thead><tr><th>\u9879\u76EE</th><th>\u91D1\u989D</th></tr></thead><tbody>';
+  for(var i=0;i<cats.length;i++){
+    var items=cats[i].data.items;
+    for(var j=0;j<items.length;j++){
+      html+='<tr><td>'+esc(items[j].name)+'</td><td>\u00a5'+items[j].cost+'</td></tr>';
+    }
+    html+='<tr class="subtotal-row"><td>'+cats[i].name+'\u5C0F\u8BA1</td><td>\u00a5'+cats[i].data.subtotal+'</td></tr>';
+  }
+  html+='</tbody></table>';
+  html+='</div>';
+
+  /* Budget note */
+  html+='<div class="budget-note">'+esc(b.note)+'</div>';
+  html+='</div>';
+  return html;
 }
 
-function renderTips(tips) {
-  document.getElementById('tipsList').innerHTML = tips.map(t =>
-    `<div class="tip-card"><div class="tip-icon"><span class="icon">${SVG.lightbulb}</span></div><span>${t}</span></div>`
-  ).join('');
+/* ===== RENDER: TIPS ===== */
+function renderTips(){
+  var html='<div class="section-header" id="tips">\u5B9E\u7528\u8D34\u58EB</div>';
+  html+='<div class="tips-list">';
+  for(var i=0;i<tripData.tips.length;i++){
+    var tip=tripData.tips[i];
+    var titleMatch=tip.match(/\u3010(.+?)\u3011/);
+    var title=titleMatch?titleMatch[1]:'\u8D34\u58EB'+(i+1);
+    var body=titleMatch?tip.replace(/\u3010.+?\u3011/,'').trim():tip;
+    html+='<div class="tip-item">';
+    html+='<div class="tip-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleTip(this)" onkeydown="handleTipKey(event,this)">';
+    html+='<span>'+esc(title)+'</span>';
+    html+='<span class="tip-chevron">'+chevronSVG()+'</span>';
+    html+='</div>';
+    html+='<div class="tip-body">'+esc(body)+'</div>';
+    html+='</div>';
+  }
+  html+='</div>';
+  return html;
 }
 
-if (tripData) {
-  document.getElementById('heroTitle').textContent = tripData.title;
-  if (tripData.dateRange) document.getElementById('heroDate').textContent = tripData.dateRange;
-  if (tripData.travelers) document.getElementById('heroTravelers').textContent = tripData.travelers;
-  if (tripData.budget) document.getElementById('heroBudget').textContent = `¥${(tripData.budget.total || 0).toLocaleString()}`;
-  renderWeather(tripData.weather, tripData.days);
-  renderDays(tripData.days);
-  renderHotels(tripData.hotels);
-  renderBudget(tripData.budget);
-  renderTips(tripData.tips);
+/* ===== RENDER: REFERENCES ===== */
+function renderReferences(){
+  if(!tripData.references||tripData.references.length===0)return '';
+  var html='<div class="section-header" id="refs">\u53C2\u8003\u653B\u7565</div>';
+  html+='<div class="refs-grid">';
+  for(var i=0;i<tripData.references.length;i++){
+    var r=tripData.references[i];
+    html+='<div class="ref-card">';
+    html+='<span class="ref-badge">\u5C0F\u7EA2\u4E66</span>';
+    html+='<a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+esc(r.title)+'</a>';
+    html+='</div>';
+  }
+  html+='</div>';
+  return html;
 }
+
+/* ===== RENDER: FOOTER ===== */
+function renderFooter(){
+  return '<div class="page-footer">\u751F\u6210\u65E5\u671F: '+esc(tripData.generationDate)+' \u00b7 \u673A\u7968\u548C\u9152\u5E97\u4E3A\u52A8\u6001\u5B9A\u4EF7\uFF0C\u51FA\u884C\u524D\u8BF7\u786E\u8BA4\u5B9E\u9645\u4EF7\u683C</div>';
+}
+
+/* ===== EVENT HANDLERS ===== */
+function toggleDay(index){
+  var panel=document.getElementById('day-'+index);
+  var header=panel.previousElementSibling;
+  while(header && !header.classList.contains('day-header')){
+    header=header.previousElementSibling;
+  }
+  var isOpen=panel.style.maxHeight && panel.style.maxHeight!=='0px';
+  var allPanels=document.querySelectorAll('.day-panel');
+  for(var i=0;i<allPanels.length;i++){
+    allPanels[i].style.maxHeight='0px';
+  }
+  var allHeaders=document.querySelectorAll('.day-header');
+  for(var i=0;i<allHeaders.length;i++){
+    allHeaders[i].classList.remove('active');
+    allHeaders[i].setAttribute('aria-expanded','false');
+  }
+  if(!isOpen){
+    panel.style.maxHeight=panel.scrollHeight+'px';
+    header.classList.add('active');
+    header.setAttribute('aria-expanded','true');
+  }
+}
+
+function handleDayKey(e,index){
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    toggleDay(index);
+  }
+}
+
+function toggleTip(el){
+  var card=el.parentElement;
+  var isOpen=card.classList.contains('open');
+  card.classList.toggle('open');
+  el.setAttribute('aria-expanded',isOpen?'false':'true');
+}
+
+function handleTipKey(e,el){
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    toggleTip(el);
+  }
+}
+
+function toggleBudgetDetail(){
+  var detail=document.getElementById('budgetDetail');
+  var bar=detail.previousElementSibling;
+  var isOpen=detail.classList.contains('expanded');
+  detail.classList.toggle('expanded');
+  bar.setAttribute('aria-expanded',isOpen?'false':'true');
+}
+
+/* ===== INIT ===== */
+function init(){
+  var html=renderHero();
+  html+=renderWeatherStrip();
+  html+=renderItinerary();
+  html+=renderHotels();
+  html+=renderBudget();
+  html+=renderTips();
+  html+=renderReferences();
+  html+=renderFooter();
+  document.getElementById('app').innerHTML=html;
+  /* Auto-open Day 1 */
+  toggleDay(0);
+}
+
+init();
 </script>
 </body>
 </html>
