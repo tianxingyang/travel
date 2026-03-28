@@ -1,185 +1,60 @@
 {
-  "query_date": "2026-03-26",
+  "query_date": "2026-03-28",
+  "source": "FlyAI (Fliggy real-time data)",
+  "selected": {
+    "outbound": {
+      "flight": "CZ5780",
+      "airline": "China Southern",
+      "dep": "15:15",
+      "arr": "16:55",
+      "dep_airport": "TFU T2",
+      "arr_airport": "NNG T2",
+      "duration_min": 100,
+      "price_cny": 980,
+      "booking_url": "https://a.feizhu.com/4BdK2y"
+    },
+    "return": {
+      "flight": "CA2668",
+      "airline": "Air China",
+      "dep": "14:55",
+      "arr": "16:50",
+      "dep_airport": "NNG T2",
+      "arr_airport": "TFU T2",
+      "duration_min": 115,
+      "price_cny": 650,
+      "booking_url": "https://a.feizhu.com/1dTmVe"
+    }
+  },
   "outbound": {
-    "route": "Chengdu (CTU/TFU) -> Nanning (NNG)",
+    "route": "Chengdu -> Nanning",
     "date": "2026-04-02",
-    "sort": "price ascending",
+    "sort": "departure early to late",
     "direct_flights": [
-      {
-        "flight": "ZH9356",
-        "airline": "Shenzhen Airlines",
-        "dep": "10:05",
-        "arr": "12:00",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 115,
-        "price_cny": 760,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/1iQiZi"
-      },
-      {
-        "flight": "CZ8408",
-        "airline": "China Southern",
-        "dep": "11:00",
-        "arr": "13:05",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 125,
-        "price_cny": 800,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/0bJpct"
-      },
-      {
-        "flight": "GX8866",
-        "airline": "GX Airlines / Beibu Gulf Air",
-        "dep": "11:10",
-        "arr": "13:05",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 115,
-        "price_cny": 800,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/0JfW5T"
-      },
-      {
-        "flight": "CA2667",
-        "airline": "Air China",
-        "dep": "11:55",
-        "arr": "13:55",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 120,
-        "price_cny": 800,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/0NB2Ua"
-      },
-      {
-        "flight": "3U6747",
-        "airline": "Sichuan Airlines",
-        "dep": "12:55",
-        "arr": "14:40",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 105,
-        "price_cny": 820,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/3VMsAr"
-      },
-      {
-        "flight": "CA2689",
-        "airline": "Air China",
-        "dep": "17:55",
-        "arr": "19:45",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 110,
-        "price_cny": 800,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/1momej"
-      },
-      {
-        "flight": "CZ3242",
-        "airline": "China Southern",
-        "dep": "22:15",
-        "arr": "23:55",
-        "dep_terminal": "TFU T2",
-        "arr_terminal": "NNG T2",
-        "duration_min": 100,
-        "price_cny": 1000,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/39VWhT"
-      }
+      { "flight": "3U8727", "airline": "Sichuan Airlines", "dep": "06:55", "arr": "08:45", "dep_airport": "CTU T1", "arr_airport": "NNG T2", "duration_min": 110, "price_cny": 800, "url": "https://a.feizhu.com/4PS5uF" },
+      { "flight": "ZH9356", "airline": "Shenzhen Airlines", "dep": "10:05", "arr": "12:00", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 115, "price_cny": 750, "url": "https://a.feizhu.com/1Prtp6" },
+      { "flight": "CZ8408", "airline": "China Southern", "dep": "11:00", "arr": "13:05", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 125, "price_cny": 800, "url": "https://a.feizhu.com/1tlsJN" },
+      { "flight": "GX8866", "airline": "GX/Beibu Gulf Air", "dep": "11:10", "arr": "13:05", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 115, "price_cny": 760, "url": "https://a.feizhu.com/4b3VDh" },
+      { "flight": "CA2667", "airline": "Air China", "dep": "11:55", "arr": "13:55", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 120, "price_cny": 700, "url": "https://a.feizhu.com/36BovH" },
+      { "flight": "3U6747", "airline": "Sichuan Airlines", "dep": "12:55", "arr": "14:40", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 105, "price_cny": 690, "url": "https://a.feizhu.com/4TAF1k" },
+      { "flight": "CZ5780", "airline": "China Southern", "dep": "15:15", "arr": "16:55", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 100, "price_cny": 980, "url": "https://a.feizhu.com/4BdK2y" },
+      { "flight": "CA2689", "airline": "Air China", "dep": "17:55", "arr": "19:45", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 110, "price_cny": 600, "url": "https://a.feizhu.com/49JTyn" },
+      { "flight": "CZ3242", "airline": "China Southern", "dep": "22:15", "arr": "00:05+1", "dep_airport": "TFU T2", "arr_airport": "NNG T2", "duration_min": 110, "price_cny": 800, "url": "https://a.feizhu.com/0qVlY9" }
     ]
   },
   "return": {
-    "route": "Nanning (NNG) -> Chengdu (CTU/TFU)",
+    "route": "Nanning -> Chengdu",
     "date": "2026-04-07",
-    "sort": "price ascending",
+    "sort": "departure early to late",
     "direct_flights": [
-      {
-        "flight": "CA2668",
-        "airline": "Air China",
-        "dep": "14:55",
-        "arr": "16:50",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 115,
-        "price_cny": 600,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/2oVs8O"
-      },
-      {
-        "flight": "CA2690",
-        "airline": "Air China",
-        "dep": "20:35",
-        "arr": "22:20",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 105,
-        "price_cny": 600,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/20z78b"
-      },
-      {
-        "flight": "3U6748",
-        "airline": "Sichuan Airlines",
-        "dep": "16:00",
-        "arr": "17:40",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 100,
-        "price_cny": 620,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/1fTekx"
-      },
-      {
-        "flight": "GX8865",
-        "airline": "GX Airlines / Beibu Gulf Air",
-        "dep": "08:15",
-        "arr": "10:00",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 105,
-        "price_cny": 620,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/48YPur"
-      },
-      {
-        "flight": "ZH9355",
-        "airline": "Shenzhen Airlines",
-        "dep": "13:20",
-        "arr": "15:10",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 110,
-        "price_cny": 660,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/1UFdHz"
-      },
-      {
-        "flight": "CZ3241",
-        "airline": "China Southern",
-        "dep": "19:20",
-        "arr": "21:10",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 110,
-        "price_cny": 720,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/3Cb3II"
-      },
-      {
-        "flight": "CZ8407",
-        "airline": "China Southern",
-        "dep": "08:05",
-        "arr": "09:55",
-        "dep_terminal": "NNG T2",
-        "arr_terminal": "TFU T2",
-        "duration_min": 110,
-        "price_cny": 780,
-        "class": "Economy",
-        "url": "https://a.feizhu.com/0O1amc"
-      }
+      { "flight": "CZ8407", "airline": "China Southern", "dep": "08:05", "arr": "09:55", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 110, "price_cny": 680, "url": "https://a.feizhu.com/0Mlq65" },
+      { "flight": "GX8865", "airline": "GX/Beibu Gulf Air", "dep": "08:15", "arr": "10:00", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 105, "price_cny": 620, "url": "https://a.feizhu.com/3Tcx1V" },
+      { "flight": "3U8728", "airline": "Sichuan Airlines", "dep": "09:55", "arr": "11:55", "dep_airport": "NNG T2", "arr_airport": "CTU T1", "duration_min": 120, "price_cny": 770, "url": "https://a.feizhu.com/1jnnRo" },
+      { "flight": "CZ5779", "airline": "China Southern", "dep": "12:20", "arr": "14:10", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 110, "price_cny": 740, "url": "https://a.feizhu.com/0O97Ae" },
+      { "flight": "ZH9355", "airline": "Shenzhen Airlines", "dep": "13:20", "arr": "15:10", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 110, "price_cny": 660, "url": "https://a.feizhu.com/0mVk5U" },
+      { "flight": "CA2668", "airline": "Air China", "dep": "14:55", "arr": "16:50", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 115, "price_cny": 650, "url": "https://a.feizhu.com/1dTmVe" },
+      { "flight": "3U6748", "airline": "Sichuan Airlines", "dep": "16:00", "arr": "17:40", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 100, "price_cny": 820, "url": "https://a.feizhu.com/4VAmic" },
+      { "flight": "CZ3241", "airline": "China Southern", "dep": "19:20", "arr": "21:10", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 110, "price_cny": 620, "url": "https://a.feizhu.com/232bS2" },
+      { "flight": "CA2690", "airline": "Air China", "dep": "20:35", "arr": "22:20", "dep_airport": "NNG T2", "arr_airport": "TFU T2", "duration_min": 105, "price_cny": 600, "url": "https://a.feizhu.com/3xBH69" }
     ]
   }
 }
