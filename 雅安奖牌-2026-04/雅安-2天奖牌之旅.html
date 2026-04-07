@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅安集奖牌周末 · 蒙顶山+碧峰峡自驾2日</title>
+<style>
+:root{
+  --tea-deep:#1f4d3a;
+  --tea:#2d6a4f;
+  --tea-mist:#95d5b2;
+  --tea-ink:#081c15;
+  --medal:#c9a96e;
+  --medal-deep:#a97e3c;
+  --medal-glow:#f3d9a9;
+  --panda-black:#1b1b1b;
+  --panda-white:#fafaf7;
+  --camellia:#c74e3c;
+  --bamboo:#52796f;
+  --paper:#faf6ee;
+  --paper-dark:#efe8d8;
+  --ink:#232020;
+  --ink-soft:#5a5551;
+  --line:#d9cfbb;
+  --warn:#b5341a;
+  --warn-bg:#fbeee4;
+  --ok:#2d6a4f;
+  --ok-bg:#e3f1e6;
+  --shadow-sm:0 2px 6px rgba(31,77,58,.08);
+  --shadow:0 6px 24px rgba(31,77,58,.12);
+  --shadow-lg:0 16px 48px rgba(31,77,58,.18);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(circle at 15% 10%,rgba(149,213,178,.18) 0%,transparent 45%),
+    radial-gradient(circle at 85% 90%,rgba(201,169,110,.12) 0%,transparent 50%),
+    repeating-linear-gradient(0deg,transparent 0 42px,rgba(217,207,187,.15) 42px 43px);
+}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 22px 72px}
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;
+  border-radius:24px;
+  padding:52px 44px 48px;
+  margin-bottom:28px;
+  overflow:hidden;
+  color:var(--paper);
+  background:linear-gradient(135deg,var(--tea-ink) 0%,var(--tea-deep) 45%,var(--tea) 100%);
+  box-shadow:var(--shadow-lg);
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 560px 320px at 85% 15%,rgba(201,169,110,.35) 0%,transparent 60%),
+    radial-gradient(ellipse 400px 260px at 15% 85%,rgba(149,213,178,.15) 0%,transparent 60%);
+}
+.hero::after{
+  content:'茶';
+  position:absolute;
+  right:-30px;bottom:-60px;
+  font-size:420px;
+  font-family:"STKaiti","KaiTi",serif;
+  color:rgba(201,169,110,.06);
+  font-weight:900;
+  pointer-events:none;
+  line-height:1;
+}
+.hero-inner{position:relative;z-index:2}
+.hero-tag{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid rgba(243,217,169,.5);
+  border-radius:999px;
+  font-size:.8rem;
+  letter-spacing:.15em;
+  color:var(--medal-glow);
+  margin-bottom:18px;
+  backdrop-filter:blur(2px);
+}
+.hero h1{
+  font-size:2.4rem;
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.2;
+  margin-bottom:10px;
+}
+.hero h1 .accent{color:var(--medal-glow)}
+.hero .subtitle{
+  font-size:1rem;
+  opacity:.85;
+  margin-bottom:28px;
+  max-width:620px;
+}
+.hero-meta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:16px;
+}
+.hero-meta-item{
+  padding:14px 16px;
+  background:rgba(250,250,247,.08);
+  border:1px solid rgba(243,217,169,.2);
+  border-radius:12px;
+  backdrop-filter:blur(4px);
+}
+.hero-meta-item .label{
+  font-size:.72rem;
+  letter-spacing:.1em;
+  color:var(--medal-glow);
+  opacity:.8;
+  margin-bottom:4px;
+  text-transform:uppercase;
+}
+.hero-meta-item .value{
+  font-size:1.02rem;
+  font-weight:600;
+  color:var(--paper);
+}
+
+/* ========== MEDAL HERO SHOWCASE ========== */
+.medal-showcase{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin:-20px 0 36px;
+  position:relative;
+  z-index:5;
+}
+@media(max-width:720px){.medal-showcase{grid-template-columns:1fr}}
+.medal-card{
+  background:linear-gradient(145deg,var(--panda-white) 0%,var(--paper-dark) 100%);
+  border:2px solid var(--medal);
+  border-radius:20px;
+  padding:28px 26px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.medal-card::before{
+  content:'';
+  position:absolute;
+  top:-40px;right:-40px;
+  width:160px;height:160px;
+  background:radial-gradient(circle,var(--medal-glow) 0%,transparent 70%);
+  opacity:.5;
+}
+.medal-card.bfx{
+  background:linear-gradient(145deg,#fff 0%,#f0f0f0 60%,#e8e8e8 100%);
+  border-color:var(--panda-black);
+}
+.medal-card.bfx::before{
+  background:radial-gradient(circle,rgba(27,27,27,.12) 0%,transparent 70%);
+}
+.medal-num{
+  display:inline-flex;
+  align-items:center;justify-content:center;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--medal);
+  color:#fff;
+  font-weight:800;
+  font-size:1.1rem;
+  margin-bottom:12px;
+  box-shadow:0 0 0 4px var(--medal-glow);
+}
+.medal-card.bfx .medal-num{background:var(--panda-black);box-shadow:0 0 0 4px #d0d0d0}
+.medal-card h3{
+  font-size:1.18rem;
+  color:var(--tea-ink);
+  margin-bottom:6px;
+  font-weight:800;
+}
+.medal-card .spot{
+  font-size:.78rem;
+  color:var(--ink-soft);
+  margin-bottom:14px;
+  letter-spacing:.05em;
+}
+.medal-card .mdesc{
+  font-size:.88rem;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:14px;
+}
+.medal-card .mconditions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.mchip{
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:.72rem;
+  background:var(--ok-bg);
+  color:var(--ok);
+  border:1px solid #c4e0c9;
+  font-weight:600;
+}
+.mchip.warn{background:var(--warn-bg);color:var(--warn);border-color:#f0c9b6}
+
+/* ========== NAV ========== */
+.nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  margin-bottom:36px;
+  padding-bottom:4px;
+}
+.nav::-webkit-scrollbar{height:0}
+.nav a{
+  flex-shrink:0;
+  padding:10px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--ink-soft);
+  font-size:.85rem;
+  font-weight:500;
+  text-decoration:none;
+  transition:all .2s;
+}
+.nav a:hover{background:var(--tea);color:#fff;border-color:var(--tea);transform:translateY(-2px)}
+
+/* ========== SECTION ========== */
+.sec{margin-bottom:44px;scroll-margin-top:20px}
+.sec-head{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:22px;
+  padding-bottom:14px;
+  border-bottom:2px dashed var(--line);
+}
+.sec-head h2{
+  font-size:1.5rem;
+  color:var(--tea-ink);
+  font-weight:800;
+  letter-spacing:-.01em;
+}
+.sec-head .sec-tag{
+  font-size:.75rem;
+  color:var(--medal-deep);
+  padding:3px 10px;
+  background:var(--medal-glow);
+  border-radius:6px;
+  font-weight:600;
+}
+.sec-head .zh{
+  font-size:.85rem;
+  color:var(--ink-soft);
+  margin-left:auto;
+}
+
+/* ========== BONUS BOX (春假免票) ========== */
+.bonus-box{
+  position:relative;
+  background:linear-gradient(135deg,#fff8e0 0%,#fef3cc 50%,#fde8a8 100%);
+  border:2px solid var(--medal);
+  border-radius:18px;
+  padding:24px 28px 22px;
+  margin-bottom:24px;
+  box-shadow:0 8px 28px rgba(201,169,110,.22);
+  overflow:hidden;
+}
+.bonus-box::before{
+  content:'🎁';
+  position:absolute;
+  right:-8px;top:-12px;
+  font-size:120px;
+  opacity:.08;
+  pointer-events:none;
+  line-height:1;
+  transform:rotate(12deg);
+}
+.bonus-ribbon{
+  display:inline-block;
+  background:var(--medal-deep);
+  color:#fff;
+  padding:4px 14px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  margin-bottom:10px;
+  box-shadow:0 2px 8px rgba(169,126,60,.35);
+}
+.bonus-box h4{
+  color:var(--medal-deep);
+  font-size:1.15rem;
+  font-weight:800;
+  margin-bottom:12px;
+  line-height:1.4;
+}
+.bonus-box h4 .big{
+  background:var(--medal-deep);
+  color:#fff;
+  padding:2px 10px;
+  border-radius:6px;
+  font-weight:800;
+}
+.bonus-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:14px 0;
+}
+@media(max-width:640px){.bonus-grid{grid-template-columns:1fr}}
+.bonus-item{
+  background:rgba(255,255,255,.65);
+  border:1px dashed var(--medal);
+  border-radius:10px;
+  padding:12px 14px;
+}
+.bonus-item .spot-name{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--tea-ink);
+  margin-bottom:5px;
+}
+.bonus-item .spot-detail{
+  font-size:.78rem;
+  color:var(--ink-soft);
+  line-height:1.65;
+}
+.bonus-note{
+  font-size:.82rem;
+  color:#6e4a10;
+  background:rgba(255,255,255,.5);
+  padding:10px 14px;
+  border-radius:8px;
+  line-height:1.7;
+  border-left:3px solid var(--medal-deep);
+}
+.bonus-note strong{color:var(--warn)}
+
+/* ========== WARN BOX ========== */
+.warn-box{
+  background:linear-gradient(135deg,var(--warn-bg) 0%,#fde5d5 100%);
+  border-left:5px solid var(--warn);
+  padding:18px 22px;
+  border-radius:0 14px 14px 0;
+  margin-bottom:24px;
+  box-shadow:var(--shadow-sm);
+}
+.warn-box h4{
+  color:var(--warn);
+  font-size:1rem;
+  margin-bottom:8px;
+  font-weight:800;
+}
+.warn-box p{
+  color:#6e2510;
+  font-size:.9rem;
+  line-height:1.8;
+}
+.warn-box .phone{
+  display:inline-block;
+  background:#fff;
+  border:1px dashed var(--warn);
+  padding:3px 10px;
+  border-radius:6px;
+  font-weight:700;
+  color:var(--warn);
+  margin:0 3px;
+}
+
+/* ========== WEATHER ========== */
+.weather-card{
+  background:linear-gradient(135deg,#e8f3ed 0%,#d7ebe0 100%);
+  padding:24px 26px;
+  border-radius:16px;
+  border:1px solid #bbd8c5;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.weather-main{border-right:1px dashed #94b7a0;padding-right:20px}
+.weather-main .big-temp{
+  font-size:2.6rem;
+  font-weight:800;
+  color:var(--tea-deep);
+  line-height:1;
+}
+.weather-main .summary{
+  font-size:1rem;
+  color:var(--ink);
+  margin:6px 0 10px;
+}
+.weather-main .rain{
+  font-size:.82rem;
+  color:var(--ink-soft);
+}
+.weather-tips ul{list-style:none;font-size:.88rem;color:var(--ink-soft);line-height:2}
+.weather-tips li::before{content:'· ';color:var(--tea);font-weight:800}
+.reliab{
+  display:inline-block;
+  padding:2px 8px;
+  font-size:.68rem;
+  border-radius:4px;
+  font-weight:700;
+  letter-spacing:.03em;
+  vertical-align:middle;
+}
+.reliab.live{background:var(--ok-bg);color:var(--ok)}
+.reliab.ref{background:#fff4d6;color:#8a6508}
+.reliab.est{background:#e8e8e8;color:#666}
+
+/* ========== ROUTE ========== */
+.route-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:var(--shadow-sm);
+}
+.route-total{
+  text-align:center;
+  margin-bottom:20px;
+  padding-bottom:18px;
+  border-bottom:1px dashed var(--line);
+}
+.route-total .num{
+  font-size:2.2rem;
+  color:var(--medal-deep);
+  font-weight:800;
+}
+.route-total .lbl{color:var(--ink-soft);font-size:.85rem;margin-left:6px}
+.route-legs{display:flex;flex-direction:column;gap:14px}
+.leg{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:16px;
+  align-items:center;
+  padding:14px 18px;
+  background:var(--paper);
+  border-radius:12px;
+  border:1px solid var(--paper-dark);
+}
+.leg-idx{
+  width:32px;height:32px;
+  background:var(--tea);
+  color:#fff;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;
+  font-size:.95rem;
+}
+.leg-body .leg-route{font-weight:700;color:var(--ink);font-size:.95rem}
+.leg-body .leg-via{font-size:.8rem;color:var(--ink-soft);margin-top:3px}
+.leg-stats{text-align:right;min-width:120px}
+.leg-stats .km{font-size:1.2rem;color:var(--tea-deep);font-weight:800}
+.leg-stats .t{font-size:.78rem;color:var(--ink-soft)}
+
+/* ========== DAY TIMELINE ========== */
+.day{
+  background:#fff;
+  border-radius:18px;
+  padding:28px 26px;
+  margin-bottom:24px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+  position:relative;
+  overflow:hidden;
+}
+.day::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:6px;height:100%;
+  background:linear-gradient(180deg,var(--medal) 0%,var(--tea) 100%);
+}
+.day-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:18px;
+  padding-bottom:16px;
+  border-bottom:2px dotted var(--line);
+  gap:18px;
+  flex-wrap:wrap;
+}
+.day-title{flex:1;min-width:200px}
+.day-badge{
+  display:inline-flex;
+  align-items:center;gap:8px;
+  background:var(--tea);
+  color:#fff;
+  padding:6px 14px;
+  border-radius:8px;
+  font-size:.82rem;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.day-badge .d{
+  background:var(--medal-glow);
+  color:var(--tea-ink);
+  padding:2px 8px;
+  border-radius:4px;
+  font-weight:800;
+}
+.day-theme{
+  font-size:1.25rem;
+  color:var(--tea-ink);
+  font-weight:800;
+  margin-bottom:6px;
+}
+.day-sum{
+  font-size:.88rem;
+  color:var(--ink-soft);
+  line-height:1.7;
+  max-width:640px;
+}
+
+.timeline{
+  position:relative;
+  padding-left:22px;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:4px;top:6px;bottom:6px;
+  width:2px;
+  background:linear-gradient(180deg,var(--medal) 0%,var(--tea-mist) 100%);
+}
+.tl-item{
+  position:relative;
+  margin-bottom:14px;
+  padding-left:18px;
+}
+.tl-item::before{
+  content:'';
+  position:absolute;
+  left:-22px;top:8px;
+  width:10px;height:10px;
+  background:#fff;
+  border:2px solid var(--medal);
+  border-radius:50%;
+}
+.tl-item.key::before{
+  background:var(--medal);
+  box-shadow:0 0 0 4px var(--medal-glow);
+}
+.tl-time{
+  display:inline-block;
+  background:var(--paper);
+  padding:2px 10px;
+  border-radius:5px;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--tea-deep);
+  margin-right:10px;
+  font-family:"SF Mono","Consolas",monospace;
+}
+.tl-act{
+  font-size:.9rem;
+  color:var(--ink);
+  line-height:1.65;
+}
+.tl-item.key .tl-act{color:var(--medal-deep);font-weight:700}
+
+.day-extras{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px dashed var(--line);
+}
+@media(max-width:640px){.day-extras{grid-template-columns:1fr}}
+.pois-list,.tips-list{
+  background:var(--paper);
+  padding:16px 18px;
+  border-radius:12px;
+}
+.pois-list h4,.tips-list h4{
+  font-size:.88rem;
+  color:var(--tea-deep);
+  margin-bottom:10px;
+  font-weight:800;
+  letter-spacing:.03em;
+}
+.pois-list li,.tips-list li{
+  list-style:none;
+  font-size:.82rem;
+  color:var(--ink-soft);
+  line-height:1.75;
+  padding:4px 0;
+  border-bottom:1px dotted var(--line);
+}
+.pois-list li:last-child,.tips-list li:last-child{border-bottom:0}
+.pois-list li strong{color:var(--ink);font-weight:700}
+
+/* ========== CARDS GRID ========== */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{
+  background:#fff;
+  padding:18px 20px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+  transition:all .25s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.card.pick{
+  border:2px solid var(--medal);
+  background:linear-gradient(135deg,#fff 0%,#fffaf0 100%);
+}
+.card h4{
+  font-size:1rem;
+  color:var(--tea-ink);
+  font-weight:800;
+  margin-bottom:6px;
+}
+.card .pick-badge{
+  display:inline-block;
+  background:var(--medal-glow);
+  color:var(--medal-deep);
+  padding:2px 8px;
+  border-radius:5px;
+  font-size:.68rem;
+  font-weight:700;
+  margin-left:6px;
+}
+.card .loc{
+  font-size:.78rem;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+.card .hl{
+  font-size:.84rem;
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.7;
+}
+.card .price{
+  font-size:.82rem;
+  color:var(--medal-deep);
+  font-weight:700;
+}
+
+/* ========== BUDGET ========== */
+.budget-wrap{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--line);
+}
+.budget-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:20px;
+  margin-bottom:22px;
+  border-bottom:2px dashed var(--line);
+  flex-wrap:wrap;
+  gap:14px;
+}
+.budget-total .total-num{
+  font-size:2.5rem;
+  color:var(--medal-deep);
+  font-weight:800;
+  line-height:1;
+}
+.budget-total .per{
+  font-size:.85rem;
+  color:var(--ink-soft);
+  margin-top:4px;
+}
+.budget-total .note{
+  font-size:.78rem;
+  color:var(--ink-soft);
+  max-width:520px;
+  text-align:right;
+  line-height:1.6;
+}
+.bcat{margin-bottom:18px}
+.bcat-head{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  padding:8px 12px;
+  background:var(--paper);
+  border-radius:8px;
+}
+.bcat-head .name{font-weight:800;color:var(--tea-deep)}
+.bcat-head .sub{font-weight:800;color:var(--medal-deep)}
+.bcat-items{font-size:.82rem;padding:0 14px}
+.bcat-items li{
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  padding:5px 0;
+  border-bottom:1px dotted var(--line);
+  color:var(--ink-soft);
+}
+.bcat-items li:last-child{border-bottom:0}
+
+/* ========== TIPS ========== */
+.tips-all{
+  background:#fff;
+  border-radius:16px;
+  padding:24px 26px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+}
+.tips-all ol{counter-reset:tip;list-style:none}
+.tips-all li{
+  counter-increment:tip;
+  padding:12px 0 12px 40px;
+  position:relative;
+  border-bottom:1px dashed var(--line);
+  font-size:.9rem;
+  color:var(--ink);
+  line-height:1.7;
+}
+.tips-all li:last-child{border-bottom:0}
+.tips-all li::before{
+  content:counter(tip,decimal-leading-zero);
+  position:absolute;left:0;top:13px;
+  color:var(--medal-deep);
+  font-weight:800;
+  font-size:.88rem;
+  font-family:"SF Mono","Consolas",monospace;
+}
+.tips-all li strong{color:var(--warn)}
+
+/* ========== COMMUNITY (小红书) ========== */
+.xhs-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.xhs-card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+  transition:all .25s;
+  display:flex;flex-direction:column;
+}
+.xhs-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.xhs-head{
+  padding:14px 16px 10px;
+  background:linear-gradient(135deg,#ff2442 0%,#ff5a7a 100%);
+  color:#fff;
+}
+.xhs-head .xhs-brand{
+  font-size:.68rem;
+  letter-spacing:.1em;
+  opacity:.85;
+  margin-bottom:4px;
+}
+.xhs-head h4{
+  font-size:.98rem;
+  font-weight:800;
+  line-height:1.4;
+}
+.xhs-body{padding:12px 16px 14px;flex:1;display:flex;flex-direction:column;gap:8px}
+.xhs-meta{
+  display:flex;
+  gap:12px;
+  font-size:.75rem;
+  color:var(--ink-soft);
+  padding-bottom:8px;
+  border-bottom:1px dashed var(--line);
+}
+.xhs-meta span b{color:var(--tea-deep);font-weight:800}
+.xhs-quote{
+  font-size:.82rem;
+  color:var(--ink-soft);
+  line-height:1.75;
+  font-style:italic;
+  padding:6px 10px;
+  background:var(--paper);
+  border-left:3px solid var(--medal);
+  border-radius:0 6px 6px 0;
+}
+.xhs-quote strong{color:var(--warn);font-style:normal}
+.xhs-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
+.xhs-tags span{
+  font-size:.68rem;
+  background:#ffe0e4;
+  color:#c1324b;
+  padding:2px 7px;
+  border-radius:4px;
+  font-weight:600;
+}
+
+/* ========== REFS ========== */
+.refs{
+  background:var(--paper);
+  padding:20px 24px;
+  border-radius:14px;
+  border:1px solid var(--paper-dark);
+}
+.refs h4{font-size:.88rem;color:var(--tea-deep);margin-bottom:10px}
+.refs ul{list-style:none}
+.refs li{padding:4px 0;font-size:.78rem}
+.refs a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dotted var(--line)}
+.refs a:hover{color:var(--tea);border-color:var(--tea)}
+
+/* ========== FOOTER ========== */
+.footer{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:.78rem;
+  padding:32px 0 8px;
+  border-top:2px dashed var(--line);
+  margin-top:48px;
+}
+
+@media(max-width:720px){
+  .wrap{padding:18px 14px 48px}
+  .hero{padding:36px 24px 32px}
+  .hero h1{font-size:1.7rem}
+  .day{padding:20px 18px}
+  .weather-card{grid-template-columns:1fr}
+  .weather-main{border-right:0;border-bottom:1px dashed #94b7a0;padding:0 0 14px 0}
+  .budget-total .note{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-tag">🏅 奖牌双收 · 雅安 2 日</span>
+      <h1>蒙顶山茶马道 × 碧峰峡大熊猫<br><span class="accent">周末自驾 · 稳拿两块奖牌</span></h1>
+      <p class="subtitle">从成都一脚油门 137km 直达蒙顶山茶源，9km 茶马轻徒步取奖牌；次日 18km 南下碧峰峡，联票打卡 5 点位再取一块熊猫勋章。一家三口周末两天即可收获整套"茶源 + 熊猫"荣誉套组。</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="label">日期</div>
+          <div class="value">04/11-12 周六日</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">出行</div>
+          <div class="value">2大1小 自驾</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">里程</div>
+          <div class="value">约 306 km</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="label">人均预算</div>
+          <div class="value">￥908</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MEDAL SHOWCASE ========== -->
+  <div class="medal-showcase">
+    <div class="medal-card">
+      <div class="medal-num">1</div>
+      <h3>蒙顶山 · 旋转奖牌</h3>
+      <div class="spot">Day 1 · 名山区 蒙顶山景区</div>
+      <p class="mdesc">8km 环线 4 点位打卡：<b>天下第一壶 → 天梯古道 → 天盖寺 → 天仙池</b>。凭打卡记录到索道下"养生茶铺"领取，打满 10 个送明信片彩蛋。</p>
+      <div class="mconditions">
+        <span class="mchip">门票 30 元</span>
+        <span class="mchip">库存不限</span>
+        <span class="mchip">3 小时完赛</span>
+      </div>
+    </div>
+    <div class="medal-card bfx">
+      <div class="medal-num">2</div>
+      <h3>碧峰峡 · 熊猫旋转奖牌</h3>
+      <div class="spot">Day 2 · 雨城区 碧峰峡景区（官方认证）</div>
+      <p class="mdesc">5 打卡点：<b>碧峰之家文创店 → 科普讲堂 → 百鸟乐园 → 悬空透视桥中央 → 白熊坪</b>。全程 3-4 小时，官方路线先文创店再进野动园。</p>
+      <div class="mconditions">
+        <span class="mchip warn">周末限量 300/天</span>
+        <span class="mchip warn">身高≥1.2m 才可领</span>
+        <span class="mchip warn">17:00 前兑换</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav">
+    <a href="#bonus">🎁 春假免票</a>
+    <a href="#alert">⚠ 出发前确认</a>
+    <a href="#weather">☁ 天气</a>
+    <a href="#route">🚗 自驾路线</a>
+    <a href="#day1">① Day1 蒙顶山</a>
+    <a href="#day2">② Day2 碧峰峡</a>
+    <a href="#hotel">🏨 酒店</a>
+    <a href="#food">🍲 餐饮</a>
+    <a href="#budget">💰 预算</a>
+    <a href="#tips">📝 贴士</a>
+    <a href="#community">📖 小红书情报</a>
+  </nav>
+
+  <!-- ========== BONUS (春假免票) ========== -->
+  <section class="sec" id="bonus">
+    <div class="bonus-box">
+      <span class="bonus-ribbon">🏆 SPECIAL BONUS</span>
+      <h4>2026 四川春假免票福利 · <span class="big">4/1 - 4/30</span> 覆盖咱们的行程！</h4>
+      <p style="font-size:.88rem;color:#6e4a10;margin-bottom:6px">雅安市 11 家景区对全省幼儿园/中小学生/教师春假期间<b>免门票</b>，碧峰峡 + 蒙顶山双入选。4/11-4/12 完全在优惠期内，不属清明例外日（4/4-4/6）。</p>
+      <div class="bonus-grid">
+        <div class="bonus-item">
+          <div class="spot-name">🌿 蒙顶山</div>
+          <div class="spot-detail">省内学龄前儿童 / 中小学生 / 教师 <b>免 30 元门票</b>。凭学生证 / 户口本 / 身份证入园。</div>
+        </div>
+        <div class="bonus-item">
+          <div class="spot-name">🐼 碧峰峡（野生动物园）</div>
+          <div class="spot-detail">省内学生免 <b>175 元野动门票</b>，只需付<b>猛兽区大巴车 50 元</b>。熊猫基地含在风景区联票内照常购买。</div>
+        </div>
+      </div>
+      <p class="bonus-note"><strong>适用前提</strong>：孩子是<b>四川省内</b>学龄前或中小学在校生，并能提供学生证/户口本/身份证。<strong>关键条款</strong>：每名学生需 1 名家长 / 监护人正常购票陪同入园。若满足条件，本次行程可省约 ¥190 元（小孩的 15 元蒙顶山半票 + 小孩的 175 元碧峰峡野动票，抵扣新付 50 元猛兽车 = 净省 ¥140），预算从 ¥2,725 降到约 <b>¥2,585</b>。</p>
+    </div>
+  </section>
+
+  <!-- ========== ALERT ========== -->
+  <section class="sec" id="alert">
+    <div class="warn-box">
+      <h4>⚠ 出发前 48 小时必须完成的 4 件事（小红书真实情报核实）</h4>
+      <p>
+        <strong>1. 确认小孩身高 ≥ 1.2m</strong> —
+        <b>碧峰峡景区官方号明确规定：1.2 米以下小朋友不参与奖牌打卡</b>。
+        若孩子不到 1.2 米，只能拿到蒙顶山那一块奖牌，Day 2 联票投资需重新权衡。<br>
+        <strong>2. 抢限量</strong> —
+        <b>碧峰峡奖牌周末/节假日限量 300 枚/天</b>（周内不限量）。4/12 是周日，必须 9 点前到游客中心；<b>17:00 前完成兑换</b>否则工作人员下班。<br>
+        <strong>3. 电话核实</strong> —
+        致电碧峰峡景区
+        <span class="phone">0835-2318091</span>
+        <span class="phone">0835-2318086</span>
+        确认 4/12 库存余量并预问清文创店位置；同时微信关注<b>碧峰峡景区</b>（小红书号）+ <b>蒙顶山景区</b>公众号。<br>
+        <strong>4. 预订联票 + 酒店</strong> —
+        提前在抖音/美团锁定"2大送1小套票"（官方认证<b>可兑 3 枚奖牌</b>！），同步订好碧峰峡门口亲子酒店。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== WEATHER ========== -->
+  <section class="sec" id="weather">
+    <div class="sec-head">
+      <h2>天气</h2>
+      <span class="sec-tag">Weather</span>
+      <span class="zh">雅安"雨城"实锤，雨具必备 <span class="reliab ref">参考</span></span>
+    </div>
+    <div class="weather-card">
+      <div class="weather-main">
+        <div class="big-temp">15~25℃</div>
+        <div class="summary">周六多云转阴 · 周日小雨</div>
+        <div class="rain">降雨概率：周六低、周日高</div>
+      </div>
+      <div class="weather-tips">
+        <ul>
+          <li>必带：折叠雨伞 + 雨衣</li>
+          <li>着装：长袖 + 薄外套 + 防滑徒步鞋</li>
+          <li>山区早晚温差较大，小孩备一件中层</li>
+          <li>碧峰峡峡谷湿滑，注意小孩防摔</li>
+          <li>临行前再查中国天气网雅安 15 天预报</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ROUTE ========== -->
+  <section class="sec" id="route">
+    <div class="sec-head">
+      <h2>自驾路线</h2>
+      <span class="sec-tag">Route</span>
+      <span class="zh">高德 API 实查数据 <span class="reliab live">实查</span></span>
+    </div>
+    <div class="route-box">
+      <div class="route-total">
+        <span class="num">306</span><span class="lbl">km · 净驾驶约 4 小时</span>
+      </div>
+      <div class="route-legs">
+        <div class="leg">
+          <div class="leg-idx">1</div>
+          <div class="leg-body">
+            <div class="leg-route">成都 天府广场 → 蒙顶山 售票处</div>
+            <div class="leg-via">G5 京昆高速 → 名山立交桥下 → 蒙顶山大道 → 三蒙公路</div>
+          </div>
+          <div class="leg-stats"><div class="km">137 km</div><div class="t">约 102 分钟</div></div>
+        </div>
+        <div class="leg">
+          <div class="leg-idx">2</div>
+          <div class="leg-body">
+            <div class="leg-route">蒙顶山 → 碧峰峡 景区门口</div>
+            <div class="leg-via">陇蒙路 → 雅碧路（不走雅安市区，最顺路）</div>
+          </div>
+          <div class="leg-stats"><div class="km">18 km</div><div class="t">约 32 分钟</div></div>
+        </div>
+        <div class="leg">
+          <div class="leg-idx">3</div>
+          <div class="leg-body">
+            <div class="leg-route">碧峰峡 → 成都</div>
+            <div class="leg-via">雅碧路 → 雅安北立交 → G5 京昆高速 → 市区</div>
+          </div>
+          <div class="leg-stats"><div class="km">151 km</div><div class="t">约 110 分钟</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DAY 1 ========== -->
+  <section class="sec" id="day1">
+    <div class="sec-head">
+      <h2>Day 1 · 茶源轻徒步</h2>
+      <span class="sec-tag">04/11 周六</span>
+    </div>
+    <div class="day">
+      <div class="day-head">
+        <div class="day-title">
+          <div class="day-badge">DAY <span class="d">01</span> · 成都 → 蒙顶山 → 碧峰峡门口</div>
+          <div class="day-theme">8km 环线 4 点打卡 · 拿下旋转奖牌</div>
+          <div class="day-sum">一早出发避开成都早高峰和 G5 周末车流，9:00 前到达蒙顶山。走小红书实测 3 小时 8km 环线——<b>天下第一壶 → 天梯古道 → 天盖寺 → 天仙池</b>四点打卡，到索道下"养生茶铺"领取奖牌，然后 32 分钟南下 18km 到碧峰峡门口亲子酒店休整。</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><span class="tl-time">06:30</span><span class="tl-act">成都家中出发，路上早餐（自备包子豆浆/就近吃）</span></div>
+        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-act">上 G5 京昆高速，建议走人民南路 → 红照壁街 → 创业路 G5 入口</span></div>
+        <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-act">抵达 <strong>蒙顶山生态停车场</strong>，停车费参考 15 元/天</span></div>
+        <div class="tl-item"><span class="tl-time">09:15</span><span class="tl-act">游客中心购票：成人 30 元 × 2 + 儿童半价 15 元 = <strong>75 元</strong>（省内学生春假凭证件免票）。先完成"分享社交媒体截图"任务</span></div>
+        <div class="tl-item key"><span class="tl-time">09:30</span><span class="tl-act">🏅【打卡 ①/4】<strong>天下第一壶</strong>——从景区入口一进来就是大茶壶，在壶下面完成第一个打卡。<b>⚠ 按顺序！不要走大茶壶上山</b>（小红书常见踩坑）</span></div>
+        <div class="tl-item"><span class="tl-time">09:45</span><span class="tl-act">沿公路走，转两个弯到天梯古道入口</span></div>
+        <div class="tl-item key"><span class="tl-time">10:00</span><span class="tl-act">🏅【打卡 ②/4】<strong>天梯古道</strong>下方打卡（石阶较多）</span></div>
+        <div class="tl-item"><span class="tl-time">10:15</span><span class="tl-act">爬一段天梯古道；分叉口可选继续爬古道或沿大路从甘露寺上</span></div>
+        <div class="tl-item key"><span class="tl-time">11:00</span><span class="tl-act">🏅【打卡 ③/4】<strong>天盖寺</strong>——千年银杏下点一壶蒙顶甘露茶约 30 元，体验非遗"龙行十八式"掺茶表演。此时正好午餐，素斋 120-150 元/家庭</span></div>
+        <div class="tl-item"><span class="tl-time">12:30</span><span class="tl-act">天盖寺后继续往上：阴阳石麒麟屏风 → 古蒙泉 → 皇茶园护茶虎</span></div>
+        <div class="tl-item key"><span class="tl-time">13:30</span><span class="tl-act">🏅【打卡 ④/4】<strong>天仙池</strong>——第四个打卡点完成</span></div>
+        <div class="tl-item"><span class="tl-time">13:45</span><span class="tl-act">下山路线：千亩茶园 → 羊圈门 → 凌云台 → 返回起点（沿步道）</span></div>
+        <div class="tl-item key"><span class="tl-time">14:30</span><span class="tl-act">🏅【拿下奖牌 ①】到<strong>索道下"养生茶铺"</strong>凭打卡记录领取旋转奖牌。打满 10 个有明信片彩蛋</span></div>
+        <div class="tl-item"><span class="tl-time">15:00</span><span class="tl-act">开车前往碧峰峡：陇蒙路 → 雅碧路（18km / 32 分钟）</span></div>
+        <div class="tl-item"><span class="tl-time">15:35</span><span class="tl-act">抵达碧峰峡景区门口酒店，入住亲子房</span></div>
+        <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-act">酒店周边散步，小孩提前适应景区环境</span></div>
+        <div class="tl-item"><span class="tl-time">18:30</span><span class="tl-act">晚餐：熊猫餐厅 / 碧峰之家，雅鱼砂锅 + 腊肉笋子 + 酸菜豆花</span></div>
+        <div class="tl-item"><span class="tl-time">20:00</span><span class="tl-act">早休息，为 Day2 抢限量奖牌储备体力</span></div>
+      </div>
+      <div class="day-extras">
+        <div class="pois-list">
+          <h4>4 个官方打卡点</h4>
+          <ul>
+            <li><strong>天下第一壶</strong> — 起点大茶壶下</li>
+            <li><strong>天梯古道</strong> — 古道入口</li>
+            <li><strong>天盖寺</strong> — 千年银杏+非遗茶技</li>
+            <li><strong>天仙池</strong> — 皇茶园后</li>
+            <li><strong>养生茶铺</strong> — 索道下，兑换点</li>
+          </ul>
+        </div>
+        <div class="tips-list">
+          <h4>Day 1 小红书实测贴士</h4>
+          <ul>
+            <li>全程 8-9km，约 3 小时完赛（带娃可慢游 4-5h）</li>
+            <li>打卡不用严格按序但第一点要<b>先文创分享</b>任务</li>
+            <li>若打卡点手机定位不灵，找工作人员拍照核验</li>
+            <li>阶梯多，注意保护膝盖；雨天路滑慎走</li>
+            <li>下雨可能有泥巴路段，防滑鞋必备</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DAY 2 ========== -->
+  <section class="sec" id="day2">
+    <div class="sec-head">
+      <h2>Day 2 · 熊猫联票打卡</h2>
+      <span class="sec-tag">04/12 周日</span>
+    </div>
+    <div class="day">
+      <div class="day-head">
+        <div class="day-title">
+          <div class="day-badge">DAY <span class="d">02</span> · 碧峰峡全天 → 成都</div>
+          <div class="day-theme">官方路线 · 抢限量 300 枚的熊猫奖牌</div>
+          <div class="day-sum"><b>周日限量 300 枚/天</b>！8:30 前必须到售票处，按官方号认证路线：<b>先文创店 → 野动园猛兽区 → 和谐家园 → 科普讲堂 → 百鸟乐园 → 悬空透视桥中央 → 熊猫基地白熊坪</b>，全程 3-4 小时可搞定。<b>17:00 前必须回游客中心兑换</b>奖牌否则工作人员下班。</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-act">起床，酒店早餐（含）</span></div>
+        <div class="tl-item"><span class="tl-time">08:00</span><span class="tl-act">退房，开车到景区售票处（提前 30 分钟到门口排队）</span></div>
+        <div class="tl-item key"><span class="tl-time">08:30</span><span class="tl-act">🎫【关键】购买"野生动物世界 + 悬空透视桥 + 风景区"<strong>三联票</strong>：约 <strong>725 元</strong>（若提前在抖音买 2大送1小套票可兑 <b>3 枚奖牌</b>！）。春假省内学生凭证件可免野动票</span></div>
+        <div class="tl-item key"><span class="tl-time">09:00</span><span class="tl-act">🏅【打卡 ①/5 · 官方要求先打】<strong>游客中心 碧峰之家文创店</strong>——一日游第一个点必须先打，否则最后浪费时间（官方 tip）</span></div>
+        <div class="tl-item"><span class="tl-time">09:15</span><span class="tl-act">进入野生动物世界，乘观光车先去<b>猛兽区</b>（车行投食老虎狮子，每份约 50 元）</span></div>
+        <div class="tl-item"><span class="tl-time">10:00</span><span class="tl-act"><b>和谐家园</b>——下车近距离接触羊驼/梅花鹿/天鹅，小孩最爱</span></div>
+        <div class="tl-item key"><span class="tl-time">10:45</span><span class="tl-act">🏅【打卡 ②/5】<strong>科普讲堂</strong>——野动园内必打</span></div>
+        <div class="tl-item key"><span class="tl-time">11:15</span><span class="tl-act">🏅【打卡 ③/5】<strong>百鸟乐园</strong>——野动园内必打</span></div>
+        <div class="tl-item"><span class="tl-time">11:45</span><span class="tl-act">午餐：野动园餐车或往悬空透视桥方向走，<b>桥上有餐饮车</b>可补给</span></div>
+        <div class="tl-item key"><span class="tl-time">12:45</span><span class="tl-act">🏅【打卡 ④/5 · 容易漏！】<strong>悬空透视桥 桥中央</strong>——过桥时务必在中央扫码打卡，这是最常被漏的点</span></div>
+        <div class="tl-item"><span class="tl-time">13:15</span><span class="tl-act">过桥直达大熊猫基地（基地下午 13:30 重新开放）</span></div>
+        <div class="tl-item key"><span class="tl-time">13:45</span><span class="tl-act">🏅【打卡 ⑤/5】<strong>白熊坪</strong>——大熊猫基地内必打。打完后慢悠悠看国宝</span></div>
+        <div class="tl-item"><span class="tl-time">14:30</span><span class="tl-act">慢速观赏熊猫（海归园、豹子山）+ 峡谷瀑布拍照</span></div>
+        <div class="tl-item key"><span class="tl-time">15:30</span><span class="tl-act">🏅【拿下奖牌 ②】返回游客中心，<b>凭 5 点位打卡记录兑换</b>熊猫旋转奖牌（抖音套票家庭可兑 3 枚）</span></div>
+        <div class="tl-item"><span class="tl-time">16:00</span><span class="tl-act">开车返程：雅碧路 → 雅安北立交 → G5 京昆高速</span></div>
+        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-act">服务区简餐或抵达成都再吃</span></div>
+        <div class="tl-item"><span class="tl-time">18:30</span><span class="tl-act">抵达成都，两块奖牌到手 🎉 行程结束</span></div>
+      </div>
+      <div class="day-extras">
+        <div class="pois-list">
+          <h4>5 个官方打卡点（顺序推荐）</h4>
+          <ul>
+            <li><strong>① 碧峰之家文创店</strong> — 游客中心内，入园前打</li>
+            <li><strong>② 科普讲堂</strong> — 野生动物世界内</li>
+            <li><strong>③ 百鸟乐园</strong> — 野生动物世界内</li>
+            <li><strong>④ 悬空透视桥中央</strong> — 180m 高空桥 <b>(易漏)</b></li>
+            <li><strong>⑤ 白熊坪</strong> — 大熊猫基地内</li>
+          </ul>
+        </div>
+        <div class="tips-list">
+          <h4>Day 2 官方号真实避坑</h4>
+          <ul>
+            <li><b>⚠ 1.2m 以下小孩不能参与打卡领奖牌</b></li>
+            <li><b>⚠ 周末/节假日限量 300 枚/天</b>，要抢</li>
+            <li><b>⚠ 悬空透视桥中央打卡点最容易漏</b></li>
+            <li><b>⚠ 17:00 前兑换</b>否则工作人员下班</li>
+            <li>穿运动鞋 + 带充电宝（扫码吃电）</li>
+            <li>抖音 2大1小套票 = 3 枚奖牌（小孩需随合影）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOTELS ========== -->
+  <section class="sec" id="hotel">
+    <div class="sec-head">
+      <h2>碧峰峡门口酒店</h2>
+      <span class="sec-tag">Stay</span>
+      <span class="zh">5 家备选 · 位置 <span class="reliab live">实查</span> 价格 <span class="reliab est">估算</span></span>
+    </div>
+    <div class="grid-2">
+      <div class="card pick">
+        <h4>雅安长红亲子精品酒店<span class="pick-badge">★ 带娃首选</span></h4>
+        <div class="loc">北碧峰峡景区商业巷街</div>
+        <div class="hl">家庭/亲子主题酒店，房型专门为有娃家庭设计，有儿童设施。</div>
+        <div class="price">￥400-600 / 晚</div>
+      </div>
+      <div class="card">
+        <h4>雅安云景酒店（碧峰峡店）</h4>
+        <div class="loc">碧峰峡景区门口 · 近游客接待中心</div>
+        <div class="hl">距售票处最近，徒步 3-5 分钟即到景区大门。</div>
+        <div class="price">￥350-500 / 晚</div>
+      </div>
+      <div class="card">
+        <h4>雅安君豪怡鑫酒店（碧峰峡店）</h4>
+        <div class="loc">熊猫基地正对面 50 米</div>
+        <div class="hl">Day2 早上第一个进基地的最佳位置选择。</div>
+        <div class="price">￥300-450 / 晚</div>
+      </div>
+      <div class="card">
+        <h4>雅安森林花语酒店</h4>
+        <div class="loc">碧峰村 4 组 19 号 · 熊猫基地对面</div>
+        <div class="hl">森林主题装修，性价比高。</div>
+        <div class="price">￥280-400 / 晚</div>
+      </div>
+      <div class="card">
+        <h4>碧峰峡清桂园酒店</h4>
+        <div class="loc">碧峰峡风景区收费站前 200 米左转</div>
+        <div class="hl">靠近收费站方便快速进出。</div>
+        <div class="price">￥260-380 / 晚</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOD ========== -->
+  <section class="sec" id="food">
+    <div class="sec-head">
+      <h2>餐饮推荐</h2>
+      <span class="sec-tag">Food</span>
+      <span class="zh">价格 <span class="reliab est">估算</span></span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h4>天盖寺茶馆</h4>
+        <div class="loc">Day1 午餐 · 蒙顶山天盖寺</div>
+        <div class="hl">千年银杏下喝蒙顶甘露，非遗"龙行十八式"掺茶表演。</div>
+        <div class="price">￥80-150 / 家庭</div>
+      </div>
+      <div class="card">
+        <h4>熊猫餐厅</h4>
+        <div class="loc">Day2 午餐 · 碧峰峡游客中心二楼</div>
+        <div class="hl">景区官方餐厅，熊猫主题装修适合拍照打卡。</div>
+        <div class="price">￥150-250 / 家庭</div>
+      </div>
+      <div class="card">
+        <h4>碧峰之家</h4>
+        <div class="loc">碧峰峡游客中心附近</div>
+        <div class="hl">本地雅鱼砂锅、腊肉笋子、酸菜豆花。</div>
+        <div class="price">￥150-220 / 家庭</div>
+      </div>
+      <div class="card">
+        <h4>四季雅鱼饭店</h4>
+        <div class="loc">雅安市青衣江路西段 7-10 号</div>
+        <div class="hl">返程可绕道尝地标性砂锅雅鱼老店。</div>
+        <div class="price">￥200-300 / 家庭</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUDGET ========== -->
+  <section class="sec" id="budget">
+    <div class="sec-head">
+      <h2>预算明细</h2>
+      <span class="sec-tag">Budget</span>
+      <span class="zh">共 <span class="reliab live">实查</span> <span class="reliab ref">参考</span> <span class="reliab est">估算</span> 三类</span>
+    </div>
+    <div class="budget-wrap">
+      <div class="budget-total">
+        <div>
+          <span class="total-num">￥2,725</span>
+          <div class="per">2 大 1 小 · 人均 ≈ ￥908</div>
+        </div>
+        <div class="note">景区联票 ~890 元占三成，是拿奖牌的硬支出。<b>如果孩子是四川省内中小学/学龄前在校生</b>，春假免票政策可让门票支出从 ¥890 降到 ¥750，总价约 <b>¥2,585</b>（人均 ¥862）。若放弃碧峰峡奖牌改走单风景区（含熊猫基地 ~100 元/人），可省 ￥435。油费、餐食、住宿为估算，实际以预订为准。</div>
+      </div>
+
+      <div class="bcat">
+        <div class="bcat-head"><span class="name">🚗 交通</span><span class="sub">￥435</span></div>
+        <ul class="bcat-items">
+          <li><span>往返油费（约 306km，1.5L 家用车）<span class="reliab est">估算</span></span><span>￥250</span></li>
+          <li><span>往返高速通行费 <span class="reliab est">估算</span></span><span>￥150</span></li>
+          <li><span>停车费（蒙顶山 15 + 碧峰峡 20）<span class="reliab live">实查</span></span><span>￥35</span></li>
+        </ul>
+      </div>
+
+      <div class="bcat">
+        <div class="bcat-head"><span class="name">🏨 住宿</span><span class="sub">￥500</span></div>
+        <ul class="bcat-items">
+          <li><span>碧峰峡门口亲子酒店 1 晚 <span class="reliab est">估算</span></span><span>￥500</span></li>
+        </ul>
+      </div>
+
+      <div class="bcat">
+        <div class="bcat-head"><span class="name">🎫 门票</span><span class="sub">￥890</span></div>
+        <ul class="bcat-items">
+          <li><span>蒙顶山门票（2 大 30 + 1 小 15）<span class="reliab live">实查</span></span><span>￥75</span></li>
+          <li><span>蒙顶山观光车/索道（按需）<span class="reliab ref">参考</span></span><span>￥90</span></li>
+          <li><span>碧峰峡联票（野动+风景区+透视桥）2 大 1 小 <span class="reliab live">实查</span></span><span>￥725</span></li>
+        </ul>
+      </div>
+
+      <div class="bcat">
+        <div class="bcat-head"><span class="name">🍲 餐食</span><span class="sub">￥650</span></div>
+        <ul class="bcat-items">
+          <li><span>Day1 午餐 · 天盖寺茶餐 <span class="reliab est">估算</span></span><span>￥150</span></li>
+          <li><span>Day1 晚餐 · 酒店/农家乐 <span class="reliab est">估算</span></span><span>￥200</span></li>
+          <li><span>Day2 午餐 · 碧峰峡内 <span class="reliab est">估算</span></span><span>￥200</span></li>
+          <li><span>Day2 晚餐 · 返程路上 <span class="reliab est">估算</span></span><span>￥100</span></li>
+        </ul>
+      </div>
+
+      <div class="bcat">
+        <div class="bcat-head"><span class="name">🎁 其他</span><span class="sub">￥250</span></div>
+        <ul class="bcat-items">
+          <li><span>碧峰峡投食体验（选做）<span class="reliab ref">参考</span></span><span>￥100</span></li>
+          <li><span>蒙顶山茶叶/纪念品 <span class="reliab est">估算</span></span><span>￥150</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TIPS ========== -->
+  <section class="sec" id="tips">
+    <div class="sec-head">
+      <h2>关键贴士</h2>
+      <span class="sec-tag">Tips</span>
+      <span class="zh">12 条</span>
+    </div>
+    <div class="tips-all">
+      <ol>
+        <li><strong>⚠ 红线 | 身高</strong>：小红书官方号明确 <b>1.2 米以下小朋友不参与打卡领奖牌</b>。如孩子身高不达标，Day2 奖牌放弃，联票可降为单风景区。</li>
+        <li><strong>⚠ 红线 | 限量</strong>：碧峰峡周末限量 <b>300 枚/天</b>（周内不限）。4/12 是周日，<b>8:30 景区开门前就要在售票处排队</b>，否则当日有可能抢空。</li>
+        <li><strong>必做 | 抖音套票</strong>：小红书实测抖音"2大送1小"套票可兑 <b>3 枚奖牌</b>（小孩需随大人合影上传），性价比最高。</li>
+        <li><strong>必做 | 核电话</strong>：致电 0835-2318091 确认 4/12 当日库存 + 文创店位置 + 奖牌款式。</li>
+        <li><strong>必做 | 酒店</strong>：周五下午前锁定碧峰峡门口亲子酒店（周末紧张），推荐"雅安长红亲子精品酒店"。</li>
+        <li><strong>必做 | 联票</strong>：碧峰峡联票提前一天通过"祥源碧峰峡"公众号买，每人便宜 5-10 元。</li>
+        <li><strong>必做 | 雨具</strong>：两天都要带折叠雨伞和雨衣，雅安"雨城"名不虚传。</li>
+        <li><strong>必做 | 保暖</strong>：长袖 + 薄外套（山上温差大），徒步鞋防滑。</li>
+        <li>Day1 早出发（7 点前上高速）避开成都市区早高峰 + G5 周末返程堵车。</li>
+        <li>Day2 16:00 准时出园回成都，避开周日晚成温邛段返程高峰。</li>
+        <li>小孩在蒙顶山如果体力不支，观光车/索道可省 2-3km 徒步，但部分打卡点可能错过。</li>
+        <li>奖牌打卡务必全程拍照留存，领取时需要出示。</li>
+        <li>加油建议出发前在成都加满，返程可在雅安或天全段加油站补油。</li>
+        <li>应急药品：晕车药、感冒药、创可贴、儿童退烧药。</li>
+        <li>备足水、小零食，蒙顶山山上补给点少。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY (小红书) ========== -->
+  <section class="sec" id="community">
+    <div class="sec-head">
+      <h2>小红书真实情报</h2>
+      <span class="sec-tag">Xiaohongshu</span>
+      <span class="zh">经 xhs MCP 直抓 · 3 条高赞笔记核心摘要</span>
+    </div>
+    <div class="xhs-wrap">
+      <article class="xhs-card">
+        <div class="xhs-head">
+          <div class="xhs-brand">📍 蒙顶山 · 徒步攻略</div>
+          <h4>雅安蒙顶山｜3 小时 8km 徒步奖牌攻略／含竞速</h4>
+        </div>
+        <div class="xhs-body">
+          <div class="xhs-meta">
+            <span>👤 @阿睿（自律版）</span>
+            <span>👍 <b>732</b></span>
+            <span>💬 51</span>
+            <span>⭐ 734</span>
+          </div>
+          <div class="xhs-quote">
+            "漫游模式打卡点位共 <strong>4 个</strong>：天下第一壶 → 天梯古道 → 天盖寺 → 天仙池。可以<strong>不按顺序</strong>完成，凭打卡记录在<strong>索道下处"养生茶铺"领取</strong>。奖牌<strong>不限量</strong>！阶梯较多，注意保护膝盖。"
+          </div>
+          <div class="xhs-tags">
+            <span>#徒步奖牌</span><span>#蒙顶山</span><span>#周末去哪儿</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-head">
+          <div class="xhs-brand">📍 蒙顶山 · 最新奖牌实拍</div>
+          <h4>2026-04-01 蒙顶山旋转奖牌 Get</h4>
+        </div>
+        <div class="xhs-body">
+          <div class="xhs-meta">
+            <span>👤 @柚子味可乐</span>
+            <span>👍 <b>58</b></span>
+            <span>💬 122</span>
+            <span>⭐ 29</span>
+          </div>
+          <div class="xhs-quote">
+            "全程 8km 样子，<strong>1 小时 35 分</strong>打卡完所有。第二个打卡点在牌牌下面手机定位打不起，联系工作人员可以<strong>拍照最后核验</strong>。<strong>按顺序！按顺序！不要走大茶壶上</strong>（很多人走错）。打卡完 10 个有<strong>明信片彩蛋</strong>。"
+          </div>
+          <div class="xhs-tags">
+            <span>#最新款</span><span>#旋转奖牌</span><span>#实测</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="xhs-card">
+        <div class="xhs-head">
+          <div class="xhs-brand">📍 碧峰峡 · 官方号亲发 ✅</div>
+          <h4>碧峰峡熊猫奖牌‼跟着官方打卡超省力🥳</h4>
+        </div>
+        <div class="xhs-body">
+          <div class="xhs-meta">
+            <span>👤 @碧峰峡景区</span>
+            <span>👍 <b>108</b></span>
+            <span>💬 66</span>
+            <span>⭐ 93</span>
+          </div>
+          <div class="xhs-quote">
+            "5 点位：<strong>文创店 → 科普讲堂 → 百鸟乐园 → 悬空透视桥中央 → 白熊坪</strong>。一日游 3-4 小时搞定。⚠ <strong>1.2 米以下小朋友不参与活动打卡</strong>；<strong>周末限量 300 枚/天</strong>；<strong>17:00 前兑换</strong>否则下班；悬空桥中央打卡点最容易漏。抖音买 2 大 1 小套票可兑 <strong>3 枚</strong>奖牌。"
+          </div>
+          <div class="xhs-tags">
+            <span>#官方发布</span><span>#5点位</span><span>#碧峰峡奖牌</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== REFERENCES ========== -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2>信息来源</h2>
+      <span class="sec-tag">Sources</span>
+    </div>
+    <div class="refs">
+      <h4>本次计划基于 10 个公开来源 + 高德 MCP 实查路线 + xhs MCP 直抓 3 条高赞笔记</h4>
+      <ul>
+        <li>🔴 <a href="https://www.xiaohongshu.com/explore/691c6048000000001e012694" target="_blank">小红书｜@阿睿：雅安蒙顶山 3 小时 8km 徒步奖牌攻略（732 赞）</a></li>
+        <li>🔴 <a href="https://www.xiaohongshu.com/explore/69cc880e000000001a020f40" target="_blank">小红书｜@柚子味可乐：2026-04-01 蒙顶山旋转奖牌 Get（58 赞，最新款实拍）</a></li>
+        <li>🔴 <a href="https://www.xiaohongshu.com/explore/69314e1a000000001f006854" target="_blank">小红书｜@碧峰峡景区（官方号）：熊猫奖牌官方打卡路线（108 赞）</a></li>
+        <li>① <a href="https://www.lu17996.com/home/product/info.html?id=1433&trips_id=23087" target="_blank">LU 趣户外｜蒙顶山轻徒步拿奖牌活动详情</a></li>
+        <li>② <a href="https://www.dahepiao.com/lvyounews1/20220510271006.html" target="_blank">大河票务网｜蒙顶山门票价格/优惠政策</a></li>
+        <li>③ <a href="https://sc.cnr.cn/scpd/xwsd/20250731/t20250731_527293209.shtml" target="_blank">央广网｜蒙顶山 2025 夏日徒步打卡奖牌活动</a></li>
+        <li>④ <a href="https://www.sohu.com/a/910297144_121106884" target="_blank">搜狐｜蒙顶山奖牌景区报道</a></li>
+        <li>⑤ <a href="https://c.m.163.com/news/a/K50M8IB40514FD4Q.html" target="_blank">网易｜碧峰峡超萌奖牌徒步攻略</a></li>
+        <li>⑥ <a href="https://c.m.163.com/news/a/KLO54NIC0514D8NK.html" target="_blank">网易｜2026 新春雨城文旅精品路线（含碧峰峡打卡奖牌）</a></li>
+        <li>⑦ <a href="https://news.qq.com/rain/a/20251110A063UU00" target="_blank">腾讯新闻｜成都自驾碧峰峡奖牌全攻略（2025-11）</a></li>
+        <li>⑧ <a href="https://www.dahepiao.com/lvyounews1/20251205539042.html" target="_blank">大河票务网｜2025 碧峰峡野生动物世界门票（2025-12 更新）</a></li>
+        <li>⑨ <a href="https://sichuan.scol.com.cn/ggxw/202506/83072671.html" target="_blank">四川在线｜碧峰峡沉浸式生态体验报道</a></li>
+        <li>⑩ <a href="https://www.weather.com.cn/weather15d/101271701.shtml" target="_blank">中国天气网｜雅安 15 天预报（临近出发再查）</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer">
+    生成于 2026-04-07 · 雅安集奖牌周末 2 日自驾 · 数据来源：Amap MCP 实查 + 公开网络资料综合<br>
+    🏅 祝你满载而归，两块奖牌稳稳收下！
+  </div>
+
+</div>
+
+<script>
+// Embedded trip data for validation and future regeneration
+const tripData = {
+  title: "雅安集奖牌周末2日自驾 · 蒙顶山+碧峰峡",
+  dateRange: "2026-04-11 ~ 2026-04-12",
+  travelers: "2大1小",
+  generationDate: "2026-04-07",
+  routeDistance: 306,
+  total: 2725,
+  perPerson: 908,
+  medalCount: 2
+};
+</script>
+</body>
+</html>
