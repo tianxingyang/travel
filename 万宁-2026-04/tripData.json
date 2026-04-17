@@ -1,0 +1,393 @@
+{
+  "title": "万宁石梅湾·威斯汀慢冲浪3日",
+  "dateRange": "2026-04-23 ~ 04-26",
+  "travelers": "2成人",
+  "generationDate": "2026-04-17",
+  "weather": {
+    "summary": "初夏海岛·多云为主，昼夜温差小，适合水上活动",
+    "avgHigh": 30,
+    "avgLow": 24,
+    "rainfall": "15%·午后偶有短阵雨",
+    "clothing": "速干短袖/短裤·泳衣·防晒霜（50+）·墨镜·薄外套夜间备",
+    "tips": "紫外线指数 11，每 2 小时补防晒；风力 3 级海面平静；尾波当日建议清晨或下午 3 点后光线最佳"
+  },
+  "days": [
+    {
+      "date": "04-23",
+      "weekday": "周四",
+      "theme": "夜航入琼·零点抵威斯汀",
+      "weather": { "icon": "cloudy", "high": 29, "low": 23 },
+      "activities": [
+        {
+          "time": "18:00",
+          "name": "天府机场 T2 集合·值机",
+          "duration": "1.5h",
+          "cost": 0,
+          "transport": "地铁 18 号线 / 机场快线",
+          "note": "关闭口前 45min；冲浪手套脚绳可托运"
+        },
+        {
+          "time": "20:30",
+          "name": "川航 3U6727 成都天府 → 三亚凤凰",
+          "duration": "2h25m",
+          "cost": 960,
+          "transport": "经济舱 ¥480/人·实查 FlyAI",
+          "note": "2 人机票含税 ¥960；选左侧窗位可看夜光海岸线"
+        },
+        {
+          "time": "22:55",
+          "name": "三亚凤凰 T1 落地·神州租车柜台",
+          "duration": "45min",
+          "cost": 0,
+          "note": "夜间柜台 24h 开放，提前 App 预订快速通道"
+        },
+        {
+          "time": "23:40",
+          "name": "G98 环岛高速夜驰 SYX → 石梅湾",
+          "duration": "1h30m",
+          "cost": 150,
+          "transport": "驾车 100km·石梅湾互通下",
+          "note": "过路费约 ¥85 + 油费 ¥65；牛岭隧道限速 80"
+        },
+        {
+          "time": "01:10",
+          "name": "石梅湾威斯汀 Check-in",
+          "duration": "20min",
+          "cost": 0,
+          "note": "已电话预留晚间到店；前台 24h 服务；客房升级金可咨询"
+        }
+      ]
+    },
+    {
+      "date": "04-24",
+      "weekday": "周五",
+      "theme": "日月湾咖啡打卡日",
+      "weather": { "icon": "sunny", "high": 30, "low": 24 },
+      "activities": [
+        {
+          "time": "10:30",
+          "name": "起床·落地窗看海·家属化妆",
+          "duration": "1.5h",
+          "cost": 0,
+          "note": "威斯汀客房通常含双早，可享到 10:30"
+        },
+        {
+          "time": "12:00",
+          "name": "威斯汀 Seasonal Tastes 早午餐",
+          "duration": "1.5h",
+          "cost": 0,
+          "transport": "酒店一楼",
+          "meal": {
+            "name": "Seasonal Tastes 国际自助餐厅",
+            "cuisine": "自助·西式·海南本地菜",
+            "location": "石梅湾威斯汀 1F",
+            "recommended": "现切三文鱼·椰奶陈年米糕·手冲咖啡",
+            "perPerson": 0
+          }
+        },
+        {
+          "time": "13:30",
+          "name": "驾车威斯汀 → 日月湾冲浪镇",
+          "duration": "20min",
+          "cost": 40,
+          "transport": "G98 环岛高速·13km",
+          "note": "油费约 ¥30 + 小段路桥费 ¥10"
+        },
+        {
+          "time": "14:00",
+          "name": "Goofydog 咖啡·冲浪集合店",
+          "duration": "1h",
+          "cost": 0,
+          "meal": {
+            "name": "Goofydog 咖啡·冲浪集合店",
+            "cuisine": "精品咖啡·轻食",
+            "location": "日月湾冲浪镇核心",
+            "recommended": "椰子冰咖·冲浪板墙拍照",
+            "perPerson": 60
+          }
+        },
+        {
+          "time": "15:00",
+          "name": "春山入簾稻田咖啡·家属出片专场",
+          "duration": "1.5h",
+          "cost": 0,
+          "meal": {
+            "name": "春山入簾稻田咖啡 SpringCafe",
+            "cuisine": "日式咖啡·稻田景观",
+            "location": "日月湾田新村",
+            "recommended": "米酿拿铁·稻田露台·下午光线最柔",
+            "perPerson": 70
+          }
+        },
+        {
+          "time": "17:00",
+          "name": "飞鱼俱乐部·双人桨板 SUP",
+          "duration": "1.5h",
+          "cost": 300,
+          "transport": "步行或电瓶车",
+          "note": "2 人桨板 ¥150/人；傍晚海面平静拍剪影；全程教练陪同"
+        },
+        {
+          "time": "19:00",
+          "name": "日月湾日落沙滩·拍照",
+          "duration": "30min",
+          "cost": 0,
+          "note": "日落约 18:52；冲浪板当道具；黄金 20 分钟"
+        },
+        {
+          "time": "19:30",
+          "name": "新海府海鲜·本地家常晚餐",
+          "duration": "1.5h",
+          "cost": 0,
+          "meal": {
+            "name": "新海府海鲜餐厅",
+            "cuisine": "海南海鲜·本地菜",
+            "location": "日月湾沿海公路",
+            "recommended": "和乐蟹·清蒸石斑·文昌鸡·椰子饭",
+            "perPerson": 180
+          }
+        },
+        {
+          "time": "21:15",
+          "name": "驾车回威斯汀",
+          "duration": "20min",
+          "cost": 40,
+          "transport": "G98 环岛高速·13km",
+          "note": "夜间路况佳，约 18min"
+        }
+      ]
+    },
+    {
+      "date": "04-25",
+      "weekday": "周六",
+      "theme": "家属尾波冲浪日·威斯汀 resort 慢享",
+      "weather": { "icon": "partlyCloudy", "high": 30, "low": 24 },
+      "activities": [
+        {
+          "time": "09:00",
+          "name": "起床·化妆·阳台咖啡",
+          "duration": "1.5h",
+          "cost": 0,
+          "note": "防水彩妆 or 不化；冲浪结束后再补全妆下午拍照"
+        },
+        {
+          "time": "10:30",
+          "name": "威斯汀 Seasonal Tastes 自助早餐",
+          "duration": "1h",
+          "cost": 0,
+          "meal": {
+            "name": "Seasonal Tastes 自助早餐",
+            "cuisine": "自助·西式·现煎现做",
+            "location": "石梅湾威斯汀 1F",
+            "recommended": "现烤可颂·热带水果·鲜榨椰汁",
+            "perPerson": 0
+          }
+        },
+        {
+          "time": "11:30",
+          "name": "步行至华润游艇会·尾波冲浪（仅家属）",
+          "duration": "10min",
+          "cost": 0,
+          "transport": "威斯汀步行 5-8 分钟",
+          "note": "酒店门口就能远眺游艇会码头；老公带相机/GoPro 岸边拍"
+        },
+        {
+          "time": "11:45",
+          "name": "家属尾波冲浪·拼船 45-60min",
+          "duration": "1.5h",
+          "cost": 500,
+          "note": "¥500/人·拼船制（同船 2-3 位轮流）；首冲教练全程护板；船上可拍小视频"
+        },
+        {
+          "time": "13:15",
+          "name": "石梅湾九里·海景午餐",
+          "duration": "1.5h",
+          "cost": 0,
+          "meal": {
+            "name": "Coco Bistro / 九里餐厅",
+            "cuisine": "轻食·地中海·简餐",
+            "location": "石梅湾九里商业区",
+            "recommended": "椰子鸡意面·热带水果沙拉·柠檬气泡水",
+            "perPerson": 170
+          }
+        },
+        {
+          "time": "15:00",
+          "name": "威斯汀 无边际泳池·私人沙滩",
+          "duration": "2.5h",
+          "cost": 0,
+          "transport": "酒店内",
+          "note": "泳池朝南，午后 3-5 点光线最佳，拍照黄金时段"
+        },
+        {
+          "time": "17:30",
+          "name": "石梅湾海边漫步·日落",
+          "duration": "1h",
+          "cost": 0,
+          "note": "酒店外侧沙滩连绵 3km，人少出片；日落约 18:52"
+        },
+        {
+          "time": "19:00",
+          "name": "威斯汀 The Lounge 或 九里外带",
+          "duration": "2h",
+          "cost": 0,
+          "meal": {
+            "name": "威斯汀 The Lounge 晚餐",
+            "cuisine": "地中海·海鲜",
+            "location": "石梅湾威斯汀 1F 大堂吧",
+            "recommended": "海南黑山羊·椰乳意面·提拉米苏",
+            "perPerson": 280
+          }
+        }
+      ]
+    },
+    {
+      "date": "04-26",
+      "weekday": "周日",
+      "theme": "告别威斯汀·成都 16:20 落地",
+      "weather": { "icon": "sunny", "high": 30, "low": 24 },
+      "activities": [
+        {
+          "time": "08:30",
+          "name": "起床·收拾行李",
+          "duration": "1h",
+          "cost": 0,
+          "note": "不需太早；行李提前装车省后续时间"
+        },
+        {
+          "time": "09:30",
+          "name": "威斯汀 自助早餐·最后泳池散步",
+          "duration": "1h",
+          "cost": 0,
+          "meal": {
+            "name": "Seasonal Tastes 早餐",
+            "cuisine": "自助·西式",
+            "location": "石梅湾威斯汀",
+            "recommended": "最后一杯手冲·椰奶燕麦·热带水果",
+            "perPerson": 0
+          }
+        },
+        {
+          "time": "10:30",
+          "name": "Check-out·驶往凤凰机场",
+          "duration": "1h40m",
+          "cost": 150,
+          "transport": "G98 环岛高速·100km",
+          "note": "比日月湾到机场省 3km 约 5min；还车+安检预留 1h30m"
+        },
+        {
+          "time": "12:15",
+          "name": "三亚凤凰 T3 还车·值机·安检",
+          "duration": "1.5h",
+          "cost": 0,
+          "note": "国内经济舱提前 2h 开放值机；凤凰 T3 新航站楼"
+        },
+        {
+          "time": "13:45",
+          "name": "祥鹏 8L9692 三亚凤凰 → 成都天府",
+          "duration": "2h35m",
+          "cost": 2520,
+          "transport": "经济舱 ¥1260/人·实查 FlyAI",
+          "note": "周日返程溢价；靠左窗位看海岸线;天府 T2 落地"
+        },
+        {
+          "time": "16:20",
+          "name": "成都天府 T2 落地·回城",
+          "duration": "1h",
+          "cost": 0,
+          "transport": "地铁 18 号线 / 机场专车",
+          "note": "比目标 16:00 晚 20min；若严卡 16:00 可换 JD5941 15:25 +¥30/人"
+        }
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "石梅湾威斯汀度假酒店",
+      "area": "石梅湾·Marriott",
+      "pricePerNight": 1232,
+      "highlights": "Marriott 旗舰·3km 私人沙滩;步行 5min 到尾波俱乐部码头;无边际泳池朝南;含双早;2016装修;一线海景房"
+    },
+    {
+      "name": "海南日月湾温士顿秘境",
+      "area": "日月湾田新村",
+      "pricePerNight": 1276,
+      "highlights": "2025新开·独栋别墅风;保留日月湾咖啡街步行半径;豪华型·出片度高;比威斯汀多花¥44/晚"
+    },
+    {
+      "name": "万宁神州半岛君悦酒店",
+      "area": "神州半岛·凯悦",
+      "pricePerNight": 1749,
+      "highlights": "凯悦 2022 最新;海景无敌·空间最大;距尾波点 20min;升级¥+517/晚"
+    },
+    {
+      "name": "日月湾由仑 YOOLAND 酒店",
+      "area": "日月湾冲浪镇",
+      "pricePerNight": 444,
+      "highlights": "日月湾本地设计酒店·高档型;咖啡街步行范围;降档保留冲浪镇氛围·省¥2364/3晚"
+    }
+  ],
+  "budget": {
+    "transport": {
+      "items": [
+        { "name": "3U6727 成都→三亚 ¥480 ×2", "cost": 960, "confidence": "实查" },
+        { "name": "8L9692 三亚→成都 ¥1260 ×2", "cost": 2520, "confidence": "实查" },
+        { "name": "海南 3 天租车（小型 SUV）", "cost": 450, "confidence": "估算" },
+        { "name": "过路费·油费（机场+日月湾往返）", "cost": 380, "confidence": "估算" },
+        { "name": "成都两端地铁/停车", "cost": 100, "confidence": "估算" }
+      ],
+      "subtotal": 4410
+    },
+    "accommodation": {
+      "items": [
+        { "name": "石梅湾威斯汀度假酒店 ¥1232 ×3晚（含双早）", "cost": 3696, "confidence": "实查" }
+      ],
+      "subtotal": 3696
+    },
+    "food": {
+      "items": [
+        { "name": "4.24 日月湾 cafes + 海鲜晚餐 ×2", "cost": 780, "confidence": "参考" },
+        { "name": "4.25 石梅湾九里午餐 + 威斯汀晚餐 ×2", "cost": 900, "confidence": "参考" },
+        { "name": "4.26 酒店早餐 + 机场简餐 ×2", "cost": 100, "confidence": "估算" }
+      ],
+      "subtotal": 1780
+    },
+    "tickets": {
+      "items": [
+        { "name": "尾波冲浪 ×1 人（仅家属·石梅湾拼船）", "cost": 500, "confidence": "参考" },
+        { "name": "桨板 SUP 2h ×2 人（日月湾飞鱼）", "cost": 300, "confidence": "参考" }
+      ],
+      "subtotal": 800
+    },
+    "other": {
+      "items": [
+        { "name": "防晒·冲浪用品·零碎", "cost": 200, "confidence": "估算" },
+        { "name": "应急备用金", "cost": 200, "confidence": "估算" }
+      ],
+      "subtotal": 400
+    },
+    "total": 11086,
+    "perPerson": 5543,
+    "note": "升级版：石梅湾威斯汀 ×3晚 + 单人尾波拼船 + 双人桨板 = ¥11,086（¥5,543/人）。进一步升级：包船 1 小时独享 +¥700、神州半岛君悦 +¥1551/3晚。平替：温士顿秘境（保留日月湾 cafe 步行）同价位；由仑酒店降档 -¥2364/3晚 回到基准 ¥7,920。"
+  },
+  "tips": [
+    "尾波冲浪需提前 1 天微信预约，4 月非暴风季；若当日 3 级以上大风教练会主动改期",
+    "威斯汀步行 5-8 分钟到华润游艇会码头，家属完全可以自走，老公岸边拍照；俱乐部有岸边观景台",
+    "日月湾海边'拉客仔'低价招揽（50-100/h）是真浪冲浪课，和尾波不是同一项目，别买错",
+    "石梅湾 ↔ 日月湾 G98 高速 13km，周末下午 14:00-16:00 易拥堵，Day 2 建议留石梅湾免折返",
+    "威斯汀自助早餐通常含双早，价值 ¥250/人·天；不要错过现切三文鱼和手冲咖啡",
+    "天府机场距市中心 50km，地铁 18 号线约 1h；若行李多建议预约机场专车（周日晚高峰优势明显）",
+    "凤凰机场 → 石梅湾 100km，沿途加油站少，建议出发前满油",
+    "4 月海水温度 26℃，可不穿湿衣；但防晒服/冲浪帽强烈建议，紫外线指数 11",
+    "推荐下载'海浪预报'App 或'Windy'查当日风浪；尾波要求 0.3m 以下小浪"
+  ],
+  "references": [
+    { "title": "FlyAI 实查·3U6727 去程航班", "url": "https://a.feizhu.com/0HcO3Q" },
+    { "title": "FlyAI 实查·8L9692 返程航班", "url": "https://a.feizhu.com/3rAnmt" },
+    { "title": "FlyAI 实查·石梅湾威斯汀度假酒店", "url": "https://a.feizhu.com/2GA3GS" },
+    { "title": "FlyAI 实查·日月湾温士顿秘境", "url": "https://a.feizhu.com/1um6EV" },
+    { "title": "小红书·万宁尾波冲浪小宇教练", "url": "https://www.xiaohongshu.com/explore/69df85770000000021006dee" },
+    { "title": "小红书·海南尾波冲浪现状（避雷）", "url": "https://www.xiaohongshu.com/explore/679f8c60000000002901a0fc" },
+    { "title": "小红书·万宁包船尾浪", "url": "https://www.xiaohongshu.com/explore/679c7b1c00000000170391ac" }
+  ]
+}

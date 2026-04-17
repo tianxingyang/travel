@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>万宁石梅湾·威斯汀慢冲浪3日</title>
+<style>
+:root{
+  --ink:#1A1611;
+  --ink-70:rgba(26,22,17,.72);
+  --ink-50:rgba(26,22,17,.55);
+  --ink-30:rgba(26,22,17,.3);
+  --ink-12:rgba(26,22,17,.12);
+  --paper:#FAF7F0;
+  --paper-soft:#F3EDE0;
+  --sand:#E7D9BE;
+  --sand-deep:#C8AE85;
+  --navy:#13315C;
+  --navy-deep:#0A2142;
+  --sea:#3A7CA5;
+  --mist:#B9D2E3;
+  --gold:#B48A4C;
+  --gold-soft:#DFC79B;
+  --serif:"Cormorant Garamond","EB Garamond","Libre Bodoni","Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,"SF Pro Display","PingFang SC","Microsoft YaHei","Public Sans","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-weight:400;font-size:16px;overflow-x:hidden}
+a{color:inherit;text-decoration:none;transition:opacity .2s ease}
+a:hover{opacity:.65}
+button{border:none;background:none;cursor:pointer;font:inherit;color:inherit}
+img{max-width:100%;display:block}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.wrap-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-50);font-weight:500}
+.rule{height:1px;background:var(--ink-12);border:none;margin:0}
+
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 45%,var(--sea) 80%,var(--mist) 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(231,217,190,.35),transparent 60%);pointer-events:none}
+.hero-top{padding:32px 32px 0;display:flex;justify-content:space-between;align-items:center;color:#F3EDE0;z-index:2;position:relative}
+.hero-brand{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:18px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.hero-brand-mark{width:22px;height:22px;border:1.5px solid currentColor;border-radius:50%;position:relative}
+.hero-brand-mark::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;background:currentColor;border-radius:50%;transform:translate(-50%,-50%)}
+.hero-meta{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 32px;color:#FAF7F0;z-index:2;position:relative;max-width:1400px;margin:0 auto;width:100%}
+.hero-eyebrow{display:flex;align-items:center;gap:18px;margin-bottom:28px;font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-soft);font-weight:500}
+.hero-eyebrow-line{width:56px;height:1px;background:var(--gold-soft)}
+.hero h1{font-family:var(--serif);font-size:clamp(52px,9vw,128px);line-height:.95;font-weight:400;letter-spacing:-.03em;margin-bottom:36px}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,28px);font-weight:300;max-width:640px;line-height:1.4;color:rgba(250,247,240,.88)}
+
+.hero-stats{padding:28px 32px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(250,247,240,.2);color:#FAF7F0;z-index:2;position:relative;max-width:1400px;margin:0 auto;width:100%}
+.hero-stat{padding:14px 20px;border-right:1px solid rgba(250,247,240,.12)}
+.hero-stat:last-child{border-right:none}
+.hero-stat-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.7;margin-bottom:10px}
+.hero-stat-value{font-family:var(--serif);font-size:clamp(24px,3.5vw,42px);font-weight:500;line-height:1;letter-spacing:-.02em}
+.hero-stat-hint{font-size:12px;margin-top:6px;opacity:.72;font-style:italic;font-family:var(--serif)}
+
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0;height:120px;pointer-events:none}
+
+.intro{padding:120px 0;position:relative}
+.intro-grid{display:grid;grid-template-columns:180px 1fr;gap:56px;align-items:start}
+.intro-label{position:sticky;top:32px}
+.intro-label-sm{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-50);margin-bottom:14px}
+.intro-label-num{font-family:var(--serif);font-size:72px;line-height:.9;color:var(--ink-30);font-weight:400}
+.intro-body{max-width:680px}
+.intro-body .dropcap{font-family:var(--serif);float:left;font-size:108px;line-height:.85;padding:8px 16px 0 0;font-weight:500;color:var(--navy)}
+.intro-body p{font-family:var(--serif);font-size:21px;line-height:1.6;color:var(--ink);font-weight:400;margin-bottom:24px}
+.intro-body .small{font-family:var(--sans);font-size:14px;color:var(--ink-70);line-height:1.75;margin-top:32px}
+
+.weather{background:var(--paper-soft);padding:56px 0;border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12)}
+.weather-grid{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:48px;align-items:center}
+.weather-icon{width:72px;height:72px;color:var(--gold)}
+.weather-title{font-family:var(--serif);font-size:22px;color:var(--ink);line-height:1.3;font-weight:500}
+.weather-title em{color:var(--sea);font-style:italic}
+.weather-stat .eyebrow{margin-bottom:6px;display:block}
+.weather-stat-v{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--ink)}
+.weather-stat-v span{font-size:15px;color:var(--ink-50);margin-left:4px;font-style:italic}
+
+.sect-h{padding:96px 0 48px;text-align:center}
+.sect-h .eyebrow{margin-bottom:18px;display:block}
+.sect-h h2{font-family:var(--serif);font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.02em;font-weight:500;color:var(--ink)}
+.sect-h h2 em{font-style:italic;color:var(--gold)}
+.sect-h .sub{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-50);margin-top:18px;font-weight:400}
+
+.days{padding:0 0 80px}
+.day{position:relative;padding:80px 0;border-top:1px solid var(--ink-12)}
+.day:last-child{border-bottom:1px solid var(--ink-12)}
+.day-grid{display:grid;grid-template-columns:220px 1fr;gap:72px;align-items:start}
+.day-num{position:sticky;top:40px}
+.day-num-big{font-family:var(--serif);font-size:clamp(96px,11vw,156px);line-height:.82;color:var(--ink);font-weight:400;letter-spacing:-.04em}
+.day-num-big em{color:var(--gold);font-style:italic}
+.day-num-date{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-50);margin-top:14px}
+.day-num-weather{display:flex;align-items:center;gap:10px;margin-top:18px;font-family:var(--serif);font-size:15px;color:var(--ink-70);font-style:italic}
+.day-num-weather svg{width:22px;height:22px;color:var(--gold)}
+
+.day-body h3{font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);line-height:1.15;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin-bottom:36px;max-width:640px}
+.day-body h3 em{color:var(--sea);font-style:italic}
+
+.timeline{position:relative;padding-left:0}
+.act{display:grid;grid-template-columns:84px 1fr;gap:28px;padding:22px 0;border-top:1px solid var(--ink-12);align-items:start;transition:background .25s ease}
+.act:hover{background:linear-gradient(90deg,transparent,var(--paper-soft) 50%,transparent)}
+.act-time{font-family:var(--serif);font-size:22px;color:var(--ink);font-weight:500;letter-spacing:.02em;padding-top:2px}
+.act-time small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-30);margin-top:4px;font-weight:500}
+.act-main{min-width:0}
+.act-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:6px}
+.act-name{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);line-height:1.25;letter-spacing:-.005em}
+.act-dur{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-50);padding:4px 10px;border:1px solid var(--ink-12);border-radius:999px}
+.act-cost{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold);margin-left:auto}
+.act-cost.free{color:var(--sea)}
+.act-note{font-size:14px;color:var(--ink-70);line-height:1.65;margin-top:6px;font-family:var(--sans)}
+.act-transport{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-50);margin-top:8px;font-style:italic;font-family:var(--serif)}
+.act-transport::before{content:"";width:14px;height:1px;background:var(--ink-30)}
+
+.meal{margin-top:14px;padding:18px 22px;background:var(--paper-soft);border-left:2px solid var(--gold);border-radius:2px}
+.meal-top{display:flex;align-items:baseline;gap:14px;margin-bottom:4px;flex-wrap:wrap}
+.meal-name{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink)}
+.meal-cuisine{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.meal-loc{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink-50);margin-bottom:6px}
+.meal-rec{font-size:14px;color:var(--ink-70);line-height:1.55;font-family:var(--sans)}
+.meal-pp{display:inline-block;margin-top:8px;font-family:var(--serif);font-size:13px;color:var(--ink-70);font-style:italic;padding:3px 10px;background:#fff;border-radius:999px;border:1px solid var(--ink-12)}
+
+.hotels{padding:80px 0;background:var(--paper-soft)}
+.hotels-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:24px;margin-top:16px}
+.hcard{background:#fff;padding:32px;border-radius:2px;border:1px solid var(--ink-12);display:flex;flex-direction:column;position:relative;transition:transform .3s ease,box-shadow .3s ease}
+.hcard:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(26,22,17,.15)}
+.hcard-tag{position:absolute;top:16px;right:16px;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:4px 10px;border-radius:999px;font-weight:600}
+.hcard-tag.primary{background:var(--navy);color:var(--gold-soft)}
+.hcard-tag.alt{background:var(--sand);color:var(--ink)}
+.hcard-tag.top{background:var(--gold);color:#fff}
+.hcard-tag.save{background:var(--sea);color:#fff}
+.hcard .area{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-50);margin-bottom:10px;font-weight:500}
+.hcard .name{font-family:var(--serif);font-size:22px;line-height:1.2;color:var(--ink);margin-bottom:16px;letter-spacing:-.005em;font-weight:500;flex:1}
+.hcard .price{font-family:var(--serif);font-size:32px;color:var(--navy);font-weight:500;letter-spacing:-.01em}
+.hcard .price span{font-size:14px;color:var(--ink-50);font-weight:400;font-style:italic;margin-left:4px}
+.hcard .hl{list-style:none;padding:0;margin-top:16px;border-top:1px solid var(--ink-12);padding-top:16px}
+.hcard .hl li{font-family:var(--sans);font-size:13px;color:var(--ink-70);padding:4px 0;display:flex;gap:8px;line-height:1.5}
+.hcard .hl li::before{content:"·";color:var(--gold);flex-shrink:0;font-weight:700}
+.hcard.featured{background:linear-gradient(160deg,#fff 0%,#fff 60%,var(--sand) 200%);border-color:var(--gold-soft)}
+.hcard.featured .name{font-size:26px}
+
+.surf{padding:96px 0;background:linear-gradient(180deg,var(--paper) 0%,var(--paper-soft) 100%)}
+.surf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:16px}
+.scard{position:relative;padding:40px 32px;background:#fff;border:1px solid var(--ink-12);border-radius:2px;overflow:hidden;transition:border-color .3s ease}
+.scard:hover{border-color:var(--gold)}
+.scard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sea),var(--navy))}
+.scard.recommend::before{background:linear-gradient(90deg,var(--gold),var(--sand-deep))}
+.scard-rank{font-family:var(--serif);font-size:48px;color:var(--gold);line-height:1;font-weight:500;font-style:italic}
+.scard-name{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin-top:12px;letter-spacing:-.005em}
+.scard-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-50);margin-top:4px;margin-bottom:18px}
+.scard-meta{font-family:var(--sans);font-size:13px;color:var(--ink-70);line-height:1.7}
+.scard-meta strong{color:var(--ink);font-weight:600}
+.scard-price{margin-top:18px;padding-top:18px;border-top:1px solid var(--ink-12);display:flex;justify-content:space-between;align-items:baseline}
+.scard-price-v{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:500;letter-spacing:-.01em}
+.scard-price-l{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-50);font-family:var(--sans)}
+
+.budget{padding:96px 0;background:var(--ink);color:var(--paper)}
+.budget .sect-h h2{color:var(--paper)}
+.budget .sect-h h2 em{color:var(--gold-soft)}
+.budget .sect-h .eyebrow{color:var(--gold-soft)}
+.budget .sect-h .sub{color:rgba(250,247,240,.55)}
+.budget-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;margin-top:48px;align-items:start}
+.budget-total{padding:48px;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);border-radius:2px;position:relative;overflow:hidden}
+.budget-total::before{content:"";position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,var(--gold) 0%,transparent 60%);opacity:.25}
+.budget-total-eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:16px}
+.budget-total-v{font-family:var(--serif);font-size:clamp(64px,9vw,128px);line-height:.9;color:var(--paper);font-weight:400;letter-spacing:-.03em;position:relative}
+.budget-total-v em{color:var(--gold-soft);font-style:italic;font-size:.55em;margin-left:8px}
+.budget-total-sub{font-family:var(--serif);font-style:italic;font-size:20px;color:rgba(250,247,240,.8);margin-top:20px}
+.budget-total-sub strong{color:var(--gold-soft);font-style:normal;font-weight:500}
+.budget-note{font-family:var(--sans);font-size:14px;color:rgba(250,247,240,.6);margin-top:28px;line-height:1.75;padding-top:20px;border-top:1px solid rgba(250,247,240,.15)}
+
+.budget-bars{padding:24px 0}
+.bar{margin-bottom:28px}
+.bar-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.bar-label{font-family:var(--serif);font-size:17px;color:var(--paper);font-weight:500}
+.bar-label small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,240,.45);margin-top:2px;font-weight:500}
+.bar-v{font-family:var(--serif);font-size:20px;color:var(--gold-soft);font-weight:500;letter-spacing:-.01em}
+.bar-v small{font-size:12px;color:rgba(250,247,240,.5);margin-left:6px;font-style:italic}
+.bar-track{height:4px;background:rgba(250,247,240,.1);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));border-radius:999px;transition:width 1.2s cubic-bezier(.25,.1,.25,1);width:0}
+
+.budget-table{margin-top:56px;padding-top:48px;border-top:1px solid rgba(250,247,240,.15)}
+.btbl{width:100%;border-collapse:collapse}
+.btbl thead th{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(250,247,240,.5);font-weight:500;text-align:left;padding:14px 12px;border-bottom:1px solid rgba(250,247,240,.15)}
+.btbl thead th:last-child{text-align:right}
+.btbl tbody td{padding:16px 12px;border-bottom:1px solid rgba(250,247,240,.08);font-size:14px;color:rgba(250,247,240,.85);font-family:var(--sans);line-height:1.5}
+.btbl tbody td:first-child{font-family:var(--serif);font-size:15px;color:var(--paper)}
+.btbl tbody td:last-child{text-align:right;font-family:var(--serif);font-size:15px;color:var(--gold-soft);font-weight:500;letter-spacing:-.005em}
+.conf{display:inline-block;font-size:10px;letter-spacing:.15em;padding:2px 8px;border-radius:3px;font-weight:600;text-transform:uppercase;font-family:var(--sans)}
+.conf.real{background:rgba(180,138,76,.18);color:var(--gold-soft)}
+.conf.ref{background:rgba(58,124,165,.2);color:var(--mist)}
+.conf.est{background:rgba(250,247,240,.08);color:rgba(250,247,240,.55)}
+
+.tips{padding:96px 0;background:var(--paper-soft)}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
+.tcard{background:#fff;padding:28px;border-radius:2px;border:1px solid var(--ink-12);position:relative;transition:transform .3s ease;display:flex;flex-direction:column}
+.tcard:hover{transform:translateY(-3px)}
+.tcard-num{font-family:var(--serif);font-size:14px;color:var(--gold);font-style:italic;font-weight:500;letter-spacing:.05em;margin-bottom:10px}
+.tcard-txt{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.55;font-weight:400}
+
+.refs{padding:80px 0 60px;background:var(--ink);color:rgba(250,247,240,.75)}
+.refs-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:32px}
+.ref-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(250,247,240,.08);align-items:center}
+.ref-num{font-family:var(--serif);font-size:13px;color:var(--gold-soft);font-style:italic;flex-shrink:0;min-width:30px;font-weight:500}
+.ref-title{font-family:var(--serif);font-size:15px;flex:1;font-weight:400}
+.ref-arrow{width:16px;height:16px;color:rgba(250,247,240,.4);flex-shrink:0}
+
+.foot{padding:40px 0;background:var(--ink);color:rgba(250,247,240,.4);text-align:center;font-family:var(--serif);font-style:italic;font-size:13px;border-top:1px solid rgba(250,247,240,.08)}
+.foot a{color:var(--gold-soft);border-bottom:1px solid rgba(223,199,155,.3)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .bar-fill{transition:none}
+}
+
+@media (max-width:960px){
+  .wrap,.wrap-narrow{padding:0 22px}
+  .hero-top{padding:22px 22px 0}
+  .hero-body{padding:40px 22px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);padding:22px}
+  .hero-stat{border-right:none;border-bottom:1px solid rgba(250,247,240,.12)}
+  .intro{padding:72px 0}
+  .intro-grid{grid-template-columns:1fr;gap:20px}
+  .intro-label{position:static}
+  .intro-label-num{font-size:56px}
+  .weather-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .weather-icon{width:56px;height:56px}
+  .sect-h{padding:72px 0 32px}
+  .day{padding:56px 0}
+  .day-grid{grid-template-columns:1fr;gap:28px}
+  .day-num{position:static}
+  .day-num-big{font-size:96px}
+  .act{grid-template-columns:64px 1fr;gap:16px}
+  .hotels-grid{grid-template-columns:1fr;gap:16px}
+  .surf-grid{grid-template-columns:1fr;gap:20px}
+  .budget-hero{grid-template-columns:1fr;gap:32px}
+  .budget-total{padding:32px}
+  .tips-grid{grid-template-columns:1fr}
+  .refs-grid{grid-template-columns:1fr;gap:4px}
+  .btbl thead{display:none}
+  .btbl tbody td{display:block;border:none;padding:2px 0}
+  .btbl tbody tr{display:block;padding:14px 0;border-bottom:1px solid rgba(250,247,240,.1)}
+  .btbl tbody td:first-child{font-size:16px;margin-bottom:4px}
+  .btbl tbody td:last-child{text-align:left;font-size:14px}
+}
+@media (max-width:480px){
+  .hero-stats{grid-template-columns:1fr}
+  .hero-stat{border-bottom:1px solid rgba(250,247,240,.12)}
+  .hero-stat:last-child{border-bottom:none}
+  .intro-body .dropcap{font-size:84px}
+  .intro-body p{font-size:18px}
+  .act-top{flex-direction:column;align-items:flex-start}
+  .act-cost{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" width="100%" height="120" aria-hidden="true">
+    <path d="M0,60 C240,100 480,20 720,50 C960,80 1200,30 1440,60 L1440,120 L0,120 Z" fill="#FAF7F0"/>
+    <path d="M0,80 C180,100 420,50 720,70 C1020,90 1260,50 1440,75 L1440,120 L0,120 Z" fill="#FAF7F0" opacity=".6"/>
+  </svg>
+
+  <header class="hero-top">
+    <div class="hero-brand">
+      <span class="hero-brand-mark" aria-hidden="true"></span>
+      <span>WANNING&nbsp;&middot;&nbsp;SHIMEI BAY</span>
+    </div>
+    <div class="hero-meta">VOL.01 &middot; 2026 Spring</div>
+  </header>
+
+  <div class="hero-body">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span>A SLOW-PACED WEEKEND AT THE WESTIN</span>
+    </div>
+    <h1>万宁石梅湾<br>威斯汀<em>慢</em>冲浪</h1>
+    <p class="hero-sub">三日两海湾，一场家属的尾波初体验；<br>从日月湾的咖啡小馆，走回石梅湾的无边际泳池。</p>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-label">Dates</div>
+      <div class="hero-stat-value">04.23<span style="color:var(--gold-soft);margin:0 8px;font-weight:400">—</span>04.26</div>
+      <div class="hero-stat-hint">weekend · 3 days</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Travelers</div>
+      <div class="hero-stat-value">2<span style="font-size:.5em;color:var(--gold-soft);margin-left:6px">成人</span></div>
+      <div class="hero-stat-hint">couple getaway</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Budget</div>
+      <div class="hero-stat-value">¥5,543<span style="font-size:.5em;color:var(--gold-soft);margin-left:6px">/人</span></div>
+      <div class="hero-stat-hint">total ¥11,086</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Stay</div>
+      <div class="hero-stat-value">Westin</div>
+      <div class="hero-stat-hint">石梅湾 · Marriott</div>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="intro-grid reveal">
+      <div class="intro-label">
+        <div class="intro-label-sm">The Brief</div>
+        <div class="intro-label-num">01</div>
+      </div>
+      <div class="intro-body">
+        <p><span class="dropcap">从</span>成都出发的一班夜航，把两个人从三月的湿冷带进四月的海南。凤凰机场灯火微亮，租车柜台 24 小时开门；沿 G98 夜驰一百公里，零点抵石梅湾威斯汀——行李还没放下，枕头就已经带着海的味道。</p>
+        <p>这趟行程没有赶早冲浪的闹钟，没有把两个人都塞进教练船。只给家属安排一节拼船尾波——你站在岸边的观景台，顺手把她最漂亮的那组 wake ride 拍成视频。其余时间属于日月湾的咖啡馆、稻田露台、威斯汀的无边际泳池，和晚风里的一杯椰乳意面。</p>
+        <p class="small">基础节奏：Day 1 日月湾咖啡打卡 &amp; 桨板 / Day 2 尾波 + resort 慢享 / Day 3 早餐后离开。尾波和桨板都是"家属优先"型体验，预算含威斯汀双早，单人拼船尾波 ¥500，机票为 FlyAI 实查价。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="weather">
+  <div class="wrap">
+    <div class="weather-grid reveal">
+      <svg class="weather-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" width="72" height="72" aria-hidden="true">
+        <circle cx="32" cy="30" r="11" stroke-linecap="round"/>
+        <line x1="32" y1="8" x2="32" y2="13" stroke-linecap="round"/>
+        <line x1="32" y1="47" x2="32" y2="52" stroke-linecap="round"/>
+        <line x1="10" y1="30" x2="15" y2="30" stroke-linecap="round"/>
+        <line x1="49" y1="30" x2="54" y2="30" stroke-linecap="round"/>
+        <line x1="16" y1="14" x2="19.5" y2="17.5" stroke-linecap="round"/>
+        <line x1="44.5" y1="42.5" x2="48" y2="46" stroke-linecap="round"/>
+        <line x1="16" y1="46" x2="19.5" y2="42.5" stroke-linecap="round"/>
+        <line x1="44.5" y1="17.5" x2="48" y2="14" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="eyebrow">Weather Brief</div>
+        <div class="weather-title" style="margin-top:6px">初夏海岛·<em>多云为主</em>，昼夜温差小，海面平静。</div>
+      </div>
+      <div class="weather-stat">
+        <span class="eyebrow">Temperature</span>
+        <div class="weather-stat-v">24<span>—</span>30°<span>C</span></div>
+      </div>
+      <div class="weather-stat">
+        <span class="eyebrow">Rainfall · UV</span>
+        <div class="weather-stat-v">15<span>%</span> · 11<span>UVI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect-h">
+  <div class="wrap">
+    <div class="eyebrow">Day-by-Day</div>
+    <h2>三个<em>慢</em>日子</h2>
+    <p class="sub">From night-landing to Sunday's afternoon flight home.</p>
+  </div>
+</section>
+
+<section class="days">
+  <div class="wrap">
+
+    <article class="day reveal">
+      <div class="day-grid">
+        <aside class="day-num">
+          <div class="day-num-big">D<em>0</em></div>
+          <div class="day-num-date">04.23 · 周四</div>
+          <div class="day-num-weather">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <path d="M7 16a4 4 0 010-8 5 5 0 019.9 1A3 3 0 0117 16H7z"/>
+            </svg>
+            <span>多云 · 29° / 23°</span>
+          </div>
+        </aside>
+        <div class="day-body">
+          <h3>夜航入琼 · 零点抵<em>威斯汀</em></h3>
+
+          <div class="timeline">
+            <div class="act">
+              <div class="act-time">18:00<small>Check-in</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">天府机场 T2 集合·值机</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">关闭口前 45min；冲浪手套、脚绳可托运。</div>
+                <div class="act-transport">地铁 18 号线 / 机场快线</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">20:30<small>Departure</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">川航 3U6727 成都天府 → 三亚凤凰</div>
+                  <span class="act-dur">2h25m</span>
+                  <span class="act-cost">¥960</span>
+                </div>
+                <div class="act-note">2 人机票含税 ¥960（单人 ¥480），FlyAI 实查。选左侧窗位可看夜光海岸线。</div>
+                <div class="act-transport">经济舱 · 川航 A320</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">22:55<small>Arrival</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">三亚凤凰 T1 落地·神州租车</div>
+                  <span class="act-dur">45m</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">夜间柜台 24h 开放；提前 App 预订走快速通道。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">23:40<small>Drive</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">G98 环岛高速夜驰 SYX → 石梅湾</div>
+                  <span class="act-dur">1h30m</span>
+                  <span class="act-cost">¥150</span>
+                </div>
+                <div class="act-note">过路费约 ¥85 + 油费 ¥65；牛岭隧道限速 80。</div>
+                <div class="act-transport">驾车 100km · 石梅湾互通下</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">01:10<small>Arrive</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">石梅湾威斯汀 Check-in</div>
+                  <span class="act-dur">20m</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">已电话预留晚间到店；前台 24h 服务；客房升级金可咨询。</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day reveal">
+      <div class="day-grid">
+        <aside class="day-num">
+          <div class="day-num-big">D<em>1</em></div>
+          <div class="day-num-date">04.24 · 周五</div>
+          <div class="day-num-weather">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5"/>
+              <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" stroke-linecap="round"/>
+            </svg>
+            <span>晴 · 30° / 24°</span>
+          </div>
+        </aside>
+        <div class="day-body">
+          <h3><em>日月湾</em>咖啡打卡日 —— 从威斯汀出发，13 公里的小镇穿越。</h3>
+
+          <div class="timeline">
+            <div class="act">
+              <div class="act-time">10:30<small>Wake</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">起床·落地窗看海·家属化妆</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">威斯汀客房通常含双早，可享到 10:30。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">12:00<small>Brunch</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">威斯汀 Seasonal Tastes 早午餐</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">含双早</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">Seasonal Tastes 国际自助餐厅</div>
+                    <div class="meal-cuisine">自助 · 西式 · 海南菜</div>
+                  </div>
+                  <div class="meal-loc">石梅湾威斯汀 1F</div>
+                  <div class="meal-rec">现切三文鱼 · 椰奶陈年米糕 · 手冲咖啡</div>
+                  <div class="meal-pp">已含在房费</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">13:30<small>Drive</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">驾车 威斯汀 → 日月湾冲浪镇</div>
+                  <span class="act-dur">20m</span>
+                  <span class="act-cost">¥40</span>
+                </div>
+                <div class="act-note">油费约 ¥30 + 小段路桥费 ¥10。</div>
+                <div class="act-transport">G98 环岛高速 · 13km</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">14:00<small>Coffee</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">Goofydog 咖啡·冲浪集合店</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">免费入场</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">Goofydog 咖啡·冲浪集合店</div>
+                    <div class="meal-cuisine">精品咖啡 · 轻食</div>
+                  </div>
+                  <div class="meal-loc">日月湾冲浪镇核心</div>
+                  <div class="meal-rec">椰子冰咖 · 冲浪板墙拍照</div>
+                  <div class="meal-pp">约 ¥60/人</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">15:00<small>Coffee</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">春山入簾稻田咖啡·家属出片专场</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">免费入场</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">春山入簾稻田咖啡 SpringCafe</div>
+                    <div class="meal-cuisine">日式咖啡 · 稻田景观</div>
+                  </div>
+                  <div class="meal-loc">日月湾田新村</div>
+                  <div class="meal-rec">米酿拿铁 · 稻田露台 · 下午光线最柔</div>
+                  <div class="meal-pp">约 ¥70/人</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">17:00<small>Water</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">飞鱼俱乐部·双人桨板 SUP</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost">¥300</span>
+                </div>
+                <div class="act-note">2 人桨板 ¥150/人；傍晚海面平静拍剪影；全程教练陪同。</div>
+                <div class="act-transport">步行或电瓶车</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">19:00<small>Sunset</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">日月湾日落沙滩·拍照</div>
+                  <span class="act-dur">30m</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">日落约 18:52；冲浪板当道具；黄金 20 分钟。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">19:30<small>Dinner</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">新海府海鲜·本地家常晚餐</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">见下</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">新海府海鲜餐厅</div>
+                    <div class="meal-cuisine">海南海鲜 · 本地菜</div>
+                  </div>
+                  <div class="meal-loc">日月湾沿海公路</div>
+                  <div class="meal-rec">和乐蟹 · 清蒸石斑 · 文昌鸡 · 椰子饭</div>
+                  <div class="meal-pp">约 ¥180/人</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">21:15<small>Drive</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">驾车回威斯汀</div>
+                  <span class="act-dur">20m</span>
+                  <span class="act-cost">¥40</span>
+                </div>
+                <div class="act-note">夜间路况佳，约 18min。</div>
+                <div class="act-transport">G98 环岛高速 · 13km</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day reveal">
+      <div class="day-grid">
+        <aside class="day-num">
+          <div class="day-num-big">D<em>2</em></div>
+          <div class="day-num-date">04.25 · 周六</div>
+          <div class="day-num-weather">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <circle cx="9" cy="9" r="3"/>
+              <path d="M13 13a3 3 0 100 6h4a2.5 2.5 0 000-5 3 3 0 00-4-1z"/>
+            </svg>
+            <span>多云 · 30° / 24°</span>
+          </div>
+        </aside>
+        <div class="day-body">
+          <h3>家属<em>尾波</em>冲浪日 · 威斯汀 resort 慢享</h3>
+
+          <div class="timeline">
+            <div class="act">
+              <div class="act-time">09:00<small>Wake</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">起床·化妆·阳台咖啡</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">防水彩妆 or 不化；冲浪结束后再补全妆下午拍照。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">10:30<small>Breakfast</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">威斯汀 Seasonal Tastes 自助早餐</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">含双早</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">Seasonal Tastes 自助早餐</div>
+                    <div class="meal-cuisine">自助 · 西式 · 现做</div>
+                  </div>
+                  <div class="meal-loc">石梅湾威斯汀 1F</div>
+                  <div class="meal-rec">现烤可颂 · 热带水果 · 鲜榨椰汁</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">11:30<small>Walk</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">步行至华润游艇会·尾波冲浪码头</div>
+                  <span class="act-dur">10m</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">酒店门口就能远眺游艇会码头；老公带相机 / GoPro 岸边拍。</div>
+                <div class="act-transport">威斯汀步行 5-8 分钟</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">11:45<small>Wake Surf</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">家属尾波冲浪·拼船 45-60min</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost">¥500</span>
+                </div>
+                <div class="act-note">¥500 / 人·拼船制（同船 2-3 位轮流）；首冲教练全程护板；船上可拍小视频。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">13:15<small>Lunch</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">石梅湾九里·海景午餐</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">见下</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">Coco Bistro / 九里餐厅</div>
+                    <div class="meal-cuisine">轻食 · 地中海 · 简餐</div>
+                  </div>
+                  <div class="meal-loc">石梅湾九里商业区</div>
+                  <div class="meal-rec">椰子鸡意面 · 热带水果沙拉 · 柠檬气泡水</div>
+                  <div class="meal-pp">约 ¥170/人</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">15:00<small>Pool</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">威斯汀 无边际泳池·私人沙滩</div>
+                  <span class="act-dur">2.5h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">泳池朝南，午后 3-5 点光线最佳，拍照黄金时段。</div>
+                <div class="act-transport">酒店内</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">17:30<small>Sunset</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">石梅湾海边漫步·日落</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">酒店外侧沙滩连绵 3km，人少出片；日落约 18:52。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">19:00<small>Dinner</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">威斯汀 The Lounge 晚餐</div>
+                  <span class="act-dur">2h</span>
+                  <span class="act-cost free">见下</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">威斯汀 The Lounge</div>
+                    <div class="meal-cuisine">地中海 · 海鲜</div>
+                  </div>
+                  <div class="meal-loc">石梅湾威斯汀 1F 大堂</div>
+                  <div class="meal-rec">海南黑山羊 · 椰乳意面 · 提拉米苏</div>
+                  <div class="meal-pp">约 ¥280/人</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day reveal">
+      <div class="day-grid">
+        <aside class="day-num">
+          <div class="day-num-big">D<em>3</em></div>
+          <div class="day-num-date">04.26 · 周日</div>
+          <div class="day-num-weather">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5"/>
+              <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" stroke-linecap="round"/>
+            </svg>
+            <span>晴 · 30° / 24°</span>
+          </div>
+        </aside>
+        <div class="day-body">
+          <h3>告别<em>威斯汀</em> · 成都 16:20 落地</h3>
+
+          <div class="timeline">
+            <div class="act">
+              <div class="act-time">08:30<small>Wake</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">起床·收拾行李</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">行李提前装车省后续时间。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">09:30<small>Breakfast</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">威斯汀 自助早餐·最后泳池散步</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">含双早</span>
+                </div>
+                <div class="meal">
+                  <div class="meal-top">
+                    <div class="meal-name">Seasonal Tastes 早餐</div>
+                    <div class="meal-cuisine">自助 · 西式</div>
+                  </div>
+                  <div class="meal-loc">石梅湾威斯汀</div>
+                  <div class="meal-rec">最后一杯手冲 · 椰奶燕麦 · 热带水果</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">10:30<small>Check Out</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">Check-out·驶往凤凰机场</div>
+                  <span class="act-dur">1h40m</span>
+                  <span class="act-cost">¥150</span>
+                </div>
+                <div class="act-note">比日月湾到机场省 3km 约 5min；还车 + 安检预留 1h30m。</div>
+                <div class="act-transport">G98 环岛高速 · 100km</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">12:15<small>Airport</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">三亚凤凰 T3 还车·值机·安检</div>
+                  <span class="act-dur">1.5h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">国内经济舱提前 2h 开放值机；凤凰 T3 新航站楼。</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">13:45<small>Flight</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">祥鹏 8L9692 三亚凤凰 → 成都天府</div>
+                  <span class="act-dur">2h35m</span>
+                  <span class="act-cost">¥2,520</span>
+                </div>
+                <div class="act-note">周日返程溢价；靠左窗位看海岸线；天府 T2 落地。</div>
+                <div class="act-transport">经济舱 ¥1,260/人 · 实查 FlyAI</div>
+              </div>
+            </div>
+
+            <div class="act">
+              <div class="act-time">16:20<small>Home</small></div>
+              <div class="act-main">
+                <div class="act-top">
+                  <div class="act-name">成都天府 T2 落地·回城</div>
+                  <span class="act-dur">1h</span>
+                  <span class="act-cost free">免费</span>
+                </div>
+                <div class="act-note">比目标 16:00 晚 20min；若严卡 16:00 可换 JD5941 15:25 +¥30/人。</div>
+                <div class="act-transport">地铁 18 号线 / 机场专车</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="sect-h">
+  <div class="wrap">
+    <div class="eyebrow">The Stay</div>
+    <h2>四个<em>住</em>的选项</h2>
+    <p class="sub">从 Marriott 旗舰到日月湾本地设计酒店</p>
+  </div>
+</section>
+
+<section class="hotels">
+  <div class="wrap">
+    <div class="hotels-grid reveal">
+
+      <article class="hcard featured">
+        <span class="hcard-tag primary">Recommend</span>
+        <div class="area">Westin · Marriott</div>
+        <div class="name">石梅湾威斯汀度假酒店</div>
+        <div class="price">¥1,232<span>/ 晚</span></div>
+        <ul class="hl">
+          <li>Marriott 旗舰 · 3km 私人沙滩</li>
+          <li>步行 5min 到尾波俱乐部码头</li>
+          <li>无边际泳池朝南</li>
+          <li>含双早 · 2016 装修</li>
+          <li>一线海景房</li>
+        </ul>
+      </article>
+
+      <article class="hcard">
+        <span class="hcard-tag alt">Alt · Boutique</span>
+        <div class="area">日月湾 · 田新村</div>
+        <div class="name">海南日月湾温士顿秘境</div>
+        <div class="price">¥1,276<span>/ 晚</span></div>
+        <ul class="hl">
+          <li>2025 新开 · 独栋别墅风</li>
+          <li>咖啡街步行半径</li>
+          <li>豪华型 · 出片度高</li>
+          <li>比威斯汀 +¥44/晚</li>
+        </ul>
+      </article>
+
+      <article class="hcard">
+        <span class="hcard-tag top">Top Tier</span>
+        <div class="area">神州半岛 · 凯悦</div>
+        <div class="name">万宁神州半岛君悦酒店</div>
+        <div class="price">¥1,749<span>/ 晚</span></div>
+        <ul class="hl">
+          <li>凯悦 2022 最新</li>
+          <li>海景无敌 · 空间最大</li>
+          <li>距尾波点 20min</li>
+          <li>升级 +¥517/晚</li>
+        </ul>
+      </article>
+
+      <article class="hcard">
+        <span class="hcard-tag save">Save</span>
+        <div class="area">日月湾 · 冲浪镇</div>
+        <div class="name">日月湾由仑 YOOLAND 酒店</div>
+        <div class="price">¥444<span>/ 晚</span></div>
+        <ul class="hl">
+          <li>日月湾本地设计 · 高档型</li>
+          <li>咖啡街步行范围</li>
+          <li>保留冲浪镇氛围</li>
+          <li>省 ¥2,364 / 3 晚</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sect-h">
+  <div class="wrap">
+    <div class="eyebrow">Wake Surf Partners</div>
+    <h2>三家<em>尾波</em>俱乐部</h2>
+    <p class="sub">小红书交叉验证 · 至少提前 1 天预约</p>
+  </div>
+</section>
+
+<section class="surf">
+  <div class="wrap">
+    <div class="surf-grid reveal">
+
+      <article class="scard recommend">
+        <div class="scard-rank">i.</div>
+        <div class="scard-name">华润游艇会俱乐部</div>
+        <div class="scard-sub">石梅湾·距威斯汀 5 分钟步行</div>
+        <div class="scard-meta">
+          酒店正门外散步即达；<strong>首选</strong>——家属自己过去，老公岸边拍。<br>
+          石梅湾是封闭海湾，浪很平；4 月海水 26°C 不需湿衣。
+        </div>
+        <div class="scard-price">
+          <span class="scard-price-v">¥500/人</span>
+          <span class="scard-price-l">拼船 45-60min</span>
+        </div>
+      </article>
+
+      <article class="scard">
+        <div class="scard-rank">ii.</div>
+        <div class="scard-name">小宇教练·神州半岛</div>
+        <div class="scard-sub">万宁最高口碑 · 55 点赞</div>
+        <div class="scard-meta">
+          小红书 <strong>"万宁尾波冲浪｜小宇教练"</strong>；"可以闭眼冲的尾波" 系列评价稳。<br>
+          距威斯汀 20min 车程；需开车前往。
+        </div>
+        <div class="scard-price">
+          <span class="scard-price-v">¥500-600</span>
+          <span class="scard-price-l">拼船 or 包船</span>
+        </div>
+      </article>
+
+      <article class="scard">
+        <div class="scard-rank">iii.</div>
+        <div class="scard-name">包船独享升级</div>
+        <div class="scard-sub">家属专属 1 小时</div>
+        <div class="scard-meta">
+          两家都可包船；<strong>整船只有家属 + 教练</strong>，轮船次无等待。<br>
+          适合想拍长视频或慢慢磨技术时选用。
+        </div>
+        <div class="scard-price">
+          <span class="scard-price-v">¥1,200</span>
+          <span class="scard-price-l">整船 1h</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="budget">
+  <div class="wrap">
+    <div class="sect-h" style="padding:0 0 16px">
+      <div class="eyebrow">The Math</div>
+      <h2>一份<em>透明</em>的预算</h2>
+      <p class="sub">机票与酒店均为 FlyAI 实查 · 其余按当地行情参考 / 估算</p>
+    </div>
+
+    <div class="budget-hero reveal">
+      <div class="budget-total">
+        <div class="budget-total-eyebrow">Total · Two People</div>
+        <div class="budget-total-v">¥11,086<em>总</em></div>
+        <div class="budget-total-sub">每人 <strong>¥5,543</strong> · 3 天 2 夜</div>
+        <div class="budget-note">机票（¥3,480）+ 威斯汀 3 晚（¥3,696）占 65%；尾波只给家属安排 1 次 ¥500；其余 Day 1 打卡日预算比较弹。</div>
+      </div>
+
+      <div class="budget-bars">
+        <div class="bar">
+          <div class="bar-top">
+            <div class="bar-label">交通 Transport<small>Flights · Rental · Fuel</small></div>
+            <div class="bar-v">¥4,410<small>40%</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-pct="40"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top">
+            <div class="bar-label">住宿 Stay<small>Westin · 3 Nights</small></div>
+            <div class="bar-v">¥3,696<small>33%</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-pct="33"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top">
+            <div class="bar-label">餐饮 Food<small>Meals &amp; Cafés</small></div>
+            <div class="bar-v">¥1,780<small>16%</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-pct="16"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top">
+            <div class="bar-label">活动 Tickets<small>Wake Surf · SUP</small></div>
+            <div class="bar-v">¥800<small>7%</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-pct="7"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top">
+            <div class="bar-label">其他 Other<small>Sunscreen · Misc</small></div>
+            <div class="bar-v">¥400<small>4%</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-pct="4"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="budget-table reveal">
+      <table class="btbl">
+        <thead>
+          <tr>
+            <th>项目</th><th>类目</th><th>可信度</th><th>金额</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3U6727 成都→三亚 ¥480 ×2</td><td>交通</td><td><span class="conf real">实查</span></td><td>¥960</td></tr>
+          <tr><td>8L9692 三亚→成都 ¥1,260 ×2</td><td>交通</td><td><span class="conf real">实查</span></td><td>¥2,520</td></tr>
+          <tr><td>海南 3 天租车（小型 SUV）</td><td>交通</td><td><span class="conf est">估算</span></td><td>¥450</td></tr>
+          <tr><td>过路费·油费（机场+日月湾往返）</td><td>交通</td><td><span class="conf est">估算</span></td><td>¥380</td></tr>
+          <tr><td>成都两端地铁/停车</td><td>交通</td><td><span class="conf est">估算</span></td><td>¥100</td></tr>
+          <tr><td>石梅湾威斯汀度假酒店 ¥1,232 ×3 晚（含双早）</td><td>住宿</td><td><span class="conf real">实查</span></td><td>¥3,696</td></tr>
+          <tr><td>4.24 日月湾 cafes + 海鲜晚餐 ×2</td><td>餐饮</td><td><span class="conf ref">参考</span></td><td>¥780</td></tr>
+          <tr><td>4.25 石梅湾九里午餐 + 威斯汀晚餐 ×2</td><td>餐饮</td><td><span class="conf ref">参考</span></td><td>¥900</td></tr>
+          <tr><td>4.26 酒店早餐 + 机场简餐 ×2</td><td>餐饮</td><td><span class="conf est">估算</span></td><td>¥100</td></tr>
+          <tr><td>尾波冲浪 ×1 人（仅家属·石梅湾拼船）</td><td>活动</td><td><span class="conf ref">参考</span></td><td>¥500</td></tr>
+          <tr><td>桨板 SUP 2h ×2 人（日月湾飞鱼）</td><td>活动</td><td><span class="conf ref">参考</span></td><td>¥300</td></tr>
+          <tr><td>防晒·冲浪用品·零碎</td><td>其他</td><td><span class="conf est">估算</span></td><td>¥200</td></tr>
+          <tr><td>应急备用金</td><td>其他</td><td><span class="conf est">估算</span></td><td>¥200</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sect-h">
+  <div class="wrap">
+    <div class="eyebrow">Field Notes</div>
+    <h2>九个<em>避坑</em>tips</h2>
+    <p class="sub">小红书与本地实查 · 周末场景下的真实建议</p>
+  </div>
+</section>
+
+<section class="tips">
+  <div class="wrap">
+    <div class="tips-grid reveal">
+      <div class="tcard"><div class="tcard-num">No.01</div><div class="tcard-txt">尾波冲浪需提前 1 天微信预约，4 月非暴风季；若当日 3 级以上大风教练会主动改期。</div></div>
+      <div class="tcard"><div class="tcard-num">No.02</div><div class="tcard-txt">威斯汀步行 5-8 分钟到华润游艇会码头，家属完全可以自走，老公岸边拍照；俱乐部有岸边观景台。</div></div>
+      <div class="tcard"><div class="tcard-num">No.03</div><div class="tcard-txt">日月湾海边 "拉客仔" 低价招揽（50-100/h）是真浪冲浪课，和尾波不是同一项目，别买错。</div></div>
+      <div class="tcard"><div class="tcard-num">No.04</div><div class="tcard-txt">石梅湾 ↔ 日月湾 G98 高速 13km，周末下午 14:00-16:00 易拥堵，Day 2 建议留石梅湾免折返。</div></div>
+      <div class="tcard"><div class="tcard-num">No.05</div><div class="tcard-txt">威斯汀自助早餐通常含双早，价值 ¥250/人·天；不要错过现切三文鱼和手冲咖啡。</div></div>
+      <div class="tcard"><div class="tcard-num">No.06</div><div class="tcard-txt">天府机场距市中心 50km，地铁 18 号线约 1h；若行李多建议预约机场专车（周日晚高峰优势明显）。</div></div>
+      <div class="tcard"><div class="tcard-num">No.07</div><div class="tcard-txt">凤凰机场 → 石梅湾 100km，沿途加油站少，建议出发前满油。</div></div>
+      <div class="tcard"><div class="tcard-num">No.08</div><div class="tcard-txt">4 月海水温度 26°C，可不穿湿衣；但防晒服/冲浪帽强烈建议，紫外线指数 11。</div></div>
+      <div class="tcard"><div class="tcard-num">No.09</div><div class="tcard-txt">推荐下载 "海浪预报" App 或 "Windy" 查当日风浪；尾波要求 0.3m 以下小浪。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="refs">
+  <div class="wrap">
+    <div class="sect-h" style="padding:0 0 16px">
+      <div class="eyebrow" style="color:var(--gold-soft)">Sources</div>
+      <h2 style="color:var(--paper);font-size:clamp(30px,4vw,48px)">来源<em style="color:var(--gold-soft)">引用</em></h2>
+    </div>
+    <div class="refs-grid">
+      <a class="ref-item" href="https://a.feizhu.com/0HcO3Q" target="_blank" rel="noopener"><span class="ref-num">01 /</span><span class="ref-title">FlyAI 实查·3U6727 去程航班</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://a.feizhu.com/3rAnmt" target="_blank" rel="noopener"><span class="ref-num">02 /</span><span class="ref-title">FlyAI 实查·8L9692 返程航班</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://a.feizhu.com/2GA3GS" target="_blank" rel="noopener"><span class="ref-num">03 /</span><span class="ref-title">FlyAI 实查·石梅湾威斯汀度假酒店</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://a.feizhu.com/1um6EV" target="_blank" rel="noopener"><span class="ref-num">04 /</span><span class="ref-title">FlyAI 实查·日月湾温士顿秘境</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://www.xiaohongshu.com/explore/69df85770000000021006dee" target="_blank" rel="noopener"><span class="ref-num">05 /</span><span class="ref-title">小红书·万宁尾波冲浪小宇教练</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://www.xiaohongshu.com/explore/679f8c60000000002901a0fc" target="_blank" rel="noopener"><span class="ref-num">06 /</span><span class="ref-title">小红书·海南尾波冲浪现状（避雷）</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="ref-item" href="https://www.xiaohongshu.com/explore/679c7b1c00000000170391ac" target="_blank" rel="noopener"><span class="ref-num">07 /</span><span class="ref-title">小红书·万宁包船尾浪</span><svg class="ref-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 12L12 4M12 4H6M12 4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Generated on 2026-04-17 · Based on FlyAI · 小红书 · 高德 cross-verified data · <a href="../index.html">All trips</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var fills=document.querySelectorAll(".bar-fill");
+    for(var i=0;i<fills.length;i++){fills[i].style.width=(fills[i].getAttribute("data-pct")||"0")+"%";}
+    var rvs=document.querySelectorAll(".reveal");
+    for(var j=0;j<rvs.length;j++){rvs[j].classList.add("in");}
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add("in");
+        var bars=e.target.querySelectorAll(".bar-fill");
+        bars.forEach(function(b){
+          var pct=b.getAttribute("data-pct")||"0";
+          b.style.width=pct+"%";
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
